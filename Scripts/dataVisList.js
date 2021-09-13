@@ -74,7 +74,7 @@ const initialiseBlogs = () =>{
             if (dataVisItems[i].dataVisType === blogType || allBlogs === true)
             {
             const section = document.createElement("section");
-            section.className = "h-entry";
+            section.className = "h-entry"
             const link = document.createElement("a");
             link.className = "blog-card";
             link.href = linkPrefix + dataVisItems[i].blogLocation + (i + 1) + ".html";
