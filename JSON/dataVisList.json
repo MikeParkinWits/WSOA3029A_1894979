@@ -1,0 +1,18 @@
+[{"title": "Data Vis 2", "dataVisLocation": "Visualizations/DataVis",
+    "dataVisImagePreview": {
+        "src":"/Images/DataVisImages/Data_Vis_2.jpg",
+        "alt": "Alt 2",
+        "imageTitle": "Img Title 2"},
+    "dataVisType": "Data Visualization",
+    "dataVisDescription": "Description 2",
+    "dataVisPubDate": "2 July 2021"
+    },
+    {"title": "Data Vis 1", "dataVisLocation": "Visualizations/DataVis",
+        "dataVisImagePreview": {
+            "src":"/Images/DataVisImages/Data_Vis_1.jpg",
+            "alt": "Alt 1",
+            "imageTitle": "Img Title 1"},
+        "dataVisType": "Data Visualization",
+        "dataVisDescription": "Description 1",
+        "dataVisPubDate": "2 July 2021"
+        }]

@@ -1,0 +1,18 @@
+[{"title": "Blog Post 2", "blogLocation": "Blogs/Blog",
+    "blogImagePreview": {
+        "src":"Images/BlogImages/Blog_Post_2.jpg",
+        "alt": "Blog Image Alt 2",
+        "imageTitle": "Blog Image Title 2"},
+    "blogType": "Theory",
+    "blogDescription": "Blog Description 2",
+    "blogPubDate": "2 July 2021"
+    },
+{"title": "Blog Post 1", "blogLocation": "Blogs/Blog",
+    "blogImagePreview": {
+        "src":"Images/BlogImages/Blog_Post_1.jpg",
+        "alt": "Blog Image Alt 2",
+        "imageTitle": "Blog Image Title 1"},
+    "blogType": "Theory",
+    "blogDescription": "Blog Description 1",
+    "blogPubDate": "2 July 2021"
+    }]
