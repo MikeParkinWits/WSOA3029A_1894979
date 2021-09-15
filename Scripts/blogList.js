@@ -80,7 +80,7 @@ const initialiseBlogs = () =>{
             const section = document.createElement("section");
             const link = document.createElement("a");
             link.className = "blog-card h-entry";
-            link.href = linkPrefix + blogItems[i].blogLocation + (i + 1) + ".html";
+            link.href = linkPrefix + blogItems[i].blogLocation + ".html";
         
             const img = document.createElement("img");
             img.src = linkPrefix + blogItems[i].blogImagePreview.src;

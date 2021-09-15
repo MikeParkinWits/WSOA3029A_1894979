@@ -67,7 +67,7 @@ const initialiseBlogs = () =>{
             section.className = "h-entry"
             const link = document.createElement("a");
             link.className = "blog-card";
-            link.href = linkPrefix + dataVisItems[i].blogLocation + (i + 1) + ".html";
+            link.href = linkPrefix + dataVisItems[i].dataVisLocation + ".html";
         
             const img = document.createElement("img");
             img.src = linkPrefix + dataVisItems[i].dataVisImagePreview.src;
