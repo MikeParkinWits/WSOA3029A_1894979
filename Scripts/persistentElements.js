@@ -28,8 +28,8 @@ const initialiseMenuLogo = (ul) => {
     link.href = linkPrefix + "index.html";
     const image = document.createElement("img");
     image.src = linkPrefix + "Images/Logo.png";
-    image.width = 72;
-    image.height = 60;
+    image.width = 66;
+    image.height = 55;
     image.alt = "Lost Data Logo";
     link.appendChild(image);
 
