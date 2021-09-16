@@ -30,6 +30,7 @@ fetch(linkPrefix + "JSON/blogPostList.json")
     console.log(e);
 });
 
+
 let blogsToLoad = null;
 const pathLocation = window.location.pathname;
 let blogType = null;
@@ -48,18 +49,21 @@ const initialiseBlogs = () =>{
     else
     {
 
+        console.log(window.location.pathname);
+
+
         semanticAdjust = "h2";
 
         blogsToLoad = blogItems.length;
         switch (window.location.pathname)
         {
-            case linkPrefix + "Blogs/AllBlogsP1.html":
+            case linkPrefix + "Blogs/AllBlogs.html":
                 allBlogs = true;
                 break;
-            case linkPrefix + "Blogs/TheoryBlogsP1.html":
+            case linkPrefix + "Blogs/TheoryBlogs.html":
                 blogType = "Theory";
                 break;
-            case linkPrefix + "Blogs/WebDevBlogsP1.html":
+            case linkPrefix + "Blogs/WebDevBlogs.html":
                 blogType = "Website Development";
                 break;
         }
