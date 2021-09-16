@@ -51,18 +51,8 @@ const initialiseBlogs = () =>{
         semanticAdjust = "h2";
 
         blogsToLoad = dataVisItems.length;
-        switch (window.location.pathname)
-        {
-            case linkPrefix + "Blogs/AllBlogsP1.html":
-                allBlogs = true;
-                break;
-            case linkPrefix + "Blogs/TheoryBlogsP1.html":
-                blogType = "Theory";
-                break;
-            case linkPrefix + "Blogs/WebDevBlogsP1.html":
-                blogType = "Website Development";
-                break;
-        }
+
+        allBlogs = true;
     }
 
 
