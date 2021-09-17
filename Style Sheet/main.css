@@ -4,8 +4,8 @@
     2. TYPOGRAPHY
     3. NAV BARS & FOOTER
       3.1 MAIN NAVIGATION BAR
-      3.2 BLOG NAVIGATION BAR
-      3.3 MAIN FOOTER
+      3.2 MAIN FOOTER
+      3.3 BLOG NAVIGATION BAR
     4. BANNER
     5. BACK TO TOP LINK
     6. BUTTONS
@@ -23,19 +23,16 @@
    ---------------------------------- */
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
 body {
+  font-family: "Poppins", "arial", "sans-serif";
   margin: 0rem;
   width: 100%;
   text-align: center;
 
-  background-color: #fcfcfc;
-
-  font-family: "Poppins", "arial", "sans-serif";
-
-  box-sizing: border-box;
-
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #fcfcfc;
+  box-sizing: border-box;
 }
 
 p {
@@ -59,7 +56,8 @@ a {
   3. NAV BARS
    ----------- */
 
-nav li a {
+nav li a,
+.main-footer a {
   transition: color 0.3s;
   font-weight: 500;
   padding: 1.25rem 0rem;
@@ -67,7 +65,8 @@ nav li a {
   position: relative;
 }
 
-nav li a::before {
+nav li a::before,
+.main-footer a::before {
   transition: 0.3s ease;
   height: 0.15rem;
   content: "";
@@ -77,11 +76,13 @@ nav li a::before {
   bottom: 0.8rem;
 }
 
-nav li a:hover {
+nav li a:hover,
+.main-footer a:hover {
   color: rgb(95, 95, 95);
 }
 
-nav li a:hover::before {
+nav li a:hover::before,
+.main-footer a:hover::before {
   width: 100%;
 }
 
@@ -134,4 +135,11 @@ nav a {
   cursor: pointer;
   display: none;
   padding: 0rem 1rem 0rem 1rem;
+}
+
+/* 3.2 MAIN FOOTER */
+
+.main-footer {
+  background-color: #e6e6e5;
+  padding: 0.1rem 0rem 0.1rem 0rem;
 }
