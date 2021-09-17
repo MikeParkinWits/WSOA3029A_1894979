@@ -17,7 +17,7 @@ if (
 
   const menuOptions = [
     {title: "Visualizations", link: linkPrefix + "Visualizations/AllVisualizations.html"},
-    {title: "Blog", link: linkPrefix + "Blogs/AllBlogs.html"},
+    {title: "Blogs", link: linkPrefix + "Blogs/AllBlogs.html"},
     {title: "About Us", link: linkPrefix + "AboutPage/AboutUs.html"},
 ]
 

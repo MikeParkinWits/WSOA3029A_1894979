@@ -1,0 +1,137 @@
+/* TABLE OF CONTENTS
+
+    1. GLOBAL STYLING - Desktop First
+    2. TYPOGRAPHY
+    3. NAV BARS & FOOTER
+      3.1 MAIN NAVIGATION BAR
+      3.2 BLOG NAVIGATION BAR
+      3.3 MAIN FOOTER
+    4. BANNER
+    5. BACK TO TOP LINK
+    6. BUTTONS
+    7. PAGE SPECIFIC STYLING
+      7.1 STANDARD PAGE LAYOUT
+      7.2 ABOUT ME PAGE
+      7.3 MAP
+    8. RESEPONSIVE DESIGN
+      8.1 TABLET
+      8.2 MOBILE
+*/
+
+/* ----------------------------------
+  1. GLOBAL STYLING - DESKTOP FIRST
+   ---------------------------------- */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
+body {
+  margin: 0rem;
+  width: 100%;
+  text-align: center;
+
+  background-color: #fcfcfc;
+
+  font-family: "Poppins", "arial", "sans-serif";
+
+  box-sizing: border-box;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-family: "Helvetica Light", "arial", "sans-serif";
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* -----------
+  3. NAV BARS
+   ----------- */
+
+nav li a {
+  transition: color 0.3s;
+  font-weight: 500;
+  padding: 1.25rem 0rem;
+  margin: 0rem 1.5rem;
+  position: relative;
+}
+
+nav li a::before {
+  transition: 0.3s ease;
+  height: 0.15rem;
+  content: "";
+  position: absolute;
+  background-color: rgb(95, 95, 95);
+  width: 0%;
+  bottom: 0.8rem;
+}
+
+nav li a:hover {
+  color: rgb(95, 95, 95);
+}
+
+nav li a:hover::before {
+  width: 100%;
+}
+
+nav a {
+  padding: 0rem 2rem 0rem 2rem;
+}
+
+/* 3.1 MAIN NAVIGATION BAR */
+
+.header-nav {
+  z-index: 1;
+  top: 0rem;
+  position: sticky;
+  background-color: #ededea;
+  border-bottom: #fdfdfd solid 0.02rem;
+  box-shadow: 0 0.05rem 0.05rem 0.05rem #fdfdfd3a;
+}
+
+.header-nav ul {
+  flex-wrap: wrap;
+  display: flex;
+  margin: 0rem;
+}
+
+.header-nav li {
+  display: flex;
+}
+
+.logo a::before {
+  visibility: hidden;
+}
+
+.logo,
+.logo a {
+  margin-right: auto;
+  margin-left: 0rem;
+  padding: 0.25rem 0.2rem 0.05rem 0.4rem;
+  border: none;
+}
+
+.nav-items {
+  position: relative;
+  align-items: center;
+  padding: 0rem;
+}
+
+.hamburger-button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  padding: 0rem 1rem 0rem 1rem;
+}
