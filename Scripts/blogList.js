@@ -89,30 +89,34 @@ const initialiseBlogs = () =>{
             img.height = "202";
             img.title = blogItems[i].blogImagePreview.imageTitle;
             img.className = "u-featured";
+
+            const blogContentSection = document.createElement("section");
+            blogContentSection.className = "blog-card-content"
+
+            const infoSection = document.createElement("section");
+            infoSection.className = "blog-card-info"
         
-            const header = document.createElement("header");
-            const headerP = document.createElement("p");
+            const infoP = document.createElement("p");
 
             switch (blogItems[i].blogType){
                 case "Theory":
-                    headerP.className = "theory-blog p-category";
+                    infoP.className = "theory-blog p-category";
                     break;
                 case "Website Development":
-                    headerP.className = "website-blog p-category";
+                    infoP.className = "website-blog p-category";
                     break;
             }
 
-
-
-
-            headerP.innerText = blogItems[i].blogType;
-            header.appendChild(headerP)
+            infoP.innerText = blogItems[i].blogType;
+            infoSection.appendChild(infoP)
 
             const time = document.createElement("time");
             time.dateTime = new Date(blogItems[i].blogPubDate);
             time.innerText = blogItems[i].blogPubDate;
             time.className = "dt-published";
-            header.appendChild(time);
+            infoSection.appendChild(time);
+
+            const header = document.createElement("header");
             
             const blogTitle = document.createElement(semanticAdjust);
             blogTitle.innerText = blogItems[i].title;
@@ -124,8 +128,13 @@ const initialiseBlogs = () =>{
             linkP.className = "p-summary";
             
             link.appendChild(img);
-            link.appendChild(header);
-            link.appendChild(linkP);
+
+            blogContentSection.append(infoSection);
+            blogContentSection.append(header);
+            blogContentSection.append(linkP);
+            link.append(blogContentSection);
+
+
         
             section.appendChild(link);
         

@@ -1,0 +1,95 @@
+/* TABLE OF CONTENTS
+
+    1. Card
+        1.2 Card Styling
+        1.1 Card Typography
+
+*/
+
+/* -----------
+    1. CARD
+   ----------- */
+
+/* 1.2 CARD STYLING */
+
+.blog-card {
+  display: inline-block;
+  margin: 1rem 1rem 2.5rem;
+  background-color: rgb(253, 253, 253);
+  text-align: left;
+  border-radius: 0.5%;
+  overflow: hidden;
+  border: solid 0.06rem rgb(204, 204, 204);
+  position: relative;
+
+  max-width: 20rem;
+  min-width: 17.5rem;
+  max-height: 100%;
+  height: 23rem;
+
+  box-shadow: 0rem 0.18rem 0.62rem -0.125rem rgb(202, 202, 202);
+  top: 0rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-card-info {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.blog-card-info p,
+.blog-card-info time {
+  font-size: 0.875rem;
+  padding-right: 0.7rem;
+  top: 0rem;
+}
+
+.blog-card-info time {
+  padding-left: 0.7rem;
+}
+
+.blog-card img {
+  max-width: 100%;
+  object-fit: cover;
+
+  height: 12rem;
+  border-radius: 0.5% 0.5% 0% 0%;
+  object-position: 50% 50%;
+}
+
+.blog-card-content {
+  margin: 0.4rem 1rem;
+}
+
+.blog-card:hover {
+  top: -8px;
+  box-shadow: 0.4rem 0.5rem 0.8rem 0.1rem rgb(190, 190, 190);
+}
+
+/* 1.2 CARD TYPOGRAPHY */
+
+.blog-card h3,
+.blog-card h2 {
+  font-size: 1.25rem;
+  padding: 0rem;
+  margin: 0.3rem 0rem;
+}
+
+.blog-card p {
+  margin: 0.3rem 0rem;
+}
+
+.theory-blog {
+  color: rgb(224, 67, 67);
+}
+
+.visualization-blog {
+  color: rgb(64, 96, 201);
+}
+
+.website-blog {
+  color: rgb(201, 64, 201);
+}

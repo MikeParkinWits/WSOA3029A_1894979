@@ -76,31 +76,33 @@ const initialiseBlogs = () =>{
             img.height = "202";
             img.title = dataVisItems[i].dataVisImagePreview.imageTitle;
             img.className = "u-featured";
+
+            const blogContentSection = document.createElement("section");
+            blogContentSection.className = "blog-card-content"
+
+            const infoSection = document.createElement("section");
+            infoSection.className = "blog-card-info"
         
-            const header = document.createElement("header");
-            const headerP = document.createElement("p");
+        
+            const infoP = document.createElement("p");
 
             switch (dataVisItems[i].dataVisType){
-                case "Theory":
-                    headerP.className = "theory-blog p-category";
-                    break;
-                case "Website Development":
-                    headerP.className = "website-blog p-category";
+                case "Data Visualization":
+                    infoP.className = "visualization-blog p-category";
                     break;
             }
 
-
-
-
-            headerP.innerText = dataVisItems[i].dataVisType;
-            header.appendChild(headerP)
+            infoP.innerText = dataVisItems[i].dataVisType;
+            infoSection.appendChild(infoP)
 
             const time = document.createElement("time");
             time.dateTime = new Date(dataVisItems[i].dataVisPubDate);
             time.innerText = dataVisItems[i].dataVisPubDate;
             time.className = "dt-published";
-            header.appendChild(time);
-            
+            infoSection.appendChild(time);
+
+            const header = document.createElement("header");
+
             const blogTitle = document.createElement(semanticAdjust);
             blogTitle.innerText = dataVisItems[i].title;
             blogTitle.className = "p-name";
@@ -110,9 +112,13 @@ const initialiseBlogs = () =>{
             linkP.innerText = dataVisItems[i].dataVisDescription;
             linkP.className = "p-summary";
             
+            
             link.appendChild(img);
-            link.appendChild(header);
-            link.appendChild(linkP);
+
+            blogContentSection.append(infoSection);
+            blogContentSection.append(header);
+            blogContentSection.append(linkP);
+            link.append(blogContentSection);
         
             section.appendChild(link);
         

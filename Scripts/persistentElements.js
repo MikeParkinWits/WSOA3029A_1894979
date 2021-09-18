@@ -87,7 +87,6 @@ const initialiseFooter = () =>{
     const pFooterElements = document.createElement("p");
     pFooterElements.className = "p-name";
     pFooterElements.innerText = "Michael Parkin";
-
     footer.appendChild(pFooterElements);
 
     const ulRef = document.createElement("ul");
