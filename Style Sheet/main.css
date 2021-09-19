@@ -203,6 +203,30 @@ nav a {
   line-height: 5.5rem;
 }
 
+/* ----------------------
+    5. BACK TO TOP LINK 
+   ---------------------- */
+
+.back-to-top-link {
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  display: inline-flex;
+
+  margin: 0em 1em 1em 0em;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  color: rgb(83, 83, 83);
+  z-index: 1;
+}
+
+.back-to-top-link:hover {
+  color: rgb(109, 109, 109);
+  bottom: 0.2rem;
+}
+
 /* -------------
     6. BUTTONS 
    ------------- */
@@ -221,7 +245,7 @@ nav a {
   transition: all 0.3s ease;
 
   text-align: center;
-  background-color: rgba(221, 221, 221, 0.644);
+  background-color: rgba(238, 238, 238, 0.644);
 
   border-radius: 0.5%;
 }
@@ -256,7 +280,7 @@ nav a {
 }
 
 .background-tone-one {
-  background-color: #f7f7f7;
+  background-color: #f1f1f1;
 }
 
 .background-tone-two {
