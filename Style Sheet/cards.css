@@ -14,7 +14,7 @@
 
 .blog-card {
   display: inline-block;
-  margin: 1rem 1rem 2.5rem;
+  margin: 2rem 1rem 1.5rem;
   background-color: rgb(253, 253, 253);
   text-align: left;
   border-radius: 0.5%;
@@ -92,4 +92,47 @@
 
 .website-blog {
   color: rgb(201, 64, 201);
+}
+
+/* -----------
+    2. GRIDS 
+   ----------- */
+
+.blog-post-grid,
+.data-vis-grid {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: inline-grid;
+  grid-auto-rows: minmax(100vh, autofit);
+
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0% 0%;
+}
+
+/* 2.1 BLOG GRID */
+
+.latest-info {
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  width: 20rem;
+}
+
+#newestDataVis,
+#newestBlogPosts {
+  display: inline-flex;
+  text-align: left;
+}
+
+#newestDataVis .latest-info,
+#newestBlogPosts .latest-info {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#newestDataVis .latest-info a,
+#newestBlogPosts .latest-info a {
+  margin-top: auto;
 }

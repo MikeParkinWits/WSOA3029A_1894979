@@ -39,6 +39,24 @@ html {
   scroll-padding-top: 5rem;
 }
 
+/* Typography */
+
+h1 {
+  font-size: 5rem;
+  font-weight: bold;
+
+  text-align: left;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0rem;
+}
+
 p {
   font-family: "Helvetica Light", "arial", "sans-serif";
 }
@@ -144,7 +162,7 @@ nav a {
 /* 3.2 MAIN FOOTER */
 
 .main-footer {
-  background-color: #e6e6e5;
+  background-color: #cfcfcf;
   padding: 0.1rem 0rem 0.1rem 0rem;
 }
 
@@ -178,6 +196,7 @@ nav a {
 }
 
 .banner-info h1 {
+  text-align: center;
   font-size: 5rem;
   font-weight: bold;
   margin: 1rem 1rem 0rem 1rem;
@@ -200,6 +219,11 @@ nav a {
   transform: scale(1);
 
   transition: all 0.3s ease;
+
+  text-align: center;
+  background-color: rgba(221, 221, 221, 0.644);
+
+  border-radius: 0.5%;
 }
 
 .button {
@@ -210,7 +234,7 @@ nav a {
   color: white;
   background-color: black;
   box-shadow: 0.25rem 0.25rem 1.9rem 0.25rem rgb(165, 165, 165);
-  letter-spacing: 0.01rem;
+  letter-spacing: 0.02rem;
   transform: scale(1.08);
 }
 
@@ -220,11 +244,21 @@ nav a {
   margin: 20rem 0rem;
 }
 
-.hero-buttons .button {
-  background-color: rgba(221, 221, 221, 0.644);
+/* Page Layouts*/
+
+.background-tone-one,
+.background-tone-two {
+  padding: 0rem;
+  margin: 1rem;
+
+  border-radius: 0.5%;
+  box-shadow: 0rem 0rem 1rem -0.5rem rgb(189, 189, 189);
 }
 
-.hero-buttons .button:hover {
-  color: white;
-  background-color: black;
+.background-tone-one {
+  background-color: #f7f7f7;
+}
+
+.background-tone-two {
+  background-color: #eeeeee;
 }
