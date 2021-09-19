@@ -109,6 +109,13 @@
   width: 100%;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0% 0%;
+
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+.three-grid {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* 2.1 BLOG GRID */

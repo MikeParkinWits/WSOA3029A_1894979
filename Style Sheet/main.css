@@ -166,6 +166,23 @@ nav a {
   padding: 0.1rem 0rem 0.1rem 0rem;
 }
 
+/* 3.3 Blog Nav */
+
+.blogs-nav {
+  /*
+    display: inline-block;
+    */
+  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+  width: 45%;
+  border-top: 0.1rem solid black;
+}
+
+.blogs-nav a {
+  margin: 0rem;
+  margin-right: 1rem;
+}
+
 /* -------------
     4. BANNER
    ------------- */
@@ -273,7 +290,7 @@ nav a {
 .background-tone-one,
 .background-tone-two {
   padding: 0rem;
-  margin: 1rem;
+  margin: 1rem 1rem;
 
   border-radius: 0.5%;
   box-shadow: 0rem 0rem 1rem -0.5rem rgb(189, 189, 189);
@@ -285,4 +302,10 @@ nav a {
 
 .background-tone-two {
   background-color: #eeeeee;
+}
+
+.border-lock {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: left;
 }
