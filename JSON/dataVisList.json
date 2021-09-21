@@ -7,7 +7,7 @@
     "dataVisDescription": "Description 2",
     "dataVisPubDate": "2 July 2021"
     },
-    {"title": "Data Vis 1", "dataVisLocation": "Visualizations/AllVisualizations/Visualization1",
+    {"title": "Data Vis 1", "dataVisLocation": "Visualizations/AllVisualizations/Visualization0",
         "dataVisImagePreview": {
             "src":"Images/VisualizationPreviewImages/Visualization0.jpg",
             "alt": "Alt 1",

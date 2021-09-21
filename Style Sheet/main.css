@@ -21,6 +21,7 @@
 /* ----------------------------------
   1. GLOBAL STYLING - DESKTOP FIRST
    ---------------------------------- */
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
 body {
   font-family: "Poppins", "arial", "sans-serif";
@@ -31,15 +32,19 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #fcfcfc;
+  background-color: #f8f8f8;
   box-sizing: border-box;
+  flex-direction: column;
 }
 
 html {
   scroll-padding-top: 5rem;
+  min-height: 100%;
 }
 
-/* Typography */
+/* --------------
+   2. Typography
+   -------------- */
 
 h1 {
   font-size: 5rem;
@@ -49,7 +54,9 @@ h1 {
   padding-left: 2rem;
   padding-top: 1rem;
   margin-top: 0rem;
-  margin-bottom: 0rem;
+  margin-bottom: 1rem;
+
+  line-height: 6.5rem;
 }
 
 h2 {
@@ -57,7 +64,8 @@ h2 {
   margin-bottom: 0rem;
 }
 
-p {
+p,
+figcaption {
   font-family: "Helvetica Light", "arial", "sans-serif";
 }
 
@@ -119,8 +127,8 @@ nav a {
   top: 0rem;
   position: sticky;
   background-color: #ededea;
-  border-bottom: #fdfdfd solid 0.02rem;
-  box-shadow: 0 0.05rem 0.05rem 0.05rem #fdfdfd3a;
+  border-bottom: #fdfdfd solid 0.04rem;
+  box-shadow: 0 0.09rem 0.1rem 0.05rem #fdfdfd3a;
 }
 
 .header-nav ul {
@@ -164,18 +172,19 @@ nav a {
 .main-footer {
   background-color: #cfcfcf;
   padding: 0.1rem 0rem 0.1rem 0rem;
+  margin-top: auto;
 }
 
 /* 3.3 Blog Nav */
 
 .blogs-nav {
-  /*
-    display: inline-block;
-    */
+  display: inline-block;
+
   margin-left: 2.2rem;
   margin-top: 0.5rem;
-  width: 45%;
-  border-top: 0.1rem solid black;
+  border-top: 0.13rem solid black;
+
+  padding-right: 2.2rem;
 }
 
 .blogs-nav a {
@@ -285,27 +294,92 @@ nav a {
   margin: 20rem 0rem;
 }
 
-/* Page Layouts*/
+/* ---------------
+  7. Page Styling
+   --------------- */
+
+/* 7.1 Standard Page Elements */
 
 .background-tone-one,
 .background-tone-two {
   padding: 0rem;
-  margin: 1rem 1rem;
+  margin: 2rem 1rem;
 
-  border-radius: 0.5%;
-  box-shadow: 0rem 0rem 1rem -0.5rem rgb(189, 189, 189);
-}
-
-.background-tone-one {
+  border-radius: 0.75%;
+  box-shadow: inset 0.1rem 0.2rem 1rem -0.5rem rgb(189, 189, 189);
   background-color: #f1f1f1;
 }
 
+.background-tone-one {
+  margin: 2rem 1rem 1rem 1rem;
+}
+
 .background-tone-two {
-  background-color: #eeeeee;
+  margin: 1rem;
 }
 
 .border-lock {
   display: inline-flex;
   flex-direction: column;
   text-align: left;
+
+  width: 80%;
+  max-width: 70rem;
+}
+
+.standard-page-date,
+.standard-page-content,
+.standard-page-footer h2 {
+  margin: 1.5rem 2.2rem;
+}
+
+.standard-page-date {
+  display: inline-block;
+
+  border-top: 0.13rem solid black;
+  padding: 1rem 2.2rem;
+  margin: 0.5rem 0rem 1rem 2.2rem;
+  font-size: 1.15rem;
+}
+
+.standard-page-footer {
+  margin-bottom: 1.5rem;
+}
+
+.standard-page-header h2 {
+  text-align: left;
+  margin-left: 2.2rem;
+}
+
+.standard-page p,
+figure {
+  text-align: left;
+  padding-bottom: 1rem;
+  padding-left: 0rem;
+}
+
+figure {
+  margin-left: 0rem;
+}
+
+.standard-page-footer figcaption {
+  text-align: left;
+
+  margin: 2.2rem;
+  padding-bottom: 2.2rem;
+}
+
+.standard-page-references {
+  padding-right: 2.2rem;
+}
+
+.standard-page-references a {
+  text-decoration: underline;
+  color: blue;
+}
+
+.standard-page-references li {
+  display: list-item;
+  list-style: circle;
+  margin-left: 1rem;
 }
