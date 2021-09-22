@@ -32,7 +32,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   box-sizing: border-box;
   flex-direction: column;
 }
@@ -126,9 +126,9 @@ nav a {
   z-index: 1;
   top: 0rem;
   position: sticky;
-  background-color: #ededea;
+  background-color: #e0e0dd;
   border-bottom: #fdfdfd solid 0.04rem;
-  box-shadow: 0 0.09rem 0.1rem 0.05rem #fdfdfd3a;
+  box-shadow: 1rem 0.09rem 0.1rem 0.05rem #bbbbbb3a;
 }
 
 .header-nav ul {
@@ -170,7 +170,7 @@ nav a {
 /* 3.2 MAIN FOOTER */
 
 .main-footer {
-  background-color: #cfcfcf;
+  background-color: #b8b8b8;
   padding: 0.1rem 0rem 0.1rem 0rem;
   margin-top: auto;
 }
@@ -307,7 +307,7 @@ nav a {
 
   border-radius: 0.75%;
   box-shadow: inset 0.1rem 0.2rem 1rem -0.5rem rgb(189, 189, 189);
-  background-color: #f1f1f1;
+  background-color: #fafafa;
 }
 
 .background-tone-one {
@@ -323,14 +323,14 @@ nav a {
   flex-direction: column;
   text-align: left;
 
-  width: 80%;
+  width: 93%;
   max-width: 70rem;
 }
 
 .standard-page-date,
 .standard-page-content,
 .standard-page-footer h2 {
-  margin: 1.5rem 2.2rem;
+  margin: 1.5rem 3.3rem;
 }
 
 .standard-page-date {
@@ -338,17 +338,30 @@ nav a {
 
   border-top: 0.13rem solid black;
   padding: 1rem 2.2rem;
-  margin: 0.5rem 0rem 1rem 2.2rem;
+  margin: 0.5rem 0rem 1rem 3.3rem;
   font-size: 1.15rem;
+  line-height: 1.7rem;
 }
 
 .standard-page-footer {
   margin-bottom: 1.5rem;
 }
 
+.standard-page-references {
+  margin-left: 3.3rem;
+  margin-right: 3.3rem;
+}
+
 .standard-page-header h2 {
   text-align: left;
   margin-left: 2.2rem;
+}
+
+.standard-page-title {
+  margin-right: 3.3rem;
+  margin-left: 3.3rem;
+  margin-top: 1rem;
+  padding-left: 0rem;
 }
 
 .standard-page p,
@@ -370,7 +383,8 @@ figure {
 }
 
 .standard-page-references {
-  padding-right: 2.2rem;
+  padding-right: 0rem;
+  padding-left: 0rem;
 }
 
 .standard-page-references a {
@@ -382,4 +396,166 @@ figure {
   display: list-item;
   list-style: circle;
   margin-left: 1rem;
+}
+
+/* ------------------------
+    8. RESPONSIVE DESIGN 
+   ------------------------ */
+
+/* 8.1 TABLET - Based on the iPad */
+
+@media only screen and (max-width: 1024px) {
+  .standard-page-date,
+  .standard-page-content,
+  .standard-page-footer h2 {
+    margin: 1.5rem 2.2rem;
+  }
+
+  .standard-page-title {
+    margin-left: 2.2rem;
+  }
+
+  .banner-info {
+    margin-top: 2em;
+  }
+
+  .banner-info h1 {
+    font-size: 3em;
+  }
+
+  .banner-info p {
+    margin-top: 20em;
+    font-size: 1em;
+  }
+
+  .about-me-page {
+    flex-direction: column;
+  }
+
+  .about-me-info {
+    margin: 0rem;
+    margin-top: -1rem;
+  }
+
+  .about-profile-picture {
+    width: 70%;
+    height: 70%;
+  }
+
+  .about-me-page {
+    width: 70vw;
+  }
+
+  .border-lock {
+    width: 90%;
+  }
+}
+
+/* 8.2 MOBILE - Based on iPhone X and other popular/similair devices */
+
+@media only screen and (max-width: 765px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 0rem;
+  }
+
+  .standard-page-header h1 {
+    font-size: 2.7rem;
+  }
+
+  .blogs-nav {
+    border-top: 0rem solid black;
+  }
+
+  .standard-page-title {
+    padding-left: 0rem;
+    margin-left: 1rem;
+  }
+
+  .standard-page-date {
+    font-size: 1rem;
+    margin-left: 2.2rem;
+    margin-right: 2.2rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+    margin: 1rem;
+  }
+
+  .standard-page-content {
+    margin: 1rem;
+  }
+
+  .standard-page-references {
+    margin-left: 1rem;
+  }
+
+  .standard-page-footer h2 {
+    text-align: left;
+    margin-left: 1rem;
+  }
+
+  .banner-info h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner-info p {
+    margin-top: 25rem;
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-items a {
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hamburger-button {
+    display: block;
+  }
+
+  .nav-items a.active {
+    display: flex;
+    padding: 1rem 0rem 1rem 0rem;
+
+    border-top: 0.08rem solid rgb(204, 204, 204);
+  }
+
+  .blog-nav-items a {
+    display: inline-flex;
+    width: 80%;
+
+    padding: 1rem 0rem 1rem 0rem;
+
+    border-top: 0.08rem solid rgb(204, 204, 204);
+    border-left: 0px;
+  }
+
+  .blogs-nav li:last-child {
+    border-right: none;
+  }
+
+  .standard-page-header h2 {
+    line-height: 2.5rem;
+  }
+
+  .about-me-page {
+    width: 80vw;
+  }
+
+  .border-lock {
+    width: 90%;
+  }
 }

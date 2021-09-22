@@ -110,8 +110,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 0% 0%;
 
-  margin-left: 1rem;
-  margin-right: 3rem;
+  text-align: center;
 }
 
 .three-grid {
@@ -142,4 +141,136 @@
 #newestDataVis .latest-info a,
 #newestBlogPosts .latest-info a {
   margin-top: auto;
+}
+
+/* ------------------------
+    3. RESPONSIVE DESIGN 
+   ------------------------ */
+
+/* 3.1 TABLET - Based on the iPad */
+
+@media only screen and (max-width: 1024px) {
+  .blog-post-grid,
+  .data-vis-grid {
+    grid-template-columns: 1fr 1fr;
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+
+  .social-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photos {
+    column-count: 3;
+  }
+}
+
+/* 3.2 MOBILE - Based on iPhone X and other popular/similair devices */
+
+@media only screen and (max-width: 765px) {
+  .blog-card h3,
+  .blog-card h2,
+  .portfolio-card h3,
+  .portfolio-card h2 {
+    margin: 0.5rem 0.2rem 0.3rem 0.4rem;
+    font-size: 1.25rem;
+    text-align: left;
+  }
+
+  .blog-card {
+    min-width: 12rem;
+
+    height: 25rem;
+  }
+
+  .blog-post-grid,
+  .data-vis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-card {
+    max-width: 20rem;
+    min-width: 17.5rem;
+    max-height: 100%;
+
+    transition: all 0.25s ease-in-out;
+    border: solid 0.05rem rgb(204, 204, 204);
+  }
+
+  .portfolio-card img {
+    height: 10rem;
+    border-radius: 2% 2% 0% 0%;
+    object-position: 50% 20%;
+    border-bottom: solid 2px rgb(70, 70, 70);
+  }
+
+  .portfolio-card header {
+    margin-top: 1em;
+    max-width: 100%;
+  }
+
+  .portfolio-card h3,
+  .portfolio-card h2 {
+    padding-top: 10rem;
+  }
+
+  .portfolio-card p {
+    margin: 0.5rem 0.2rem 0.5rem 0.5rem;
+  }
+
+  .blog-post-grid {
+    grid-template-columns: 1fr;
+    margin-left: 0rem;
+    padding-left: 0rem;
+  }
+
+  .photos {
+    column-count: 2;
+  }
+
+  .social-media-card a {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-media-card .social-media-card-info {
+    padding-left: 0rem;
+  }
+
+  .social-media-grid {
+    text-align: center;
+    padding-left: 0rem;
+  }
+
+  .social-media-card-info h3 {
+    padding-left: 0rem;
+  }
+
+  .social-media-card img {
+    text-align: right;
+    justify-content: center;
+  }
+
+  .past-client-card {
+    flex-direction: column;
+  }
+
+  .client-about {
+    padding-left: 0rem;
+    padding-top: 0.5rem;
+  }
+
+  .data-vis-grid {
+    text-align: center;
+  }
+}
+
+/* 3.3 PHOTO GRID */
+
+@media (max-width: 400px) {
+  .photos {
+    column-count: 1;
+  }
 }
