@@ -42,7 +42,7 @@ const initialiseBlogs = () =>{
 
     if (window.location.pathname === linkPrefix || window.location.pathname === linkPrefix + "index.html")
     {
-        blogsToLoad = 2;
+        blogsToLoad = 1;
         allBlogs = true;
         semanticAdjust = "h3";
     }

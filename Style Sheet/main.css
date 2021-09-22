@@ -62,6 +62,14 @@ h1 {
 h2 {
   font-size: 2rem;
   margin-bottom: 0rem;
+  margin-left: 2.2rem;
+  margin-top: 2.2rem;
+  margin-right: 2.2rem;
+}
+
+#newestDataVis .button,
+.blog-post-grid .button {
+  text-align: center;
 }
 
 p,
@@ -415,12 +423,17 @@ figure {
     margin-left: 2.2rem;
   }
 
+  h1 {
+    font-size: 4rem;
+  }
+
   .banner-info {
     margin-top: 2em;
   }
 
   .banner-info h1 {
-    font-size: 3em;
+    margin-top: 4.5rem;
+    font-size: 4em;
   }
 
   .banner-info p {
@@ -456,12 +469,17 @@ figure {
 @media only screen and (max-width: 765px) {
   h1 {
     font-size: 2rem;
-    line-height: 3rem;
+    line-height: 2.7rem;
     margin-bottom: 0rem;
+    margin-top: 0rem;
   }
 
   .standard-page-header h1 {
     font-size: 2.7rem;
+  }
+
+  .blogs-nav ul {
+    margin-bottom: 0rem;
   }
 
   .blogs-nav {
@@ -496,7 +514,14 @@ figure {
   }
 
   .banner-info h1 {
-    font-size: 2.5rem;
+    margin-top: 2.5rem;
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-left: 0rem;
+  }
+
+  .hero-buttons {
+    margin-top: 11rem;
   }
 
   .banner-info p {
@@ -504,11 +529,16 @@ figure {
     font-size: 1.2rem;
   }
 
+  .background-tone-one h1 {
+    margin-top: 1rem;
+  }
+
   h2 {
     font-size: 2rem;
     text-align: center;
     margin: 0rem;
     margin-bottom: 0.5rem;
+    margin-top: 2.2rem;
   }
 
   .nav-items a {

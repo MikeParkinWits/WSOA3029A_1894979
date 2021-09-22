@@ -19,7 +19,7 @@
   text-align: left;
   border-radius: 0.5%;
   overflow: hidden;
-  border: solid 0.06rem rgb(204, 204, 204);
+  border: solid 0.01rem rgb(231, 231, 231);
   position: relative;
 
   max-width: 20rem;
@@ -27,7 +27,7 @@
   max-height: 100%;
   height: 23rem;
 
-  box-shadow: 0rem 0.18rem 0.62rem -0.125rem rgb(202, 202, 202);
+  box-shadow: 0rem 0.01rem 0.3rem -0.125rem rgb(202, 202, 202);
   top: 0rem;
   transition: all 0.3s ease-in-out;
 }
@@ -107,7 +107,7 @@
   grid-auto-rows: minmax(100vh, autofit);
 
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 0% 0%;
 
   text-align: center;
@@ -128,14 +128,12 @@
 
 #newestDataVis,
 #newestBlogPosts {
-  display: inline-flex;
-  text-align: left;
+  display: inline-block;
 }
 
 #newestDataVis .latest-info,
 #newestBlogPosts .latest-info {
   display: flex;
-  flex-flow: column nowrap;
 }
 
 #newestDataVis .latest-info a,
@@ -155,6 +153,11 @@
     grid-template-columns: 1fr 1fr;
     margin-left: 0rem;
     margin-right: 0rem;
+  }
+
+  #newestDataVis .homepage,
+  #newestBlogPosts .homepage {
+    grid-template-columns: 1fr;
   }
 
   .social-media-grid {
@@ -264,6 +267,10 @@
 
   .data-vis-grid {
     text-align: center;
+  }
+
+  .blog-card h2 {
+    margin-left: 0rem;
   }
 }
 
