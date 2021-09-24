@@ -1,18 +1,9 @@
-[{"title": "Data Vis 2", "dataVisLocation": "Visualizations/AllVisualizations/Visualization1",
-    "dataVisImagePreview": {
+[{"title": "Data Vis 2", "location": "Visualizations/AllVisualizations/Visualization1",
+    "imagePreview": {
         "src":"Images/VisualizationPreviewImages/Visualization0.jpg",
         "alt": "Alt 2",
         "imageTitle": "Img Title 2"},
-    "dataVisType": "Data Visualization",
-    "dataVisDescription": "Description 2",
-    "dataVisPubDate": "2 July 2021"
-    },
-    {"title": "Data Vis 1", "dataVisLocation": "Visualizations/AllVisualizations/Visualization0",
-        "dataVisImagePreview": {
-            "src":"Images/VisualizationPreviewImages/Visualization0.jpg",
-            "alt": "Alt 1",
-            "imageTitle": "Img Title 1"},
-        "dataVisType": "Data Visualization",
-        "dataVisDescription": "Description 1",
-        "dataVisPubDate": "2 July 2021"
-        }]
+    "type": "Data Visualization",
+    "description": "Description 2",
+    "publishDate": "2 July 2021"
+    }]

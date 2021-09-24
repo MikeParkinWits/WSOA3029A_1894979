@@ -36,7 +36,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.blog-card-info {
+.card-info {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -44,8 +44,8 @@
   align-items: center;
 }
 
-.blog-card-info p,
-.blog-card-info time {
+.card-info p,
+.card-info time {
   font-size: 0.875rem;
   padding-right: 0.7rem;
   top: 0rem;
@@ -53,7 +53,7 @@
   margin: 0rem 0rem 0rem 2rem;
 }
 
-.blog-card-info time {
+.card-info time {
   padding-left: 0.7rem;
 }
 
@@ -66,7 +66,7 @@
   object-position: 50% 50%;
 }
 
-.blog-card-content {
+.card-content {
   margin: 0.4rem 1rem;
 }
 
@@ -88,15 +88,15 @@
   margin: 0.3rem 0rem;
 }
 
-.theory-blog {
+.theory-card {
   color: rgb(224, 67, 67);
 }
 
-.visualization-blog {
+.visualization-card {
   color: rgb(64, 96, 201);
 }
 
-.website-blog {
+.website-card {
   color: rgb(201, 64, 201);
 }
 
