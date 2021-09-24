@@ -39,6 +39,7 @@ body {
 html {
   scroll-padding-top: 5rem;
   min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 /* --------------
@@ -360,7 +361,7 @@ figure {
     7. Back to Top Link 
    ---------------------- */
 
-.back-to-top-link {
+.back-to-top {
   z-index: 1;
 
   margin: 0em 1em 1em 0em;
@@ -370,13 +371,13 @@ figure {
   position: fixed;
   bottom: 0rem;
   right: 0rem;
-  display: inline-flex;
 
   transition: all 0.3s ease-in-out;
   color: rgb(83, 83, 83);
+  display: none;
 }
 
-.back-to-top-link:hover {
+.back-to-top:hover {
   bottom: 0.2rem;
   color: rgb(109, 109, 109);
 }

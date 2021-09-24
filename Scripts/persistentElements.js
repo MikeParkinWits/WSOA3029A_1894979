@@ -114,3 +114,19 @@ const HamburgerMenu = (hamburger) => {
 }
 
 document.addEventListener("DOMContentLoaded", () => initialiseMenu(), initialiseFooter());
+
+const scrollToTopButton = document.querySelector(".back-to-top");
+
+window.onscroll = function() {
+    scrollFunction()
+};
+
+
+const scrollFunction = () => {
+
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        scrollToTopButton.style.display = "block";
+      } else {
+        scrollToTopButton.style.display = "none";
+      }
+};
