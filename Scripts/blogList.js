@@ -38,11 +38,21 @@ let allBlogs = false;
 let semanticAdjust = null;
 
 const initialiseBlogs = () =>{
-    const blogGrid = document.querySelector('.blog-post-grid');
+
+    let blogGrid;
+
+    if (document.querySelector('.blog-post-grid') != null){
+        blogGrid = document.querySelector('.blog-post-grid');
+    }
+    else
+    {
+        blogGrid = document.querySelector('.blog-post-grid-homepage');
+    }
+
 
     if (window.location.pathname === linkPrefix || window.location.pathname === linkPrefix + "index.html")
     {
-        blogsToLoad = 1;
+        blogsToLoad = 2;
         allBlogs = true;
         semanticAdjust = "h3";
     }

@@ -7,19 +7,18 @@
       3.2 MAIN FOOTER
       3.3 BLOG NAVIGATION BAR
     4. BANNER
-    5. BACK TO TOP LINK
-    6. BUTTONS
-    7. PAGE SPECIFIC STYLING
-      7.1 STANDARD PAGE LAYOUT
-      7.2 ABOUT ME PAGE
-      7.3 MAP
+    5. BUTTONS
+    6. PAGE SPECIFIC STYLING
+      6.1 STANDARD PAGE LAYOUT
+      6.2 ABOUT ME PAGE
+    7. BACK TO TOP LINK
     8. RESEPONSIVE DESIGN
       8.1 TABLET
       8.2 MOBILE
 */
 
 /* ----------------------------------
-  1. GLOBAL STYLING - DESKTOP FIRST
+  1. Global Styling - Desktop First
    ---------------------------------- */
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
@@ -27,14 +26,14 @@ body {
   font-family: "Poppins", "arial", "sans-serif";
   margin: 0rem;
   width: 100%;
+  min-height: 100vh;
   text-align: center;
 
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
+
   box-sizing: border-box;
-  flex-direction: column;
 }
 
 html {
@@ -48,33 +47,28 @@ html {
 
 h1 {
   font-size: 5rem;
+  line-height: 6.5rem;
   font-weight: bold;
 
-  text-align: left;
-  padding-left: 2rem;
-  padding-top: 1rem;
-  margin-top: 0rem;
-  margin-bottom: 1rem;
+  margin: 1.2rem 3.3rem;
+  padding: 0rem;
 
-  line-height: 6.5rem;
+  text-align: left;
 }
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 0rem;
-  margin-left: 2.2rem;
-  margin-top: 2.2rem;
-  margin-right: 2.2rem;
-}
-
-#newestDataVis .button,
-.blog-post-grid .button {
-  text-align: center;
+  margin: 1rem 2.2rem 0rem 2.2rem;
+  text-align: left;
 }
 
 p,
 figcaption {
   font-family: "Helvetica Light", "arial", "sans-serif";
+  font-size: 1rem;
+
+  padding-bottom: 1rem;
+  padding-left: 0rem;
 }
 
 ul {
@@ -86,13 +80,17 @@ li {
 }
 
 a {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
 }
 
-/* -----------
-  3. NAV BARS
-   ----------- */
+/* ------------------
+  3. Navigation Bars
+   ------------------ */
+
+nav a {
+  padding: 0rem 2rem;
+}
 
 nav li a,
 .main-footer a {
@@ -124,18 +122,20 @@ nav li a:hover::before,
   width: 100%;
 }
 
-nav a {
-  padding: 0rem 2rem 0rem 2rem;
+.nav-items {
+  position: relative;
+  align-items: center;
+  padding: 0rem;
 }
 
 /* 3.1 MAIN NAVIGATION BAR */
 
 .header-nav {
   z-index: 1;
-  top: 0rem;
-  position: sticky;
   background-color: #e0e0dd;
+  top: 0rem;
   border-bottom: #fdfdfd solid 0.04rem;
+  position: sticky;
   box-shadow: 1rem 0.09rem 0.1rem 0.05rem #bbbbbb3a;
 }
 
@@ -149,10 +149,6 @@ nav a {
   display: flex;
 }
 
-.logo a::before {
-  visibility: hidden;
-}
-
 .logo,
 .logo a {
   margin-right: auto;
@@ -161,26 +157,24 @@ nav a {
   border: none;
 }
 
-.nav-items {
-  position: relative;
-  align-items: center;
-  padding: 0rem;
+.logo a::before {
+  visibility: hidden;
 }
 
 .hamburger-button {
   background-color: transparent;
   border: 0;
-  cursor: pointer;
   display: none;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 0rem 1rem;
+  cursor: pointer;
 }
 
 /* 3.2 MAIN FOOTER */
 
 .main-footer {
   background-color: #b8b8b8;
-  padding: 0.1rem 0rem 0.1rem 0rem;
   margin-top: auto;
+  padding: 0.1rem 0rem;
 }
 
 /* 3.3 Blog Nav */
@@ -188,8 +182,8 @@ nav a {
 .blogs-nav {
   display: inline-block;
 
-  margin-left: 2.2rem;
-  margin-top: 0.5rem;
+  margin: 0.5rem 2.2rem;
+
   border-top: 0.13rem solid black;
 
   padding-right: 2.2rem;
@@ -214,86 +208,52 @@ nav a {
 
 .banner-image {
   text-align: left;
+  filter: brightness(98%);
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(98%);
 }
 
 .banner-info {
   text-align: center;
   position: relative;
   color: rgb(49, 49, 49);
-
   margin-top: 7rem;
 }
 
 .banner-info h1 {
   text-align: center;
-  font-size: 5rem;
-  font-weight: bold;
-  margin: 1rem 1rem 0rem 1rem;
+  margin: 1rem;
   line-height: 5.5rem;
 }
 
-/* ----------------------
-    5. BACK TO TOP LINK 
-   ---------------------- */
-
-.back-to-top-link {
-  transition: all 0.3s ease-in-out;
-  position: fixed;
-  bottom: 0rem;
-  right: 0rem;
-  display: inline-flex;
-
-  margin: 0em 1em 1em 0em;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 2rem;
-  color: rgb(83, 83, 83);
-  z-index: 1;
-}
-
-.back-to-top-link:hover {
-  color: rgb(109, 109, 109);
-  bottom: 0.2rem;
-}
-
 /* -------------
-    6. BUTTONS 
+    5. BUTTONS 
    ------------- */
 
 .button {
   display: inline-block;
-  margin: 0.7rem;
-  margin-bottom: 2rem;
+  margin: 0.7rem 0.7rem 2rem 0.7rem;
   padding: 0.7rem;
-  border: 1px solid black;
-
-  letter-spacing: 0rem;
-
-  transform: scale(1);
+  border: 0.0625rem solid black;
+  text-align: center;
 
   transition: all 0.3s ease;
-
-  text-align: center;
+  letter-spacing: 0rem;
+  transform: scale(1);
   background-color: rgba(238, 238, 238, 0.644);
 
   border-radius: 0.5%;
-}
-
-.button {
-  letter-spacing: 0rem;
+  width: 15rem;
 }
 
 .button:hover {
   color: white;
   background-color: black;
-  box-shadow: 0.25rem 0.25rem 1.9rem 0.25rem rgb(165, 165, 165);
   letter-spacing: 0.02rem;
   transform: scale(1.08);
+  box-shadow: 0.25rem 0.25rem 1.9rem 0.25rem rgb(165, 165, 165);
 }
 
 /* 6.1 Hero Buttons */
@@ -303,10 +263,10 @@ nav a {
 }
 
 /* ---------------
-  7. Page Styling
+  6. Page Styling
    --------------- */
 
-/* 7.1 Standard Page Elements */
+/* 6.1 Background Container Elements */
 
 .background-tone-one,
 .background-tone-two {
@@ -335,10 +295,16 @@ nav a {
   max-width: 70rem;
 }
 
+/* 6.2 Standard Page Elements */
+
 .standard-page-date,
 .standard-page-content,
 .standard-page-footer h2 {
   margin: 1.5rem 3.3rem;
+}
+
+.standard-page-content h2 {
+  margin-left: 0rem;
 }
 
 .standard-page-date {
@@ -355,26 +321,13 @@ nav a {
   margin-bottom: 1.5rem;
 }
 
-.standard-page-references {
-  margin-left: 3.3rem;
-  margin-right: 3.3rem;
-}
-
 .standard-page-header h2 {
   text-align: left;
-  margin-left: 2.2rem;
-}
-
-.standard-page-title {
-  margin-right: 3.3rem;
   margin-left: 3.3rem;
-  margin-top: 1rem;
-  padding-left: 0rem;
 }
 
 .standard-page p,
 figure {
-  text-align: left;
   padding-bottom: 1rem;
   padding-left: 0rem;
 }
@@ -383,16 +336,9 @@ figure {
   margin-left: 0rem;
 }
 
-.standard-page-footer figcaption {
-  text-align: left;
-
-  margin: 2.2rem;
-  padding-bottom: 2.2rem;
-}
-
 .standard-page-references {
-  padding-right: 0rem;
-  padding-left: 0rem;
+  margin: 0rem 3.3rem;
+  padding: 0rem;
 }
 
 .standard-page-references a {
@@ -406,57 +352,83 @@ figure {
   margin-left: 1rem;
 }
 
+.blogs-nav-title {
+  margin-left: 2.2rem;
+}
+
+/* ----------------------
+    7. Back to Top Link 
+   ---------------------- */
+
+.back-to-top-link {
+  z-index: 1;
+
+  margin: 0em 1em 1em 0em;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  display: inline-flex;
+
+  transition: all 0.3s ease-in-out;
+  color: rgb(83, 83, 83);
+}
+
+.back-to-top-link:hover {
+  bottom: 0.2rem;
+  color: rgb(109, 109, 109);
+}
+
 /* ------------------------
     8. RESPONSIVE DESIGN 
    ------------------------ */
 
-/* 8.1 TABLET - Based on the iPad */
+/* 8.1 TABLET - iPad used as reference */
 
 @media only screen and (max-width: 1024px) {
+  .standard-page-title {
+    font-size: 4rem;
+    margin-left: 2.2rem;
+    line-height: 5.5rem;
+
+    margin-bottom: 0rem;
+  }
+
   .standard-page-date,
   .standard-page-content,
   .standard-page-footer h2 {
-    margin: 1.5rem 2.2rem;
+    margin: 1rem 2.2rem;
   }
 
-  .standard-page-title {
+  .standard-page-header h2 {
+    margin: 0rem 2.2rem;
+  }
+
+  .standard-page-footer h2 {
+    margin: 1rem 2.2rem;
+  }
+
+  .standard-page-footer figcaption {
     margin-left: 2.2rem;
   }
 
-  h1 {
-    font-size: 4rem;
+  .standard-page-footer figure {
+    margin-left: 2.2rem;
   }
 
   .banner-info {
-    margin-top: 2em;
+    margin-top: 1.5em;
   }
 
   .banner-info h1 {
     margin-top: 4.5rem;
-    font-size: 4em;
+    font-size: 4.5em;
   }
 
-  .banner-info p {
-    margin-top: 20em;
-    font-size: 1em;
-  }
-
-  .about-me-page {
-    flex-direction: column;
-  }
-
-  .about-me-info {
-    margin: 0rem;
-    margin-top: -1rem;
-  }
-
-  .about-profile-picture {
-    width: 70%;
-    height: 70%;
-  }
-
-  .about-me-page {
-    width: 70vw;
+  .hero-buttons {
+    margin-top: 16rem;
   }
 
   .border-lock {
@@ -464,7 +436,7 @@ figure {
   }
 }
 
-/* 8.2 MOBILE - Based on iPhone X and other popular/similair devices */
+/* 8.2 MOBILE - iPhone X and Pixel 2 XL used as reference */
 
 @media only screen and (max-width: 765px) {
   h1 {
@@ -474,12 +446,13 @@ figure {
     margin-top: 0rem;
   }
 
-  .standard-page-header h1 {
-    font-size: 2.7rem;
+  h2 {
+    text-align: center;
   }
 
   .blogs-nav ul {
     margin-bottom: 0rem;
+    text-align: center;
   }
 
   .blogs-nav {
@@ -489,6 +462,9 @@ figure {
   .standard-page-title {
     padding-left: 0rem;
     margin-left: 1rem;
+    text-align: left;
+    font-size: 2.7rem;
+    line-height: 3.5rem;
   }
 
   .standard-page-date {
@@ -517,11 +493,10 @@ figure {
     margin-top: 2.5rem;
     font-size: 3rem;
     line-height: 4rem;
-    margin-left: 0rem;
   }
 
   .hero-buttons {
-    margin-top: 11rem;
+    margin-top: 15rem;
   }
 
   .banner-info p {
@@ -530,15 +505,24 @@ figure {
   }
 
   .background-tone-one h1 {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 
-  h2 {
-    font-size: 2rem;
+  .blogs-nav-title {
     text-align: center;
     margin: 0rem;
-    margin-bottom: 0.5rem;
-    margin-top: 2.2rem;
+  }
+
+  .blogs-nav a {
+    margin: 0rem;
+  }
+
+  .blog-nav-header {
+    text-align: center;
+  }
+
+  .hamburger-button {
+    display: block;
   }
 
   .nav-items a {
@@ -552,40 +536,59 @@ figure {
     width: 100%;
   }
 
-  .hamburger-button {
-    display: block;
+  .standard-page-header h2 {
+    line-height: 2.5rem;
+    margin: 0rem 1rem;
+  }
+
+  .border-lock {
+    width: 90%;
+  }
+
+  .standard-page-content h2 {
+    margin-left: 0rem;
+    text-align: left;
+  }
+
+  .background-tone-one h1 {
+    padding-left: 0rem;
+  }
+
+  .blogs-nav {
+    text-align: center;
+    padding-right: 0rem;
+
+    margin: 0rem;
   }
 
   .nav-items a.active {
     display: flex;
-    padding: 1rem 0rem 1rem 0rem;
+    padding: 1rem 0rem;
 
     border-top: 0.08rem solid rgb(204, 204, 204);
+  }
+
+  .blogs-nav {
+    width: 100%;
   }
 
   .blog-nav-items a {
     display: inline-flex;
     width: 80%;
+    justify-content: center;
 
-    padding: 1rem 0rem 1rem 0rem;
+    padding: 1rem 0rem;
 
-    border-top: 0.08rem solid rgb(204, 204, 204);
-    border-left: 0px;
+    border-top: 0.1rem solid rgb(158, 158, 158);
+    border-left: 0rem;
   }
 
-  .blogs-nav li:last-child {
-    border-right: none;
+  .blog-nav-items:last-child a {
+    border-bottom: 0.1rem solid rgb(158, 158, 158);
   }
 
-  .standard-page-header h2 {
-    line-height: 2.5rem;
-  }
-
-  .about-me-page {
-    width: 80vw;
-  }
-
-  .border-lock {
-    width: 90%;
+  nav li a:hover::before,
+  .main-footer a:hover::before {
+    width: 0%;
   }
 }

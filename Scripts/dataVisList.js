@@ -37,11 +37,22 @@ let allBlogs = false;
 let semanticAdjust = null;
 
 const initialiseBlogs = () =>{
-    const blogGrid = document.querySelector('.data-vis-grid');
+
+    let blogGrid;
+
+    if (document.querySelector('.data-vis-grid') != null){
+        blogGrid = document.querySelector('.data-vis-grid');
+    }
+    else
+    {
+        blogGrid = document.querySelector('.data-vis-grid-homepage');
+    }
+
+    console.log(blogGrid);
 
     if (window.location.pathname === linkPrefix || window.location.pathname === linkPrefix + "index.html")
     {
-        blogsToLoad = 1;
+        blogsToLoad = 2;
         allBlogs = true;
         semanticAdjust = "h3";
     }

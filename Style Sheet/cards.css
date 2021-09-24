@@ -1,16 +1,20 @@
 /* TABLE OF CONTENTS
 
-    1. Card
-        1.2 Card Styling
-        1.1 Card Typography
+    1. Cards
+        1.1 Card Styling
+        1.2 Card Typography
+    2. Grids
+    3. Responsive Design
+      3.1 Tablet
+      3.2 Mobile
 
 */
 
 /* -----------
-    1. CARD
+    1. Cards
    ----------- */
 
-/* 1.2 CARD STYLING */
+/* 1.1 Card Styling */
 
 .blog-card {
   display: inline-block;
@@ -45,6 +49,8 @@
   font-size: 0.875rem;
   padding-right: 0.7rem;
   top: 0rem;
+  padding-bottom: 0rem;
+  margin: 0rem 0rem 0rem 2rem;
 }
 
 .blog-card-info time {
@@ -69,7 +75,7 @@
   box-shadow: 0.4rem 0.5rem 0.8rem 0.1rem rgb(190, 190, 190);
 }
 
-/* 1.2 CARD TYPOGRAPHY */
+/* 1.2 Card Typography */
 
 .blog-card h3,
 .blog-card h2 {
@@ -95,29 +101,36 @@
 }
 
 /* -----------
-    2. GRIDS 
+    2. Grids 
    ----------- */
 
 .blog-post-grid,
-.data-vis-grid {
+.data-vis-grid,
+.data-vis-grid-homepage,
+.blog-post-grid-homepage {
   width: 100%;
   max-width: 80rem;
-  margin: 0 auto;
+  margin: 0 10;
   display: inline-grid;
   grid-auto-rows: minmax(100vh, autofit);
 
   width: 100%;
-  grid-template-columns: 1fr;
   grid-gap: 0% 0%;
 
   text-align: center;
+
+  overflow-x: auto;
 }
 
-.three-grid {
+.blog-post-grid,
+.data-vis-grid {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-/* 2.1 BLOG GRID */
+.blog-post-grid-homepage,
+.data-vis-grid-homepage {
+  grid-template-columns: 1fr 1fr;
+}
 
 .latest-info {
   margin-left: 2rem;
@@ -131,153 +144,42 @@
   display: inline-block;
 }
 
-#newestDataVis .latest-info,
-#newestBlogPosts .latest-info {
-  display: flex;
-}
-
-#newestDataVis .latest-info a,
-#newestBlogPosts .latest-info a {
-  margin-top: auto;
-}
-
 /* ------------------------
-    3. RESPONSIVE DESIGN 
+    3. Responsive Design
    ------------------------ */
 
-/* 3.1 TABLET - Based on the iPad */
+/* 3.1 Tablet - Based on the iPad */
 
 @media only screen and (max-width: 1024px) {
   .blog-post-grid,
   .data-vis-grid {
     grid-template-columns: 1fr 1fr;
-    margin-left: 0rem;
-    margin-right: 0rem;
-  }
-
-  #newestDataVis .homepage,
-  #newestBlogPosts .homepage {
-    grid-template-columns: 1fr;
-  }
-
-  .social-media-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .photos {
-    column-count: 3;
+    margin: 0rem;
   }
 }
 
-/* 3.2 MOBILE - Based on iPhone X and other popular/similair devices */
+/* 3.2 Mobile - Based on iPhone X and other popular/similair devices */
 
 @media only screen and (max-width: 765px) {
   .blog-card h3,
-  .blog-card h2,
-  .portfolio-card h3,
-  .portfolio-card h2 {
-    margin: 0.5rem 0.2rem 0.3rem 0.4rem;
+  .blog-card h2 {
+    margin: 0.5rem 0.2rem 0.3rem 0rem;
     font-size: 1.25rem;
     text-align: left;
   }
 
   .blog-card {
     min-width: 12rem;
-
     height: 25rem;
   }
 
   .blog-post-grid,
-  .data-vis-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-card {
-    max-width: 20rem;
-    min-width: 17.5rem;
-    max-height: 100%;
-
-    transition: all 0.25s ease-in-out;
-    border: solid 0.05rem rgb(204, 204, 204);
-  }
-
-  .portfolio-card img {
-    height: 10rem;
-    border-radius: 2% 2% 0% 0%;
-    object-position: 50% 20%;
-    border-bottom: solid 2px rgb(70, 70, 70);
-  }
-
-  .portfolio-card header {
-    margin-top: 1em;
-    max-width: 100%;
-  }
-
-  .portfolio-card h3,
-  .portfolio-card h2 {
-    padding-top: 10rem;
-  }
-
-  .portfolio-card p {
-    margin: 0.5rem 0.2rem 0.5rem 0.5rem;
-  }
-
-  .blog-post-grid {
+  .data-vis-grid,
+  .blog-post-grid-homepage,
+  .data-vis-grid-homepage {
     grid-template-columns: 1fr;
     margin-left: 0rem;
     padding-left: 0rem;
-  }
-
-  .photos {
-    column-count: 2;
-  }
-
-  .social-media-card a {
-    display: block;
-    flex-direction: column;
     text-align: center;
-  }
-
-  .social-media-card .social-media-card-info {
-    padding-left: 0rem;
-  }
-
-  .social-media-grid {
-    text-align: center;
-    padding-left: 0rem;
-  }
-
-  .social-media-card-info h3 {
-    padding-left: 0rem;
-  }
-
-  .social-media-card img {
-    text-align: right;
-    justify-content: center;
-  }
-
-  .past-client-card {
-    flex-direction: column;
-  }
-
-  .client-about {
-    padding-left: 0rem;
-    padding-top: 0.5rem;
-  }
-
-  .data-vis-grid {
-    text-align: center;
-  }
-
-  .blog-card h2 {
-    margin-left: 0rem;
-  }
-}
-
-/* 3.3 PHOTO GRID */
-
-@media (max-width: 400px) {
-  .photos {
-    column-count: 1;
   }
 }
