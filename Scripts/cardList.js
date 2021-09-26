@@ -92,7 +92,7 @@ isBlog = true;
 
 let dataVisItems = []
 
-if (pathLocation === linkPrefix + "Blogs/AllVisualizations.html" || pathLocation === linkPrefix + "index.html"){
+if (pathLocation === linkPrefix + "Visualizations/AllVisualizations.html" || pathLocation === linkPrefix + "index.html"){
     fetch(linkPrefix + "JSON/dataVisList.json")
     .then(function(response){
         return response.json();
@@ -137,8 +137,9 @@ const initialiseDataVis = () =>{
     }
     else
     {
-
         dataVisSemanticAdjust = "h2";
+        visToLoad = dataVisItems.length;
+        allVis = true;
     }
 
     initialiseCards(visToLoad, isBlog, visType, allVis, dataVisGrid, dataVisSemanticAdjust);
@@ -159,6 +160,7 @@ const initialiseCards = (cardsToLoad, isBlogItem, cardType, allItems, gridOne, c
     for (let i=0; i<cardsToLoad; i++){
 
         if (cardItems[i] !== undefined || cardItems[i] !== null){
+            console.log("Card Type: " + cardType + cardItems[0].location);
 
             if (cardItems[i].type === cardType || allItems === true)
             {
@@ -200,7 +202,7 @@ const initialiseCards = (cardsToLoad, isBlogItem, cardType, allItems, gridOne, c
 
             const time = document.createElement("time");
             time.dateTime = new Date(cardItems[i].publishDate);
-            time.innerText = cardItems[i].publishDate;
+            time.innerText = `| ${cardItems[i].publishDate}`;
             time.className = "dt-published";
             infoSection.appendChild(time);
 

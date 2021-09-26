@@ -1,9 +1,81 @@
-[{"title": "Blog Post 2", "location": "Blogs/AllBlogs/Blog1",
+[{"title": "Website Rationale", "location": "Blogs/AllBlogs/Blog9",
     "imagePreview": {
-        "src":"Images/BlogPreviewImages/Blog0.jpg",
-        "alt": "Blog Image Alt 2",
-        "imageTitle": "Blog Image Title 2"},
+        "src":"Images/BlogPreviewImages/Blog9.jpg",
+        "alt": "A photo of someone illustrating something with an iPad",
+        "imageTitle": "Someone explaining something using an iPad"},
+    "type": "Website Development",
+    "description": "The rationale behind my website",
+    "publishDate": "25 September 2021"
+    },
+    {"title": "An Analysis of a visualization from InformationIsBeautiful", "location": "Blogs/AllBlogs/Blog8",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog8.jpg",
+        "alt": "A photo of a person holding their locked phone",
+        "imageTitle": "A phone waiting for a passcode"},
     "type": "Theory",
-    "description": "Blog Description 2",
-    "publishDate": "2 July 2021"
+    "description": "An analysis of a data visualization of the 500 most used passwords",
+    "publishDate": "21 September 2021"
+    },
+    {"title": "A Close Reading of Knaflic's Chapter 6", "location": "Blogs/AllBlogs/Blog7",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog7.jpg",
+        "alt": "A book on a dark background, with a phone ontop",
+        "imageTitle": "A book on a dark background"},
+    "type": "Theory",
+    "description": "A close reading of Knaflic's Chapter 6 - outling tips for good data vsiualization",
+    "publishDate": "14 September 2021"
+    },
+    {"title": "Initial Website Styleguide", "location": "Blogs/AllBlogs/Blog6",
+        "imagePreview": {
+            "src":"Images/BlogPreviewImages/Blog6.jpg",
+            "alt": "A photo of a laptop screen with  colour patches",
+            "imageTitle": "A laptop with colour patches on its screen"},
+        "type": "Website Development",
+        "description": "The style guide dictating all the design decisions made on the website",
+        "publishDate": "10 September 2021"
+        },
+    {"title": "Bonus: Analysis of the First Known Bar Graph", "location": "Blogs/AllBlogs/Blog5",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog5.jpg",
+        "alt": "The Original Bar Chart by William Playfair",
+        "imageTitle": "The oldest known bar chart"},
+    "type": "Theory",
+    "description": "A critical analysis of the first known bar graph by William Playfair",
+    "publishDate": "7 September 2021"
+    },
+    {"title": "A Critical Analysis of my Website Design", "location": "Blogs/AllBlogs/Blog4",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog4.jpg",
+        "alt": "A computer on a table with a webpage open",
+        "imageTitle": "A computer on a table"},
+    "type": "Theory",
+    "description": "A critical analysis into Apple.com's homepage design",
+    "publishDate": "2 September 2021"
+    },
+    {"title": "Initial Desktop Wireframes", "location": "Blogs/AllBlogs/Blog3",
+        "imagePreview": {
+            "src":"Images/BlogPreviewImages/Blog3.jpg",
+            "alt": "A picture of blue wireframes",
+            "imageTitle": "Blue Wireframes"},
+        "type": "Website Development",
+        "description": "The intial wireframe design for my website",
+        "publishDate": "1 September 2021"
+        },
+    {"title": "A Critical Analysis of Apple.com", "location": "Blogs/AllBlogs/Blog2",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog2.jpg",
+        "alt": "An Apple Logo displayed in front of their store front",
+        "imageTitle": "An Apple logo in front of their store"},
+    "type": "Theory",
+    "description": "A critical analysis into Apple.com's homepage design",
+    "publishDate": "24 August 2021"
+    },
+    {"title": "A Close Reading of Overview of Data Visualization", "location": "Blogs/AllBlogs/Blog1",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog1.jpg",
+        "alt": "A picture of a pen lying on graph paper",
+        "imageTitle": "A pen lying on a line graph"},
+    "type": "Theory",
+    "description": "A critical reading that offers crucial information about data visualizations",
+    "publishDate": "17 August 2021"
     }]

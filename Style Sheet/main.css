@@ -64,7 +64,9 @@ h2 {
 }
 
 p,
-figcaption {
+figcaption,
+.standard-page-bullets,
+.standard-page-references li {
   font-family: "Helvetica Light", "arial", "sans-serif";
   font-size: 1rem;
 
@@ -137,7 +139,7 @@ nav li a:hover::before,
   top: 0rem;
   border-bottom: #fdfdfd solid 0.04rem;
   position: sticky;
-  box-shadow: 1rem 0.09rem 0.1rem 0.05rem #bbbbbb3a;
+  box-shadow: 0rem 0.09rem 0.1rem 0.05rem #bbbbbb3a;
 }
 
 .header-nav ul {
@@ -322,9 +324,16 @@ nav li a:hover::before,
   margin-bottom: 1.5rem;
 }
 
-.standard-page-header h2 {
+.page-header h2 {
   text-align: left;
   margin-left: 3.3rem;
+  font-size: 4rem;
+}
+
+.standard-page-content img {
+  width: 90%;
+  height: 90%;
+  text-align: center;
 }
 
 .standard-page p,
@@ -333,8 +342,10 @@ figure {
   padding-left: 0rem;
 }
 
-figure {
-  margin-left: 0rem;
+figure,
+figcaption {
+  margin: 1rem 0rem 0rem 0rem;
+  text-align: center;
 }
 
 .standard-page-references {
@@ -347,10 +358,12 @@ figure {
   color: blue;
 }
 
-.standard-page-references li {
+.standard-page-references li,
+.standard-page-bullets li {
   display: list-item;
   list-style: circle;
   margin-left: 1rem;
+  margin-bottom: 0.35rem;
 }
 
 .blogs-nav-title {
@@ -403,8 +416,9 @@ figure {
     margin: 1rem 2.2rem;
   }
 
-  .standard-page-header h2 {
-    margin: 0rem 2.2rem;
+  .page-header h2 {
+    margin: 1rem 2.2rem 0rem 2.2rem;
+    font-size: 3rem;
   }
 
   .standard-page-footer h2 {
@@ -464,12 +478,16 @@ figure {
     padding-left: 0rem;
     margin-left: 1rem;
     text-align: left;
-    font-size: 2.7rem;
-    line-height: 3.5rem;
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+  }
+
+  .standard-page-content h2 {
+    font-size: 1.3rem;
   }
 
   .standard-page-date {
-    font-size: 1rem;
+    font-size: 1.035rem;
     margin-left: 2.2rem;
     margin-right: 2.2rem;
     margin-bottom: 0rem;
@@ -477,15 +495,16 @@ figure {
     margin: 1rem;
   }
 
+  .standard-page p {
+    margin-bottom: 0rem;
+  }
+
   .standard-page-content {
     margin: 1rem;
   }
 
+  .standard-page-footer h2,
   .standard-page-references {
-    margin-left: 1rem;
-  }
-
-  .standard-page-footer h2 {
     text-align: left;
     margin-left: 1rem;
   }
@@ -537,9 +556,10 @@ figure {
     width: 100%;
   }
 
-  .standard-page-header h2 {
+  .page-header h2 {
     line-height: 2.5rem;
-    margin: 0rem 1rem;
+    margin: 1rem 1rem 0rem 1rem;
+    font-size: 1.5rem;
   }
 
   .border-lock {

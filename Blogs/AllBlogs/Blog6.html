@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Initial Website Styleguide</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="../../Images/Mini_Logo.png"
+    />
+
+    <!-- Google Structured Data can only be added inline as it is using JSON-LD - as noted in the w3 here: https://www.w3.org/TR/2016/REC-html51-20161101/semantics-scripting.html#the-script-element -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "name": "Initial Website Styleguide",
+        "author": {
+          "@type": "Person",
+          "name": "Michael Parkin"
+        },
+        "headline": "Initial Website Styleguide",
+        "image": [
+          "https://mikeparkinwits.github.io/WSOA3029A_1894979/BlogPreviewImages/Blog6.jpg"
+        ],
+        "datePublished": "2021-09-10"
+      }
+    </script>
+
+    <meta property="og:title" content="Initial Website Styleguide" />
+    <meta property="og:type" content="article" />
+    <meta name="author" property="article:publisher" content="Michael Parkin" />
+    <meta property="article:section" content="Theory" />
+    <meta property="article:tag" content="Theory" />
+    <meta property="og:site_name" content="Lost Data" />
+    <meta
+      property="og:url"
+      content="https://mikeparkinwits.github.io/WSOA3029A_1894979/AllBlogs/Blog6.html"
+    />
+    <meta
+      property="og:image"
+      content="https://mikeparkinwits.github.io/WSO3029A_1894979/BlogPreviewImages/Blog6.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="A photo of a laptop screen with  colour patches"
+    />
+    <meta
+      name="description"
+      property="og:description"
+      content="The style guide
+    dictating all the design decisions made on the website"
+    />
+
+    <meta
+      name="keywords"
+      content="Data Breaches, Lost Data, Data Privacy, Data Breach Visualizations"
+    />
+
+    <script type="module" src="../../Scripts/persistentElements.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Style Sheet/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="header-nav">
+      <nav class="navbar"></nav>
+    </header>
+
+    <!-- Content -->
+    <main>
+      <article class="background-tone-one h-entry border-lock">
+        <section class="standard-page">
+          <header class="page-header">
+            <h1 class="standard-page-title p-name">
+              Initial Website Styleguide
+            </h1>
+            <p class="standard-page-date">
+              <time class="dt-published" datetime="2021-09-10"
+                >10 September 2021</time
+              >
+              | Words: 543 | Website Development
+            </p>
+          </header>
+
+          <section class="e-content standard-page-content">
+            <figure>
+              <img
+                src="../../Images/BlogImages/Blog6_Figure1.jpg"
+                alt="First known car chart by William Playfair"
+                width="600"
+                title="First known car chart by WIlliam Playfair"
+              />
+            </figure>
+            <figcaption>
+              Figure 1: Playfair's graph showing the correlation between wheat
+              prices and labour wages in the UK (Playfair, 1821)
+            </figcaption>
+
+            <p>
+              Data visualization has a deep and rich history. One of the most
+              prominent inventors in this field is William Playfair, who
+              conceptualized some of today’s most common data visualization
+              forms – including pie charts, bar graphs, and line graphs. As a
+              result, I will be analyzing one of Playfair’s most popular data
+              visualizations, one of the first recorded bar graphs. To do this,
+              I first review the visualization and story it is trying to tell;
+              and then analyze it, looking at its short comings and how it can
+              be improved by applying modern data visualization concepts.
+            </p>
+
+            <p>
+              Firstly, I start by looking at the graph (as per figure 1 above),
+              which displays three different pieces of information spanning
+              ~250-years in the United Kingdom: the average weekly wage of
+              mechanics on the line graph, the price of wheat on the bar graph,
+              and the ruling monarch on the timeline. By placing all this
+              information on one graph we can see that Playfair wanted to
+              illustrate the relationship between a laborer’s weekly wages and
+              the increased price of wheat in the UK. At the time, this type of
+              data visualization, with different empirical data on one graph,
+              was revolutionary. While this met Playfair’s idea that data must
+              <q>speak to the eyes</q> (Playfair in Thompson, 2016: n.p.) to
+              teach meaning, this meaning is lost in the age of modern data
+              visualizations.
+            </p>
+
+            <p>
+              Therefore, we can start to closely analyse the visualization. In
+              Cole Nussbaumer Knaflic’s 2015 book
+              <cite>Storytelling With Data</cite>, we are introduced to the idea
+              that all visual elements on a data visualization take up a certain
+              amount of cognitive load, and as such only elements that increase
+              understanding should be included to reduce ‘clutter’ (Knaflic,
+              2015: 71-73). As a result, it is crucial that the story behind the
+              visualization is clear – in this case, looking at the price of
+              wheat relative to labour wages over the years. Thus, we can then
+              see Playfair’s data visualization has various elements that are
+              ‘clutter’ in relation to the story being told – these include the
+              doubling of the y-axis, the timeline of monarchs, and the
+              centuries at the top. Furthermore, while Knaflic highlights the
+              importance of using colour, it should only be used to aid the
+              visualization, and the random use of pink and blue, highlighting
+              the wage increase, overpowers the price of wheat and ultimately
+              creates an unequal balance between the two.
+            </p>
+
+            <p>
+              Next, placing the graphs side-by-side leaves much of its meaning
+              to interpretation. As Jenny Kidd says in their 2016 book
+              <cite>Representation</cite>, the more abstract an image the more
+              foregrounded its connotations (Kidd, 2016: 27). As there is no
+              obvious correlation between the data in figure 1, other than being
+              on the same page, one could easily misinterpret the meaning of the
+              visualization. As such, in Friendly’s 2008 book section
+              <cite>A Brief History of Data Visualizations </cite> (Friendly,
+              2008), he recommends a different graph all together – a graph that
+              compares the ratio of wages to price over the years on one graph,
+              alleviating confusion about its meaning. However, it is important
+              to note that none of these ideas had been conceptualized at the
+              time.
+            </p>
+            <p>
+              In conclusion, we can then see that although Playfair did manage
+              to make important discoveries relating to data visualization, we
+              have come a long way since his discoveries – establishing many
+              standards, and new graph types, to improve data visualizations
+              their stories.
+            </p>
+          </section>
+        </section>
+      </article>
+
+      <!-- References -->
+
+      <footer class="background-tone-two border-lock">
+        <section class="standard-page-footer">
+          <h2>References</h2>
+          <ol class="standard-page-references">
+            <li>
+              Friendly, M. 2008. ‘A Brief History of Data Visualization’, in
+              Chen, C., Härdle, W., and Unwin, A.,
+              <cite>Handbook of Data Visualization. </cite>
+              Berlin, Heidelberg: Springer Berlin Heidelberg, pp. 15–56.
+              doi:10.1007/978-3-540-33037-0_2.
+            </li>
+            <li>
+              Kidd, J. 2015.
+              <cite>Representation.</cite> Key ideas in media and cultural
+              studies. London ; New York: Routledge.
+            </li>
+            <li>
+              Knaflic, C.N. 2015.
+              <cite>
+                Storytelling with data: a data visualization guide for business
+                professionals.</cite
+              >
+              Hoboken, New Jersey: Wiley.
+            </li>
+            <li>
+              Playfair, W. 1821.
+              <cite
+                >A Letter on Our Agricultural Distresses, Their Causes and
+                Remedies: Accompanied with Tables and Copper-plate Charts,
+                Shewing and Comparing the Prices of Wheat, Bread, and Labour,
+                from 1565 to 1821.
+              </cite>
+              Addressed to the Lords and Commons.
+            </li>
+            <li>
+              Thompson, C. 2016.
+              <cite>
+                The Surprising Hisory of the Infographic, Smithsonian Magazine.
+              </cite>
+              Available at: https://www.smithsonianmag .com/ history/
+              surprising-history -infographic-180959563/.
+            </li>
+          </ol>
+        </section>
+      </footer>
+
+      <section class="blog-nav-buttons"></section>
+    </main>
+
+    <a class="back-to-top" href="">&#9650;</a>
+
+    <!-- Footer -->
+    <footer class="main-footer h-card"></footer>
+  </body>
+</html>

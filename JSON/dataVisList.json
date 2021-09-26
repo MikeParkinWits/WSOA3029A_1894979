@@ -1,9 +1,18 @@
-[{"title": "Data Vis 2", "location": "Visualizations/AllVisualizations/Visualization1",
+[{"title": "A Line Chart Showing the number of data stolen each year", "location": "Visualizations/AllVisualizations/Visualization2",
     "imagePreview": {
-        "src":"Images/VisualizationPreviewImages/Visualization0.jpg",
-        "alt": "Alt 2",
-        "imageTitle": "Img Title 2"},
+        "src":"Images/VisualizationPreviewImages/Visualization2.jpg",
+        "alt": "A line chart showing the amount of data stolen each year in data breaches",
+        "imageTitle": "A line chart showing the amount of data stolen each year in data breaches"},
     "type": "Data Visualization",
-    "description": "Description 2",
-    "publishDate": "2 July 2021"
+    "description": "A data visualization showing the amount of data stolen each year in data breaches",
+    "publishDate": "28 September 2021"
+    },
+    {"title": "A Bar Chart showing biggest Data Breaches in Tech", "location": "Visualizations/AllVisualizations/Visualization1",
+    "imagePreview": {
+        "src":"Images/VisualizationPreviewImages/Visualization1.jpg",
+        "alt": "Horizontal bar chart showing biggest tech data breaches in history",
+        "imageTitle": "Horizontal bar chart showing biggest tech data breaches in history"},
+    "type": "Data Visualization",
+    "description": "A data visualization showing the biggest tech data breaches in histroy",
+    "publishDate": "28 September 2021"
     }]

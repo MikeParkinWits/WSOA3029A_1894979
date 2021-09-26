@@ -47,14 +47,10 @@
 .card-info p,
 .card-info time {
   font-size: 0.875rem;
-  padding-right: 0.7rem;
+  padding-right: 0.25rem;
   top: 0rem;
   padding-bottom: 0rem;
-  margin: 0rem 0rem 0rem 2rem;
-}
-
-.card-info time {
-  padding-left: 0.7rem;
+  margin: 0;
 }
 
 .blog-card img {
@@ -79,7 +75,7 @@
 
 .blog-card h3,
 .blog-card h2 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   padding: 0rem;
   margin: 0.3rem 0rem;
 }
@@ -156,6 +152,11 @@
     grid-template-columns: 1fr 1fr;
     margin: 0rem;
   }
+
+  .card-info p,
+  .card-info time {
+    font-size: 0.85rem;
+  }
 }
 
 /* 3.2 Mobile - Based on iPhone X and other popular/similair devices */
@@ -163,9 +164,16 @@
 @media only screen and (max-width: 765px) {
   .blog-card h3,
   .blog-card h2 {
-    margin: 0.5rem 0.2rem 0.3rem 0rem;
-    font-size: 1.25rem;
+    margin: 0.5rem 0.2rem 0.5rem 0rem;
+    font-size: 1.15rem;
+    line-height: 1.35rem;
+
     text-align: left;
+  }
+
+  .card-info p,
+  .card-info time {
+    font-size: 0.8rem;
   }
 
   .blog-card {
