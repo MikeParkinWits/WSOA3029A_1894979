@@ -113,6 +113,93 @@ const HamburgerMenu = (hamburger) => {
     );
 }
 
+let dataItems;
+
+
+if (document.querySelector(".blog-nav-buttons")){
+    fetch(linkPrefix + "JSON/blogPostList.json")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data) {
+        dataItems = data;
+
+        dataItems.reverse();
+
+        NavButtons(true, ".blog-nav-buttons");
+        })
+    .catch(e => {
+        console.log(e);
+    });
+}
+else if (document.querySelector(".data-vis-nav-buttons"))
+{
+    fetch(linkPrefix + "JSON/dataVisList.json")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data) {
+        dataItems = data;
+
+        dataItems.reverse();
+        
+        NavButtons(false, ".data-vis-nav-buttons");
+    })
+    .catch(e => {
+        console.log(e);
+    });
+}
+
+const NavButtons = (isBlogButton, className) => {
+
+    let buttonPage;
+    let buttonTextNext;
+    let buttonTextPrevious;
+    let pageNumMod;
+
+    if (isBlogButton){
+        buttonPage = "../AllBlogs/Blog";
+        buttonTextNext = "Next Blog"
+        buttonTextPrevious = "Previous Blog"
+
+        pageNumMod = 5;
+    }
+    else
+    {
+        buttonPage = "../AllVisualizations/Visualization";
+
+        buttonTextNext = "Next Visualization"
+        buttonTextPrevious = "Previous Visualization"
+
+        pageNumMod = 14;
+    }
+
+    let path = window.location.pathname;
+    let pageNum = path.substring(path.lastIndexOf('/') + pageNumMod);
+    pageNum = parseInt(pageNum.substring(0, pageNum.lastIndexOf('.')));
+
+    const blogNavButtons = document.querySelector(className);
+    
+    if (pageNum > 1){
+
+        const buttonAnchor = document.createElement("a");
+        buttonAnchor.className = "button";
+        buttonAnchor.href = buttonPage + (pageNum - 1) + ".html";
+        buttonAnchor.innerText = buttonTextPrevious;
+        blogNavButtons.appendChild(buttonAnchor);
+    }
+
+    if (pageNum < dataItems.length){
+
+        const buttonAnchor = document.createElement("a");
+        buttonAnchor.className = "button";
+        buttonAnchor.href = buttonPage + (pageNum + 1) + ".html";
+        buttonAnchor.innerText = buttonTextNext;
+        blogNavButtons.appendChild(buttonAnchor);
+    }
+
+}
+
 document.addEventListener("DOMContentLoaded", () => initialiseMenu(), initialiseFooter());
 
 const scrollToTopButton = document.querySelector(".back-to-top");
