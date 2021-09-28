@@ -301,7 +301,10 @@ nav li a:hover::before,
 /* 6.2 Standard Page Elements */
 
 .standard-page-date,
-.standard-page-content,
+.standard-page-content {
+  margin: 0.5rem 3.3rem 1.5rem 3.3rem;
+}
+
 .standard-page-footer h2 {
   margin: 1.5rem 3.3rem;
 }
