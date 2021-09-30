@@ -10,9 +10,9 @@
     {"title": "A Bar Chart showing biggest Data Breaches in Tech", "location": "Visualizations/AllVisualizations/Visualization1",
     "imagePreview": {
         "src":"Images/VisualizationPreviewImages/Visualization1.jpg",
-        "alt": "Horizontal bar chart showing biggest tech data breaches in history",
-        "imageTitle": "Horizontal bar chart showing biggest tech data breaches in history"},
+        "alt": "Horizontal bar chart showing biggest  data breaches in history",
+        "imageTitle": "Horizontal bar chart showing biggest digital data breaches in history"},
     "type": "Data Visualization",
-    "description": "A data visualization showing the biggest tech data breaches in histroy",
+    "description": "A data visualization showing the biggest digital data breaches in histroy",
     "publishDate": "28 September 2021"
     }]

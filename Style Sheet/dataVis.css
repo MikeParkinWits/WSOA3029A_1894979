@@ -1,6 +1,18 @@
-rect {
-  fill: rgba(233, 81, 81, 0.925);
-}
+/* TABLE OF CONTENTS
+
+    1. Visualizations
+        1.1 General
+        1.2 Bar Chart
+    2. RESEPONSIVE DESIGN
+        2.1 TABLET
+        2.2 MOBILE
+*/
+
+/* --------------------
+    1. Visualizations 
+   -------------------- */
+
+/* 1.1 General */
 
 .svg-container {
   text-align: center;
@@ -8,21 +20,20 @@ rect {
 }
 
 svg {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 0rem;
-  height: 1%;
+  width: 80%;
+  height: 100%;
+  margin: 0.5rem 1rem;
+  border: 0.11rem solid rgb(87, 87, 87);
+  box-shadow: 0.01rem 0.01rem 1rem 0.01rem rgba(219, 219, 219, 0.582);
 }
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
 text {
-  font-size: 1rem;
   font-family: "Poppins", "arial", "sans-serif";
-  fill: black;
 }
 
 .tick text {
-  fill: rgb(71, 69, 66);
+  fill: rgb(78, 76, 74);
   font-size: 0.9rem;
 }
 
@@ -31,6 +42,48 @@ text {
 }
 
 .x-axis-lab {
-  fill: rgb(63, 62, 60);
+  fill: rgb(41, 40, 39);
   font-size: 1.15rem;
+}
+
+/* 1.2 Bar Chart */
+
+rect {
+  fill: rgba(233, 81, 81, 0.925);
+}
+
+/* ------------------------
+    2. Responsive Design 
+   ------------------------ */
+
+/* 2.1 TABLET - iPad used as reference */
+
+@media only screen and (max-width: 1024px) {
+  svg {
+    width: 90%;
+  }
+
+  .tick text {
+    font-size: 1rem;
+  }
+  .x-axis-lab {
+    fill: rgb(63, 62, 60);
+    font-size: 1.25rem;
+  }
+}
+
+/* 2.2 MOBILE - iPhone X and Pixel 2 XL used as reference */
+
+@media only screen and (max-width: 765px) {
+  svg {
+    width: 95%;
+  }
+
+  .tick text {
+    font-size: 1.1rem;
+  }
+  .x-axis-lab {
+    fill: rgb(63, 62, 60);
+    font-size: 1.3rem;
+  }
 }
