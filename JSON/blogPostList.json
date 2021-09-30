@@ -1,10 +1,10 @@
-[{"title": "Website Rationale", "location": "Blogs/AllBlogs/Blog9",
+[{"title": "Selected API Rationale", "location": "Blogs/AllBlogs/Blog9",
     "imagePreview": {
         "src":"Images/BlogPreviewImages/Blog9.jpg",
         "alt": "A photo of someone illustrating something with an iPad",
         "imageTitle": "Someone explaining something using an iPad"},
     "type": "Website Development",
-    "description": "The rationale behind my website",
+    "description": "The rationale behind my websites chosen API",
     "publishDate": "25 September 2021"
     },
     {"title": "An Analysis of a visualization from InformationIsBeautiful", "location": "Blogs/AllBlogs/Blog8",

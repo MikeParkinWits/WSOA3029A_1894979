@@ -1,0 +1,36 @@
+rect {
+  fill: rgba(233, 81, 81, 0.925);
+}
+
+.svg-container {
+  text-align: center;
+  margin-bottom: 0rem;
+}
+
+svg {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0rem;
+  height: 1%;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
+text {
+  font-size: 1rem;
+  font-family: "Poppins", "arial", "sans-serif";
+  fill: black;
+}
+
+.tick text {
+  fill: rgb(71, 69, 66);
+  font-size: 0.9rem;
+}
+
+.tick line {
+  color: rgb(214, 212, 208);
+}
+
+.x-axis-lab {
+  fill: rgb(63, 62, 60);
+  font-size: 1.15rem;
+}

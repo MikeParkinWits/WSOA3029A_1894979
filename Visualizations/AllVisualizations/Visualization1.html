@@ -63,7 +63,14 @@
     />
 
     <script type="module" src="../../Scripts/persistentElements.js"></script>
+    <script type="module" src="../../Scripts/dataVisualization.js"></script>
     <link rel="stylesheet" type="text/css" href="../../Style Sheet/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../Style Sheet/dataVis.css"
+    />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -78,9 +85,10 @@
           <h1 class="standard-page-title p-name">
             Bar Chart showing biggest Data Breaches in Tech
           </h1>
-
-          <g><svg></svg></g>
         </header>
+        <section class="svg-container">
+          <svg width="750" height="500"></svg>
+        </section>
       </article>
 
       <article class="background-tone-one h-entry border-lock">
