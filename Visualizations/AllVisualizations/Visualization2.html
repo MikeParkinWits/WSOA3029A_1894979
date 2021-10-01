@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A Line Chart Showing the number of data stolen each year</title>
+    <title>The Records Lost to Data Breaches Each Year</title>
 
     <link
       rel="shortcut icon"
@@ -17,12 +17,12 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "name": "A Line Chart Showing the number of data stolen each year",
+        "name": "The Records Lost to Data Breaches Each Year",
         "author": {
           "@type": "Person",
           "name": "Michael Parkin"
         },
-        "headline": "A Line Chart Showing the number of data stolen each year",
+        "headline": "The Records Lost to Data Breaches Each Year",
         "image": [
           "https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization2.jpg"
         ],
@@ -32,7 +32,7 @@
 
     <meta
       property="og:title"
-      content="A Line Chart Showing the number of data stolen each year"
+      content="The Records Lost to Data Breaches Each Year"
     />
     <meta property="og:type" content="article" />
     <meta name="author" property="article:publisher" content="Michael Parkin" />
@@ -63,7 +63,14 @@
     />
 
     <script type="module" src="../../Scripts/persistentElements.js"></script>
+    <script type="module" src="../../Scripts/dataVisualization.js"></script>
     <link rel="stylesheet" type="text/css" href="../../Style Sheet/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../Style Sheet/dataVis.css"
+    />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -76,10 +83,11 @@
       <article class="background-tone-one h-entry border-lock">
         <header class="page-header">
           <h1 class="standard-page-title p-name">
-            A Line Chart Showing the number of data stolen each year
+            The Records Lost to Data Breaches Each Year
           </h1>
-
-          <g><svg></svg></g>
+          <section class="svg-container">
+            <svg class="svg-line-graph" width="750" height="500"></svg>
+          </section>
         </header>
       </article>
 
@@ -91,7 +99,7 @@
               <time class="dt-published" datetime="2021-09-28"
                 >28 September 2021</time
               >
-              | Words: 457 | Data Visualization
+              | Words: 452 | Data Visualization
             </p>
           </header>
 
@@ -109,14 +117,17 @@
               When reflecting on any data visualization, we must first
               understand what information was trying to be portrayed, and the
               type of visualization used as a result. In my first visualization,
-              I compared the biggest tech data breaches in history, with the
-              goal of informing the reader of the size differences between these
-              different data breaches. For this next visualization, I wanted to
-              take this a step further by showing the total size of data
-              breaches year-over-year – giving the reader an indication of the
-              general trend of data breaches. As such, like my first
-              visualization, I decided to utilize a chart – as I was still
-              comparing the size of data, and as Qi Li states in her 2020 book
+              I compared the ten biggest digital data breaches in history, with
+              the goal of informing the reader of the size differences between
+              these different data breaches and just how large they were. For
+              this visualization, I wanted to take this a step further by
+              showing the total size of data breaches year-over-year. Thus, my
+              goal was to give the reader an indication of the general trend of
+              data breaches, alluding to they are becoming more common and
+              require the reader to be more cautious with where they share their
+              data. As such, like my first visualization, I decided to utilize a
+              chart – as I was still comparing the size of data, and as Qi Li
+              states in her 2020 book
               <cite>Embodying Data</cite>, charts are best used to portray
               information about size (Li, 2020: 29 - 30). However, unlike my
               first data visualization I chose to make use of a line chart, as I
@@ -126,21 +137,18 @@
             <p>
               With that, we can then start to look at the specific
               considerations that I made when creating my second data
-              visualization. Like my first visualization, I wanted to keep this
-              visualization simple as I was still experimenting with the D3.js
-              library – although, simplicity does not mean easy to create. As is
-              the case with all my visualizations thus far, I have made a
-              conscious effort to keep them as minimalist as possible to reduce
-              cognitive load – removing any unnecessary elements. However, a
-              specific consideration that I had to make with this visualization
-              was about the inclusion of gridlines and data markers. I decided
-              that because the goal of my visualization was to show the general
-              trend of data breaches over time, the inclusion of grid lines
-              would imply that each specific data point should be read, and as
-              such I removed them. Although, while I wanted the focus of the
-              visualization to be on the general trend of data breaches, I chose
-              to leave the data markers in to allow the reader to easily view
-              the precise data if need be.
+              visualization. Like my first, I wanted to keep this visualization
+              simple as I was still experimenting with the D3.js library –
+              although, simplicity does not mean easy to create. As is the case
+              with all my visualizations thus far, I have made a conscious
+              effort to keep them as minimalist as possible to reduce cognitive
+              load – removing any unnecessary elements. However, a specific
+              consideration that I had to make with this visualization was about
+              the inclusion of gridlines and data markers. I decided that
+              because the goal of my visualization was to show the general trend
+              of data breaches over time, the inclusion of grid lines and
+              markers would imply that each specific data point should be read,
+              and as such I removed them both.
             </p>
             <p>
               In conclusion, in this blog post I looked at the reasons behind my
@@ -180,7 +188,7 @@
 
     <section class="data-vis-nav-buttons"></section>
 
-    <a class="back-to-top" href="">&#9650;</a>
+    <a class="back-to-top" href="#top">&#9650;</a>
 
     <!-- Footer -->
     <footer class="main-footer h-card"></footer>

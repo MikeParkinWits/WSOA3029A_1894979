@@ -110,7 +110,7 @@ nav li a::before,
   height: 0.15rem;
   content: "";
   position: absolute;
-  background-color: rgb(95, 95, 95);
+  background-color: rgb(218, 67, 67);
   width: 0%;
   bottom: 0.8rem;
 }
@@ -316,7 +316,7 @@ nav li a:hover::before,
 .standard-page-date {
   display: inline-block;
 
-  border-top: 0.13rem solid black;
+  border-top: 0.13rem solid rgb(218, 67, 67);
   padding: 1rem 2.2rem;
   margin: 0.5rem 0rem 1rem 3.3rem;
   font-size: 1.15rem;

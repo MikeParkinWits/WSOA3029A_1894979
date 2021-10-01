@@ -19,7 +19,8 @@
   margin-bottom: 0rem;
 }
 
-svg {
+.svg-bar-graph,
+.svg-line-graph {
   width: 80%;
   height: 100%;
   margin: 0.5rem 1rem;
@@ -41,7 +42,7 @@ text {
   color: rgb(214, 212, 208);
 }
 
-.x-axis-lab {
+.axis-lab {
   fill: rgb(41, 40, 39);
   font-size: 1.15rem;
 }
@@ -52,6 +53,18 @@ rect {
   fill: rgba(233, 81, 81, 0.925);
 }
 
+/* 1.3 Line Chart */
+
+circle {
+  fill: rgb(218, 67, 67);
+}
+
+.line {
+  stroke: rgb(218, 67, 67);
+  stroke-width: 0.25rem;
+  fill: none;
+}
+
 /* ------------------------
     2. Responsive Design 
    ------------------------ */
@@ -59,14 +72,16 @@ rect {
 /* 2.1 TABLET - iPad used as reference */
 
 @media only screen and (max-width: 1024px) {
-  svg {
+  .svg-bar-graph,
+  .svg-line-graph {
     width: 90%;
+    margin: 0.5rem 0rem;
   }
 
   .tick text {
     font-size: 1rem;
   }
-  .x-axis-lab {
+  .axis-lab {
     fill: rgb(63, 62, 60);
     font-size: 1.25rem;
   }
@@ -75,14 +90,15 @@ rect {
 /* 2.2 MOBILE - iPhone X and Pixel 2 XL used as reference */
 
 @media only screen and (max-width: 765px) {
-  svg {
+  .svg-bar-graph,
+  .svg-line-graph {
     width: 95%;
   }
 
   .tick text {
     font-size: 1.1rem;
   }
-  .x-axis-lab {
+  .axis-lab {
     fill: rgb(63, 62, 60);
     font-size: 1.3rem;
   }

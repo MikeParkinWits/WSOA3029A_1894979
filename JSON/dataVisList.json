@@ -1,4 +1,4 @@
-[{"title": "A Line Chart Showing the number of data stolen each year", "location": "Visualizations/AllVisualizations/Visualization2",
+[{"title": "The Records Lost to Data Breaches Each Year", "location": "Visualizations/AllVisualizations/Visualization2",
     "imagePreview": {
         "src":"Images/VisualizationPreviewImages/Visualization2.jpg",
         "alt": "A line chart showing the amount of data stolen each year in data breaches",
@@ -7,7 +7,7 @@
     "description": "A data visualization showing the amount of data stolen each year in data breaches",
     "publishDate": "28 September 2021"
     },
-    {"title": "A Bar Chart showing biggest Data Breaches in Tech", "location": "Visualizations/AllVisualizations/Visualization1",
+    {"title": "The Top 10 Biggest Data Breaches", "location": "Visualizations/AllVisualizations/Visualization1",
     "imagePreview": {
         "src":"Images/VisualizationPreviewImages/Visualization1.jpg",
         "alt": "Horizontal bar chart showing biggest  data breaches in history",
