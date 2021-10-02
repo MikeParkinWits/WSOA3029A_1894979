@@ -110,7 +110,7 @@ nav li a::before,
   height: 0.15rem;
   content: "";
   position: absolute;
-  background-color: rgb(218, 67, 67);
+  background-color: #d04539;
   width: 0%;
   bottom: 0.8rem;
 }
@@ -187,7 +187,7 @@ nav li a:hover::before,
 
   margin: 0.5rem 2.2rem;
 
-  border-top: 0.13rem solid black;
+  border-top: 0.13rem solid #d04539;
 
   padding-right: 2.2rem;
 }
@@ -316,7 +316,7 @@ nav li a:hover::before,
 .standard-page-date {
   display: inline-block;
 
-  border-top: 0.13rem solid rgb(218, 67, 67);
+  border-top: 0.13rem solid #d04539;
   padding: 1rem 2.2rem;
   margin: 0.5rem 0rem 1rem 3.3rem;
   font-size: 1.15rem;
@@ -603,12 +603,12 @@ figcaption {
 
     padding: 1rem 0rem;
 
-    border-top: 0.1rem solid rgb(158, 158, 158);
+    border-top: 0.1rem solid #d04539;
     border-left: 0rem;
   }
 
   .blog-nav-items:last-child a {
-    border-bottom: 0.1rem solid rgb(158, 158, 158);
+    border-bottom: 0.1rem solid #d04539;
   }
 
   nav li a:hover::before,
