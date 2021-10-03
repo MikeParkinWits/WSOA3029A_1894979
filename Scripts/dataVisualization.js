@@ -30,8 +30,6 @@ const getAllDataBreaches = async () => {
         loadLineGraph(numBreachesPerYear);
     }
 
-
-
 }
 
 getAllDataBreaches().catch(error =>{

@@ -5,14 +5,10 @@ if (
   ) {
 
     linkPrefix = "/";
-    console.log("Running on local server (ssh tunnel etc.)");
-    // like: "http://127.0.0.1:<my-port>"
   } else {
     
     linkPrefix = "/WSOA3029A_1894979/";
 
-    console.log("Running normally, via web server");
-    // like: "http://<my-host-or-ip>:<my-port>"
   }
 
   const menuOptions = [
@@ -115,7 +111,6 @@ const HamburgerMenu = (hamburger) => {
 
 let dataItems;
 
-
 if (document.querySelector(".blog-nav-buttons")){
     fetch(linkPrefix + "JSON/blogPostList.json")
     .then(function(response){
@@ -207,7 +202,6 @@ const scrollToTopButton = document.querySelector(".back-to-top");
 window.onscroll = function() {
     scrollFunction()
 };
-
 
 const scrollFunction = () => {
 

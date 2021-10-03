@@ -5,13 +5,10 @@ if (
   ) {
 
     linkPrefix = "/";
-    console.log("Running on local server");
   } 
   else 
   {
     linkPrefix = "/WSOA3029A_1894979/";
-
-    console.log("Running via web server");
   }
 
 let blogItems = []
