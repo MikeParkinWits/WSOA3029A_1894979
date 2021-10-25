@@ -15,6 +15,33 @@ numBreachesPerYear.find(e => {
 }
 });
 
+const url = "https://wits-1894979-proxy.herokuapp.com/https://haveibeenpwned.com/api/v3/breachedaccount/foo%40bar.com";
+// fetch(url, {
+//   method: "GET",
+//   headers: {
+//     "hibp-api-key": "f269230d7044457a910dc8d2d1205013"
+//   }
+// })
+// .then(response => response.json());
+
+const getData = async () => {
+    const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "hibp-api-key": "f269230d7044457a910dc8d2d1205013"
+        }
+      });
+    const data = await response.json();
+
+    console.log(data);
+    
+}
+
+getData().catch(error =>{
+    console.error(error);
+});
+
+
 const getAllDataBreaches = async () => {
     const response = await fetch(dataBreachURL);
     const data = await response.json();
