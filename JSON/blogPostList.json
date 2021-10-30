@@ -1,4 +1,13 @@
-[{"title": "Selected API Rationale", "location": "Blogs/AllBlogs/Blog9",
+[{"title": "A Close Reading of 'What is Interaction for Data Visualization?'", "location": "Blogs/AllBlogs/Blog10",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog10.jpg",
+        "alt": "A photo of someone interacting with a visualization on an iPad",
+        "imageTitle": "Someone ointeracting with a visualization on an iPad"},
+    "type": "Theory",
+    "description": "A close reading of Dimara and Perin's 2020 paper",
+    "publishDate": "05 October 2021"
+    },
+    {"title": "Selected API Rationale", "location": "Blogs/AllBlogs/Blog9",
     "imagePreview": {
         "src":"Images/BlogPreviewImages/Blog9.jpg",
         "alt": "A photo of someone illustrating something with an iPad",
