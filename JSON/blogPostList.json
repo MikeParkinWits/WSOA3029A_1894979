@@ -1,8 +1,17 @@
-[{"title": "A Close Reading of 'What is Interaction for Data Visualization?'", "location": "Blogs/AllBlogs/Blog10",
+[{"title": "An analysis of an interactive data visualization from InformationIsBeautiful", "location": "Blogs/AllBlogs/Blog11",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog11.jpg",
+        "alt": "People pointing at a screen of a computer",
+        "imageTitle": "A group of people pointing at a screen of a computer"},
+    "type": "Theory",
+    "description": "A critical analysis of an interactive data visualization about sport supplements",
+    "publishDate": "12 October 2021"
+    },
+    {"title": "A Close Reading of 'What is Interaction for Data Visualization?'", "location": "Blogs/AllBlogs/Blog10",
     "imagePreview": {
         "src":"Images/BlogPreviewImages/Blog10.jpg",
         "alt": "A photo of someone interacting with a visualization on an iPad",
-        "imageTitle": "Someone ointeracting with a visualization on an iPad"},
+        "imageTitle": "Someone interacting with a visualization on an iPad"},
     "type": "Theory",
     "description": "A close reading of Dimara and Perin's 2020 paper",
     "publishDate": "05 October 2021"
