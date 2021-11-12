@@ -1,4 +1,13 @@
-[{"title": "An analysis of an interactive data visualization from InformationIsBeautiful", "location": "Blogs/AllBlogs/Blog11",
+[{"title": "A Close Reading of 'Artistic Data Visualization: Beyond Visual Analytics'", "location": "Blogs/AllBlogs/Blog12",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog12.jpg",
+        "alt": "An abstract artistic data visualization",
+        "imageTitle": "An abstract artistic data visualization"},
+    "type": "Theory",
+    "description": "A close reading of Viegas and Wattenberg's 2007 article",
+    "publishDate": "19 October 2021"
+    },
+    {"title": "An analysis of an interactive data visualization from InformationIsBeautiful", "location": "Blogs/AllBlogs/Blog11",
     "imagePreview": {
         "src":"Images/BlogPreviewImages/Blog11.jpg",
         "alt": "People pointing at a screen of a computer",
