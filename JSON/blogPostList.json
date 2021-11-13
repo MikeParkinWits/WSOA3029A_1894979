@@ -1,4 +1,13 @@
-[{"title": "A Critical Analysis of a Data-Driven Artwork by Yoshiyuki Mikami", "location": "Blogs/AllBlogs/Blog13",
+[{"title": "A Close Reading of Chapter 9 of 'Data Driven Storytelling'", "location": "Blogs/AllBlogs/Blog14",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog14.jpg",
+        "alt": "Scrabble pieces on a table spelling out 'I am the good guide'",
+        "imageTitle": "Scrabble pieces lying on a table spelling out 'I am the good guide'"},
+    "type": "Theory",
+    "description": "A framework for better understanding ethical decisions in data-driven stories",
+    "publishDate": "02 November 2021"
+    },
+    {"title": "A Critical Analysis of a Data-Driven Artwork by Yoshiyuki Mikami", "location": "Blogs/AllBlogs/Blog13",
     "imagePreview": {
         "src":"Images/BlogPreviewImages/Blog13.jpg",
         "alt": "A pixelated picture of a giant panda sitting in a tree",
