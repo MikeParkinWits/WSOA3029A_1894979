@@ -1,4 +1,13 @@
-[{"title": "A Close Reading of 'Artistic Data Visualization: Beyond Visual Analytics'", "location": "Blogs/AllBlogs/Blog12",
+[{"title": "A Critical Analysis of a Data-Driven Artwork by Yoshiyuki Mikami", "location": "Blogs/AllBlogs/Blog13",
+    "imagePreview": {
+        "src":"Images/BlogPreviewImages/Blog13.jpg",
+        "alt": "A pixelated picture of a giant panda sitting in a tree",
+        "imageTitle": "A pixelated picture of a giant panda"},
+    "type": "Theory",
+    "description": "A close analysis of an artwork from Yoshiyuki Mikami's Population by Pixel",
+    "publishDate": "26 October 2021"
+    },
+    {"title": "A Close Reading of 'Artistic Data Visualization: Beyond Visual Analytics'", "location": "Blogs/AllBlogs/Blog12",
     "imagePreview": {
         "src":"Images/BlogPreviewImages/Blog12.jpg",
         "alt": "An abstract artistic data visualization",
