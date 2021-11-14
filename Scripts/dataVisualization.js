@@ -279,7 +279,6 @@ const LoadBubbleGraph = (data) => {
            
         const root = bubble(data);
         const tooltip = d3.select('.tooltip');
-        
     
         const node = svgArea.selectAll()
             .data(root.children)
@@ -291,7 +290,7 @@ const LoadBubbleGraph = (data) => {
                 tooltip.select('img').attr('src', d.data.LogoPath);
                 tooltip.select('.company-name').text(d.data.Name);
                 tooltip.select('.tooltip-breach-year').text(d.data.BreachDate);
-                tooltip.select('.tooltip-breach-amount').text(d.data.PwnCount.toString().replace(/(.{3})/g,'$1 '));
+                tooltip.select('.tooltip-breach-amount').text(d.data.PwnCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
                 tooltip.select('.tooltip-breach-description').html(d.data.Description);
                 tooltip.style('visibility', 'visible');
     
@@ -315,8 +314,33 @@ const LoadBubbleGraph = (data) => {
                 .attr('r', 150);
                 */
             })
-            .on('mousemove', e => tooltip.style('top', `${e.pageY+30}px`)
-                                         .style('left', `${e.pageX-250}px`))
+            .on('mousemove', function (e)
+             {
+
+                //console.log(d3.pointer(e));
+                
+                if (window.matchMedia("(max-width: 760px)").matches){
+                    tooltip.style('top', `${550}px`)
+                    .style('left', `${24}px`)
+
+                    console.log(height);
+                }
+                else if (window.matchMedia("(max-width: 1024px)").matches)
+                {
+                    console.log("HELLO!" + window.innerWidth);
+
+                    tooltip.style('top', `${e.pageY + 50}px`)
+                                         .style('left', `${e.pageX - 100}px`)
+                }
+                else
+                {
+                    console.log("HI!");
+
+                    tooltip.style('top', `${e.pageY + 30}px`)
+                                         .style('left', `${e.pageX - 175}px`)
+                }
+                 
+            })
             .on('mouseout', function () {
 
                 /*

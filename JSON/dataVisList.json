@@ -1,4 +1,13 @@
-[{"title": "The Data Lost to Data Breaches Each Year", "location": "Visualizations/AllVisualizations/Visualization2",
+[{"title": "The Data Lost to Data Breaches Each Year", "location": "Visualizations/AllVisualizations/Visualization3",
+    "imagePreview": {
+        "src":"Images/VisualizationPreviewImages/Visualization3.jpg",
+        "alt": "A bubble chart showing the different sizesdata breaches over the years",
+        "imageTitle": "A bubble chart showing the different sizesdata breaches over the years"},
+    "type": "Data Visualization",
+    "description": "An interactive data visualization showing the change in data breach sizes before and after 2015",
+    "publishDate": "12 November 2021"
+    },
+    {"title": "The Data Lost to Data Breaches Each Year", "location": "Visualizations/AllVisualizations/Visualization2",
     "imagePreview": {
         "src":"Images/VisualizationPreviewImages/Visualization2.jpg",
         "alt": "A line chart showing the amount of data stolen each year in data breaches",
