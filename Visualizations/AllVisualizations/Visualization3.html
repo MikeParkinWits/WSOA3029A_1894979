@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Change in Size of Data Breaches Over the Years</title>
+    <title>The Increased Size of Data Breaches in Recent Years</title>
 
     <link
       rel="shortcut icon"
@@ -17,12 +17,12 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "name": "The Change in Size of Data Breaches Over the Years",
+        "name": "The Increased Size of Data Breaches in Recent Years",
         "author": {
           "@type": "Person",
           "name": "Michael Parkin"
         },
-        "headline": "The Change in Size of Data Breaches Over the Years",
+        "headline": "The Increased Size of Data Breaches in Recent Years",
         "image": [
           "https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization3.jpg"
         ],
@@ -32,7 +32,7 @@
 
     <meta
       property="og:title"
-      content="The Change in Size of Data Breaches Over the Years"
+      content="The Increased Size of Data Breaches in Recent Years"
     />
     <meta property="og:type" content="article" />
     <meta name="author" property="article:publisher" content="Michael Parkin" />
@@ -83,7 +83,7 @@
       <article class="background-tone-one h-entry border-lock">
         <header class="page-header">
           <h1 class="standard-page-title p-name">
-            The Change in Size of Data Breaches Over the Years
+            The Increased Size of Data Breaches in Recent Years
           </h1>
           <section class="svg-container">
             <svg class="svg-bubble-graph" width="750" height="500"></svg>
@@ -113,64 +113,82 @@
               <time class="dt-published" datetime="2021-11-12"
                 >12 November 2021</time
               >
-              | Words: 452 | Data Visualization
+              | Words: 543 | Data Visualization
             </p>
           </header>
 
           <section class="e-content standard-page-content">
             <p>
-              While data visualizations may seem simple and intuitive to the
-              reader, if they are not well thought out, they can be extremely
-              challenging to read and understand. Thus, in this blog post I
-              critically reflect on my second data visualization – looking at
-              the considerations made to ensure that it was as readable as
-              possible.
+              While not every data visualization needs to incorporate
+              interactivity to meaningfully portray their message, when utilized
+              correctly it can greatly enhance the overall narrative of the
+              visualization. As such, in this blog post I aim to critically
+              reflect on my third data visualization – exploring my
+              implementation of interactivity within it. To do this, I start by
+              explaining both the narrative I am trying to portray, and the
+              visualization type chosen. Thereafter, I explore how I chose to
+              incorporate interactivity into my visualization, evaluating its
+              success in relation to the seven components of interactivity for
+              visualization that Evanthia Dimara and Charles Perin highlight in
+              their 2020 text
+              <cite>What is Interaction for Data Visualization?</cite>
+              (Dimara and Perin, 2020).
             </p>
 
             <p>
-              When reflecting on any data visualization, we must first
-              understand what information was trying to be portrayed, and the
-              type of visualization used as a result. In my first visualization,
-              I compared the ten biggest digital data breaches in history, with
-              the goal of informing the reader of the size differences between
-              these different data breaches and just how large they were. For
-              this visualization, I wanted to take this a step further by
-              showing the total size of data breaches year-over-year. Thus, my
-              goal was to give the reader an indication of the general trend of
-              data breaches, alluding to they are becoming more common and
-              require the reader to be more cautious with where they share their
-              data. As such, like my first visualization, I decided to utilize a
-              chart – as I was still comparing the size of data, and as Qi Li
-              states in her 2020 book
-              <cite>Embodying Data</cite>, charts are best used to portray
-              information about size (Li, 2020: 29 - 30). However, unlike my
-              first data visualization I chose to make use of a line chart, as I
-              was more concerned with showing the change over a set period, as
-              opposed to the exact numbers.
+              However, before we can look at how I incorporated interactivity
+              into my data visualization, we must understand the visualization
+              itself – beginning with the narrative that I was trying to
+              portray. While the data visualizations I have created thus far
+              have been fairly simple, allowing me to grow my skillset, for my
+              third data visualization I wanted to challenge myself. As such, I
+              landed on the idea of recreating one of my previous data
+              visualizations in a new, and interesting, way. From this, I then
+              deciding to rethink my first data visualization, concluding that a
+              bubble graph would allow me to explore not only the biggest data
+              breaches of all time, but also the size of all data breaches in
+              relation to one another. Although, I soon realized that this idea
+              would not make full use of the bubble graph, as I only planned on
+              comparing the size of bubbles and had no intention of utilizing
+              different colours. As such, I decided that by combining my
+              previous two narratives, I would then be able to create an even
+              more interesting narrative – the increasing size of data breaches
+              in recent years, where different coloured bubbles represent data
+              breaches before and after 2015 (the median date for my data).
             </p>
             <p>
-              With that, we can then start to look at the specific
-              considerations that I made when creating my second data
-              visualization. Like my first, I wanted to keep this visualization
-              simple as I was still experimenting with the D3.js library –
-              although, simplicity does not mean easy to create. As is the case
-              with all my visualizations thus far, I have made a conscious
-              effort to keep them as minimalist as possible to reduce cognitive
-              load – removing any unnecessary elements. However, a specific
-              consideration that I had to make with this visualization was about
-              the inclusion of gridlines and data markers. I decided that
-              because the goal of my visualization was to show the general trend
-              of data breaches over time, the inclusion of grid lines and
-              markers would imply that each specific data point should be read,
-              and as such I removed them both.
+              While I believe that this alone does sufficiently communicate my
+              narrative, I knew that the inclusion of interactivity could
+              greatly enhance it – if incorporated well. As such, to better
+              understand how to meaningfully incorporate interactivity, I looked
+              to Dimara and Perin, who define interaction for visualization as
+              <q
+                >“interaction for visualization is the
+                <strong>interplay</strong> between a <strong>person</strong> and
+                a <strong>data interface</strong> involving a
+                <strong>data-related intent</strong>, at least one
+                <strong>action</strong> from the person and an interface
+                <strong>reaction</strong> that is
+                <strong>perceived as such</strong>”</q
+              >
+              (Dimara and Perin, 2020: 8; emphasis added). Using this, I then
+              concluded that to create meaningful interactions, interactivity
+              must meet the end-user’s intent in a timely, and accurate, manner.
+              As such, I determined that the most likely intent for the user was
+              learning more about each data breach. This then resulted in the
+              idea of utilizing the action of hovering over a bubble to provide
+              the end-user with more information about each data breach.
             </p>
             <p>
-              In conclusion, in this blog post I looked at the reasons behind my
-              chosen data visualization type, and the considerations behind its
-              creation. Not only that, but I also highlighted the similarity in
-              thought process behind all my data visualizations thus far, with
-              both data visualizations adding to my website’s consistency
-              overall and minimalism.
+              In brief, I then believe that, although not necessary, the
+              inclusion of interactivity helped to greatly enhance the message
+              for this data visualization – ultimately allowing the end-user to
+              explore additional information that was previously inaccessible.
+              Not only that, but by consulting Dimara and Perin’s definition for
+              interaction in visualizations, before incorporating interaction, I
+              believe that my inclusion of interactivity was as successful as
+              possible – allowing the user to quickly, and easily, meet their
+              data-related intent when requested.
             </p>
           </section>
         </section>
@@ -182,19 +200,13 @@
         <section class="standard-page-footer">
           <h2>References</h2>
           <ol class="standard-page-references">
-            <li>
-              Knaflic, C.N. 2015.
-              <cite>
-                Storytelling with data: a data visualization guide for business
-                professionals.</cite
-              >
-              Hoboken, New Jersey: Wiley.
-            </li>
-            <li>
-              Li, Q. 2020. Overview of Data Visualization.
-              <cite>In Embodying Data.</cite> Singapore: Springer Singapore.
-              17–47. DOI: 10.1007/978-981-15-5069-0_2.
-            </li>
+            <ol class="standard-page-references">
+              <li>
+                Dimara, E., Perin, C., 2020.
+                <cite>What is Interaction for Data Visualization? </cite>
+                IEEE Trans. Vis. Comput. Graph. 26, 119–129. https://doi.org
+                /10.1109/TVCG. 2019.2934283
+              </li>
           </ol>
         </section>
       </footer>

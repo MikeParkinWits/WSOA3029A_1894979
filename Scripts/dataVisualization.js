@@ -301,6 +301,15 @@ const gElement = svgArea.selectAll()
     .duration(1000)
     .attr('transform', d => `translate(${d.x}, ${d.y})`);
 
+    //console.log(gElement);
+    tooltip
+    .on('click', function () {
+        console.log("CLOSE");
+        
+        d3.select(this).select('circle').style('stroke', 'none');
+        return tooltip.style('visibility', 'hidden');
+    })
+
 gElement
     .on('mouseover', function (e, d) {
         tooltip.select('img').attr('src', d.data.LogoPath);
