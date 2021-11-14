@@ -3,6 +3,9 @@
     1. Visualizations
         1.1 General
         1.2 Bar Chart
+        1.3 Line Chart
+        1.4 Bubble Graph
+
     2. RESEPONSIVE DESIGN
         2.1 TABLET
         2.2 MOBILE
@@ -12,7 +15,61 @@
     1. Visualizations 
    -------------------- */
 
-/*START*/
+/* 1.1 General */
+
+.svg-container {
+  text-align: center;
+  margin-bottom: 0rem;
+}
+
+.svg-bar-graph,
+.svg-line-graph,
+.svg-bubble-graph {
+  width: 80%;
+  height: 100%;
+  margin: 0.5rem 1rem;
+  border: 0.11rem solid rgb(87, 87, 87);
+  box-shadow: 0.01rem 0.01rem 1rem 0.01rem rgba(219, 219, 219, 0.582);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
+text {
+  font-family: "Poppins", "arial", "sans-serif";
+}
+
+.tick text {
+  fill: rgb(78, 76, 74);
+  font-size: 0.9rem;
+}
+
+.tick line {
+  color: rgb(214, 212, 208);
+}
+
+.axis-lab {
+  fill: rgb(41, 40, 39);
+  font-size: 1.15rem;
+}
+
+/* 1.2 Bar Chart */
+
+rect {
+  fill: rgba(233, 81, 81, 0.925);
+}
+
+/* 1.3 Line Chart */
+
+circle {
+  fill: rgb(218, 67, 67);
+}
+
+.line {
+  stroke: rgb(218, 67, 67);
+  stroke-width: 0.25rem;
+  fill: none;
+}
+
+/* 1.4 Bubble Graph */
 
 .tooltip img {
   max-width: 7rem;
@@ -26,16 +83,6 @@
 
 .name {
   fill: rgb(255, 255, 255);
-}
-
-.html {
-  background: #f16529;
-}
-.css {
-  background: #1c88c7;
-}
-.js {
-  background: #fcc700;
 }
 
 .tooltip {
@@ -100,62 +147,6 @@
 
 .tooltip-title {
   font-weight: bold;
-}
-
-/*END*/
-
-/* 1.1 General */
-
-.svg-container {
-  text-align: center;
-  margin-bottom: 0rem;
-}
-
-.svg-bar-graph,
-.svg-line-graph,
-.svg-bubble-graph {
-  width: 80%;
-  height: 100%;
-  margin: 0.5rem 1rem;
-  border: 0.11rem solid rgb(87, 87, 87);
-  box-shadow: 0.01rem 0.01rem 1rem 0.01rem rgba(219, 219, 219, 0.582);
-}
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
-text {
-  font-family: "Poppins", "arial", "sans-serif";
-}
-
-.tick text {
-  fill: rgb(78, 76, 74);
-  font-size: 0.9rem;
-}
-
-.tick line {
-  color: rgb(214, 212, 208);
-}
-
-.axis-lab {
-  fill: rgb(41, 40, 39);
-  font-size: 1.15rem;
-}
-
-/* 1.2 Bar Chart */
-
-rect {
-  fill: rgba(233, 81, 81, 0.925);
-}
-
-/* 1.3 Line Chart */
-
-circle {
-  fill: rgb(218, 67, 67);
-}
-
-.line {
-  stroke: rgb(218, 67, 67);
-  stroke-width: 0.25rem;
-  fill: none;
 }
 
 /* ------------------------
