@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Data Lost to Data Breaches Each Year</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="../../Images/Mini_Logo.png"
+    />
+
+    <!-- Google Structured Data can only be added inline as it is using JSON-LD - as noted in the w3 here: https://www.w3.org/TR/2016/REC-html51-20161101/semantics-scripting.html#the-script-element -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "name": "The Data Lost to Data Breaches Each Year",
+        "author": {
+          "@type": "Person",
+          "name": "Michael Parkin"
+        },
+        "headline": "The Data Lost to Data Breaches Each Year",
+        "image": [
+          "https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization2.jpg"
+        ],
+        "datePublished": "2021-09-28"
+      }
+    </script>
+
+    <meta
+      property="og:title"
+      content="The Data Lost to Data Breaches Each Year"
+    />
+    <meta property="og:type" content="article" />
+    <meta name="author" property="article:publisher" content="Michael Parkin" />
+    <meta property="article:section" content="Data Visualization" />
+    <meta property="article:tag" content="Data Visualization" />
+    <meta property="og:site_name" content="Lost Data" />
+    <meta
+      property="og:url"
+      content="https://mikeparkinwits.github.io/WSOA3029A_1894979/AllVisualizations/Visualization2.html"
+    />
+    <meta
+      property="og:image"
+      content="https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization2.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="A line chart showing the amount of data stolen each year in data breaches"
+    />
+    <meta
+      name="description"
+      property="og:description"
+      content="A data visualization showing the amount of data stolen each year in data breaches"
+    />
+
+    <meta
+      name="keywords"
+      content="Data Breaches, Lost Data, Data Privacy, Data Breach Visualizations"
+    />
+
+    <script type="module" src="../../Scripts/persistentElements.js"></script>
+    <script type="module" src="../../Scripts/dataVisualization.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Style Sheet/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../Style Sheet/dataVis.css"
+    />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="header-nav">
+      <nav class="navbar"></nav>
+    </header>
+
+    <!-- Content -->
+    <main>
+      <article class="background-tone-one h-entry border-lock">
+        <header class="page-header">
+          <h1 class="standard-page-title p-name">
+            The Data Lost to Data Breaches Each Year
+          </h1>
+          <section class="svg-container">
+            <svg class="svg-bubble-graph" width="750" height="500"></svg>
+          </section>
+          <section class="tooltip">
+            <header>
+              <img width="80rem" height="100%" alt="" />
+              <h2 class="company-name"></h2>
+            </header>
+            <section class="breach-info">
+              <p class="tooltip-title">Year Breached:</p>
+              <p class="tooltip-breach-year"></p>
+              <p class="tooltip-title">Data Breached:</p>
+              <p class="tooltip-breach-amount"></p>
+              <p class="tooltip-title">Description:</p>
+              <p class="tooltip-breach-description"></p>
+            </section>
+          </section>
+        </header>
+      </article>
+
+      <article class="background-tone-one h-entry border-lock">
+        <section class="standard-page">
+          <header class="page-header">
+            <h2>Reflection</h2>
+            <p class="standard-page-date">
+              <time class="dt-published" datetime="2021-09-28"
+                >28 September 2021</time
+              >
+              | Words: 452 | Data Visualization
+            </p>
+          </header>
+
+          <section class="e-content standard-page-content">
+            <p>
+              While data visualizations may seem simple and intuitive to the
+              reader, if they are not well thought out, they can be extremely
+              challenging to read and understand. Thus, in this blog post I
+              critically reflect on my second data visualization – looking at
+              the considerations made to ensure that it was as readable as
+              possible.
+            </p>
+
+            <p>
+              When reflecting on any data visualization, we must first
+              understand what information was trying to be portrayed, and the
+              type of visualization used as a result. In my first visualization,
+              I compared the ten biggest digital data breaches in history, with
+              the goal of informing the reader of the size differences between
+              these different data breaches and just how large they were. For
+              this visualization, I wanted to take this a step further by
+              showing the total size of data breaches year-over-year. Thus, my
+              goal was to give the reader an indication of the general trend of
+              data breaches, alluding to they are becoming more common and
+              require the reader to be more cautious with where they share their
+              data. As such, like my first visualization, I decided to utilize a
+              chart – as I was still comparing the size of data, and as Qi Li
+              states in her 2020 book
+              <cite>Embodying Data</cite>, charts are best used to portray
+              information about size (Li, 2020: 29 - 30). However, unlike my
+              first data visualization I chose to make use of a line chart, as I
+              was more concerned with showing the change over a set period, as
+              opposed to the exact numbers.
+            </p>
+            <p>
+              With that, we can then start to look at the specific
+              considerations that I made when creating my second data
+              visualization. Like my first, I wanted to keep this visualization
+              simple as I was still experimenting with the D3.js library –
+              although, simplicity does not mean easy to create. As is the case
+              with all my visualizations thus far, I have made a conscious
+              effort to keep them as minimalist as possible to reduce cognitive
+              load – removing any unnecessary elements. However, a specific
+              consideration that I had to make with this visualization was about
+              the inclusion of gridlines and data markers. I decided that
+              because the goal of my visualization was to show the general trend
+              of data breaches over time, the inclusion of grid lines and
+              markers would imply that each specific data point should be read,
+              and as such I removed them both.
+            </p>
+            <p>
+              In conclusion, in this blog post I looked at the reasons behind my
+              chosen data visualization type, and the considerations behind its
+              creation. Not only that, but I also highlighted the similarity in
+              thought process behind all my data visualizations thus far, with
+              both data visualizations adding to my website’s consistency
+              overall and minimalism.
+            </p>
+          </section>
+        </section>
+      </article>
+
+      <!-- References -->
+
+      <footer class="background-tone-two border-lock">
+        <section class="standard-page-footer">
+          <h2>References</h2>
+          <ol class="standard-page-references">
+            <li>
+              Knaflic, C.N. 2015.
+              <cite>
+                Storytelling with data: a data visualization guide for business
+                professionals.</cite
+              >
+              Hoboken, New Jersey: Wiley.
+            </li>
+            <li>
+              Li, Q. 2020. Overview of Data Visualization.
+              <cite>In Embodying Data.</cite> Singapore: Springer Singapore.
+              17–47. DOI: 10.1007/978-981-15-5069-0_2.
+            </li>
+          </ol>
+        </section>
+      </footer>
+    </main>
+
+    <section class="data-vis-nav-buttons"></section>
+
+    <a class="back-to-top" href="#top">&#9650;</a>
+
+    <!-- Footer -->
+    <footer class="main-footer h-card"></footer>
+  </body>
+</html>
