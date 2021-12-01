@@ -149,6 +149,143 @@ circle {
   font-weight: bold;
 }
 
+/* 1.5 Data Art */
+
+.timer1 {
+  display: inline-flex;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-size: 3rem;
+  padding: 0rem 0.5rem;
+
+  min-width: auto;
+}
+
+.data-art,
+.data-art-no-breach {
+  display: inline-flex;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 90%;
+  max-height: 18.75rem;
+
+  padding: 2rem 0rem;
+  padding-top: 3.8rem;
+  margin: 2rem 0rem;
+
+  border: 0.11rem solid rgb(87, 87, 87);
+  box-shadow: 0.01rem 0.01rem 1rem 0.01rem rgba(219, 219, 219, 0.582);
+
+  display: none;
+}
+
+.data-art-email {
+  display: inline-flex;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 90%;
+  max-height: 18.75rem;
+
+  padding: 2rem 0rem;
+  padding-top: 3.8rem;
+  margin: 2rem 0rem;
+
+  border: 0.11rem solid rgb(87, 87, 87);
+  box-shadow: 0.01rem 0.01rem 1rem 0.01rem rgba(219, 219, 219, 0.582);
+
+  /* display: none; */
+}
+
+input {
+  margin: 1rem;
+  border-radius: 0rem;
+  border: 0.11rem solid rgb(0, 0, 0);
+  width: 10rem;
+}
+
+.timer1 section {
+  padding: 0rem 1rem;
+}
+
+.timer1 {
+  margin-bottom: 3rem;
+}
+
+.time-days,
+.time-hours,
+.time-minutes,
+.time-seconds {
+  align-content: center;
+  padding: 0rem 1rem;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+
+  font-size: 4rem;
+
+  margin-top: 2.5rem;
+
+  color: #fd3826;
+}
+
+.data-art-no-breach h2 {
+  color: green;
+}
+
+.timer-sub {
+  padding: 0rem;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.data-art-title {
+  margin-top: auto;
+  bottom: 0;
+}
+
+.data-art-sub,
+.data-art-sub-no-breach {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+
+  font-size: 1.5rem;
+  font-weight: normal;
+
+  text-align: center;
+}
+
+.data-art h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+
+  margin-bottom: 0.2rem;
+
+  text-align: center;
+}
+
+.data-art-email h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+
+  margin-bottom: 0.2rem;
+
+  text-align: center;
+}
+
 /* ------------------------
     2. Responsive Design 
    ------------------------ */
@@ -207,5 +344,53 @@ circle {
   .tooltip {
     top: 0rem;
     left: 0rem;
+  }
+
+  .time-days,
+  .time-hours,
+  .time-minutes,
+  .time-seconds {
+    align-content: center;
+    padding: 0rem 0rem;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    padding-bottom: 0rem;
+    margin-bottom: 0rem;
+
+    font-size: 1.3rem;
+
+    margin-top: 2.5rem;
+  }
+
+  .timer1 {
+    display: inline-flex;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-size: 1rem;
+    padding: 0rem 0.5rem;
+
+    min-width: auto;
+  }
+
+  .timer1 section {
+    padding: 0rem 0rem;
+    font-size: 0.1rem;
+  }
+
+  .data-art h2,
+  .data-art-email h2 {
+    font-size: 1.3rem;
+    font-weight: normal;
+
+    margin-bottom: 0.2rem;
+
+    text-align: center;
+
+    padding-top: 0rem;
   }
 }

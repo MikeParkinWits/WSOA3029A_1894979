@@ -6,7 +6,20 @@ let topBreaches =[];
 
 let numBreachesPerYear = [{"Year": 2010, "DataLoss": 0}, {"Year": 2011, "DataLoss": 0},{"Year": 2012, "DataLoss": 0},{"Year": 2013, "DataLoss": 0},{"Year": 2014, "DataLoss": 0},{"Year": 2015, "DataLoss": 0},{"Year": 2016, "DataLoss": 0},{"Year": 2017, "DataLoss": 0},{"Year": 2018, "DataLoss": 0},{"Year": 2019, "DataLoss": 0}];
 
-let allBreachesInOrder =[];
+let allBreachesInOrder = [];
+
+let dataBreachesInOrder = [];
+let dataBreachesInOrderTimeDifferences = [];
+
+var xyz;
+
+var seconds;
+var minutes;
+var hours;
+var days;
+
+let audioObj = new Audio("../../Audio/156667__unfa__stereo-tick.flac");
+
 
 numBreachesPerYear.find(e => {
     if (e.Year === 2019){
@@ -15,7 +28,7 @@ numBreachesPerYear.find(e => {
 }
 });
 
-const url = "https://wits-1894979-proxy.herokuapp.com/https://haveibeenpwned.com/api/v3/breachedaccount/foo%40bar.com";
+
 // fetch(url, {
 //   method: "GET",
 //   headers: {
@@ -23,24 +36,6 @@ const url = "https://wits-1894979-proxy.herokuapp.com/https://haveibeenpwned.com
 //   }
 // })
 // .then(response => response.json());
-
-const getData = async () => {
-    const response = await fetch(url, {
-        method: "GET",
-        headers: {
-          "hibp-api-key": "f269230d7044457a910dc8d2d1205013"
-        }
-      });
-    const data = await response.json();
-
-    console.log(data);
-    
-}
-
-getData().catch(error =>{
-    console.error(error);
-});
-
 
 const getAllDataBreaches = async () => {
     const response = await fetch(dataBreachURL);
@@ -61,6 +56,10 @@ const getAllDataBreaches = async () => {
         orderData(data);
     
         LoadBubbleGraph(allBreachesInOrder);
+    }
+    else
+    {
+        checkDataArtInput(data);
     }
 
 
@@ -486,4 +485,313 @@ const label = gElement.append('text')
         }
               return (labelAvailableWidth / labelWidth) + 'em';
       }
+}
+
+const sortBreachesByDate = (entireDatabase, userDatabase) => {
+
+    /*
+    userDatabase.Name = "FirstPossible";
+    userDatabase.DateBreached = entireDatabase
+
+    */
+
+    dataBreachesInOrderTimeDifferences = [];
+   
+    userDatabase.forEach(element => {
+
+        entireDatabase.forEach(dateElement => {
+
+            if (element.Name === dateElement.Name){
+                element.DateBreached = dateElement.AddedDate;
+            }
+    
+            
+        })
+    })
+
+    userDatabase.sort((a,b) => new Date(a.DateBreached) - new Date(b.DateBreached)
+    )
+
+    //userDatabase.reverse();
+
+    console.log(userDatabase);
+
+    //console.log(new Date(userDatabase[1].DateBreached) - new Date(userDatabase[0].DateBreached))
+
+    for (let i = 0; i < userDatabase.length - 1; i++){
+        dataBreachesInOrderTimeDifferences[i] = new Date(userDatabase[i+1].DateBreached) - new Date(userDatabase[i].DateBreached);
+        
+        console.log(dataBreachesInOrderTimeDifferences[i]);
+    }
+
+    let averageDataBreachTime = null;
+
+    dataBreachesInOrderTimeDifferences.forEach(element => {
+        averageDataBreachTime += element;
+    })
+
+    averageDataBreachTime = averageDataBreachTime/dataBreachesInOrderTimeDifferences.length;
+
+    console.log(averageDataBreachTime);
+
+    var today = new Date();
+
+    var date = today.getFullYear()+'-'+('0' + (today.getMonth() + 1)).slice(-2)+'-'+('0' + today.getDate()).slice(-2);
+
+var time = today.getHours() + ":" + today.getMinutes() + "Z";
+
+var dateTime = date+'T'+time;
+
+console.log(dateTime);
+
+console.log(new Date((new Date(userDatabase[userDatabase.length-1].DateBreached).getTime()+ averageDataBreachTime)));
+
+let then = (new Date(userDatabase[userDatabase.length-1].DateBreached).getTime()+ averageDataBreachTime);
+
+loadDataArt(then, dateTime);
+
+    // data.forEach(barChartElement => {
+    //     if (barChartElement.IsVerified
+    //                 && barChartElement.Domain != ""){
+
+    //                     //Bar Graph
+    //                     if (count < 10){
+    //                         count++;
+    //                         topBreaches.push({"Name": barChartElement.Name, "PwnCount": barChartElement.PwnCount});
+    //                     }
+
+    //                     //Line Graph
+    //                     let date = parseInt(barChartElement.BreachDate.substring(0,4));
+                            
+    //                     numBreachesPerYear.find(e => {
+    //                         if (e.Year === date){
+    //                             e.DataLoss += barChartElement.PwnCount;
+    //                     }
+    //                     });
+    //     }
+    // });
+
+    //console.log(numBreachesPerYear);
+}
+
+const loadDataArt = (then, dateTime) => {
+
+    let then1 = null;
+
+    then1 = then;
+
+    const dataArtArea = document.querySelector(".data-art");
+
+    const dataArtTitle = document.querySelector(".data-art-title");
+
+    const dataArtSub = document.querySelector(".data-art-sub");
+
+    const dataArtDays = document.querySelector(".time-days");
+    
+
+    const dataArtHours = document.querySelector(".time-hours");
+
+    const dataArtMinutes = document.querySelector(".time-minutes");
+
+    const dataArtSeconds = document.querySelector(".time-seconds");
+
+    console.log(then);
+
+    let dateNowDiff = null;
+
+    if (then1 < new Date(dateTime)){
+        dataArtTitle.innerText = "Watch out! You are overdue for a data breach by ";
+        dataArtSub.innerText = "So it could happen any second now...";
+    }
+    else
+    {
+        dataArtTitle.innerText = "Your next data breach will happen in";
+        dataArtSub.innerText = "But it could also happen at any second now...";
+    }
+
+    clearInterval(xyz);
+    seconds=0;
+    minutes=0;
+    hours=0;
+    days=0;
+
+    dataArtDays.innerText = ('0' + days).slice(-2);
+    dataArtHours.innerText = ('0' + hours).slice(-2);
+    dataArtMinutes.innerText = ('0' + minutes).slice(-2);
+    dataArtSeconds.innerText = ('0' + seconds).slice(-2);
+
+    audioObj.volume = 0;
+
+ xyz = setInterval(function() {
+
+        if (then1 < new Date(dateTime)){
+            dateNowDiff = new Date(Date.now() - then1);
+        }
+        else
+        {
+            dateNowDiff = new Date(then1 - Date.now());
+        }
+    
+        console.log(new Date(Date.now()));
+    
+    
+        seconds = Math.floor((dateNowDiff)/1000);
+        minutes = Math.floor(seconds/60);
+        hours = Math.floor(minutes/60);
+        days = Math.floor(hours/24);
+    
+        hours = hours-(days*24);
+        minutes = minutes-(days*24*60)-(hours*60);
+        seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
+    
+        // console.log("Days: " + days);
+
+        dataArtDays.innerText = days;
+    
+        // console.log("Hours: " + hours);
+
+        dataArtHours.innerText = ('0' + hours).slice(-2);
+    
+        // console.log("Minutes: " + minutes);
+
+        dataArtMinutes.innerText = ('0' + minutes).slice(-2);
+    
+        // console.log("Seconds: " + seconds);
+
+        dataArtSeconds.innerText = ('0' + seconds).slice(-2);
+
+        audioObj.play();
+
+        console.log(audioObj.volume);
+
+        if (audioObj.volume < 0.9){
+            audioObj.volume += 0.05;
+        }
+    
+    }, 1000)
+
+
+}
+
+const checkDataArtInput = (data) =>{
+    var ad;
+
+
+var nam = document.getElementById('inputSave');
+
+nam.addEventListener('click', function() {
+    console.log(nam);
+
+    dataBreachesInOrder = null;
+
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById('input').value))
+    {
+        ad = encodeURIComponent(document.getElementById('input').value);
+
+        console.log(event.target.Name);
+        console.log(ad);
+    
+        var x = document.querySelector('.data-art');
+        var xEmail = document.querySelector('.data-art-email');
+        var xNoBreach = document.querySelector('.data-art-no-breach');
+
+
+        clearInterval(xyz);
+
+        audioObj.pause();
+
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+        days = 0;
+
+        const url = "https://wits-1894979-proxy.herokuapp.com/https://haveibeenpwned.com/api/v3/breachedaccount/" + ad;
+
+        const getData = async () => {
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                  "hibp-api-key": "f269230d7044457a910dc8d2d1205013"
+                }
+              });
+
+              if (response.ok)
+              {
+                dataBreachesInOrder = await response.json();
+        
+                console.log(dataBreachesInOrder);
+            
+            
+                    sortBreachesByDate(data, dataBreachesInOrder);
+    
+                    xEmail.style.display = "none";
+                    x.style.display = "inline-flex";
+              }
+              else
+              {
+                xEmail.style.display = "none";
+                xNoBreach.style.display = "inline-flex";
+
+
+              }
+            
+            
+        }
+        
+        getData().catch(error =>{
+            console.error(error);
+            getData();
+        });
+    }
+    else
+    {
+      alert("Please Enter a Valid Email Address")
+
+
+
+      return (false)
+    }
+});
+
+var resetInput = document.getElementById('resetInput');
+
+resetInput.addEventListener('click', function() {
+    console.log(resetInput);
+        var x = document.querySelector('.data-art');
+        var xEmail = document.querySelector('.data-art-email');
+        var xNoBreach = document.querySelector('.data-art-no-breach');
+    
+        x.style.display = "none";
+        xEmail.style.display = "inline-flex";
+        xNoBreach.style.display = "none";
+        document.getElementById('input').value = null;
+        ad = document.getElementById('input').value = null;
+
+        audioObj.pause();
+
+        clearInterval(xyz);
+
+
+});
+
+var resetInputNew = document.getElementById('resetInputNew');
+
+
+resetInputNew.addEventListener('click', function() {
+    console.log(resetInput);
+        var x = document.querySelector('.data-art');
+        var xEmail = document.querySelector('.data-art-email');
+        var xNoBreach = document.querySelector('.data-art-no-breach');
+    
+        x.style.display = "none";
+        xEmail.style.display = "inline-flex";
+        xNoBreach.style.display = "none";
+
+        document.getElementById('input').value = null;
+        ad = document.getElementById('input').value = null;
+
+        clearInterval(xyz);
+
+
+});
 }
