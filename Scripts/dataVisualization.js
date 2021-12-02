@@ -1,3 +1,4 @@
+//Breach URL
 const dataBreachURL = "https://haveibeenpwned.com/api/v3/breaches"
 
 let count = 0;
@@ -8,17 +9,20 @@ let numBreachesPerYear = [{"Year": 2010, "DataLoss": 0}, {"Year": 2011, "DataLos
 
 let allBreachesInOrder = [];
 
+//Data Art Variable
 let dataBreachesInOrder = [];
 let dataBreachesInOrderTimeDifferences = [];
 
-var xyz;
+let intervalTimer;
 
-var seconds;
-var minutes;
-var hours;
-var days;
+let timerSeconds; 
+let timerMinutes;
+let timerHours;
+let timerDays;
 
 let audioObj = new Audio("../../Audio/156667__unfa__stereo-tick.flac");
+
+let dataArtArea;
 
 
 numBreachesPerYear.find(e => {
@@ -27,15 +31,6 @@ numBreachesPerYear.find(e => {
 
 }
 });
-
-
-// fetch(url, {
-//   method: "GET",
-//   headers: {
-//     "hibp-api-key": "f269230d7044457a910dc8d2d1205013"
-//   }
-// })
-// .then(response => response.json());
 
 const getAllDataBreaches = async () => {
     const response = await fetch(dataBreachURL);
@@ -87,7 +82,7 @@ const sortDataOrder = (data) => {
                         //Bar Graph
                         if (count < 10){
                             count++;
-                            topBreaches.push({"Name": barChartElement.Name, "PwnCount": barChartElement.PwnCount});
+                            topBreaches.push({"emailSubmitButtone": barChartElement.Name, "PwnCount": barChartElement.PwnCount});
                         }
 
                         //Line Graph
@@ -117,7 +112,7 @@ const loadBarGraph = (data) => {
     const yScale = d3.scaleBand()
     .domain(data.map(d => d.Name))
     .range([0, height])
-    .padding(0.1);
+    .pemailValueding(0.1);
 
     const xScale = d3.scaleLinear()
         .domain([0, d3.max(data, dataInput => dataInput.PwnCount)])
@@ -487,13 +482,100 @@ const label = gElement.append('text')
       }
 }
 
+const checkDataArtInput = (data) =>{
+    let emailValue;
+    const xEmail = document.querySelector('.data-art-email');
+    const xNoBreach = document.querySelector('.data-art-no-breach');
+    dataArtArea = document.querySelector('.data-art');
+
+    let emailSubmitButton = document.getElementById('inputSave');
+
+    emailSubmitButton.addEventListener('click', function() {
+        //console.log(emailSubmitButton);
+
+        dataBreachesInOrder = null;
+
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById('input').value))
+        {
+            emailValue = encodeURIComponent(document.getElementById('input').value);
+
+            //console.log(emailValue);
+        
+
+            clearInterval(intervalTimer);
+
+            audioObj.pause();
+
+            timerSeconds = 0;
+            timerMinutes = 0;
+            timerHours = 0;
+            timerDays = 0;
+
+            const url = "https://wits-1894979-proxy.herokuapp.com/https://haveibeenpwned.com/api/v3/breachedaccount/" + emailValue;
+
+            const getData = async () => {
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                    "hibp-api-key": "f269230d7044457a910dc8d2d1205013"
+                    }
+                });
+
+                if (response.ok)
+                {
+                    dataBreachesInOrder = await response.json();            
+                    sortBreachesByDate(data, dataBreachesInOrder);
+        
+                    xEmail.style.display = "none";
+                    dataArtArea.style.display = "inline-flex";
+                }
+                else
+                {
+                    xEmail.style.display = "none";
+                    xNoBreach.style.display = "inline-flex";
+                }
+            }
+            
+            getData().catch(error =>{
+                console.error(error);
+                getData();
+            });
+        }
+        else
+        {
+        alert("Please Enter a Valid Email Address")
+        }
+    });
+
+    const resetInput = document.getElementById('resetInput');
+
+    resetInput.addEventListener('click', function() {    
+            dataArtArea.style.display = "none";
+            xEmail.style.display = "inline-flex";
+            xNoBreach.style.display = "none";
+            document.getElementById('input').value = null;
+            emailValue = document.getElementById('input').value = null;
+
+            audioObj.pause();
+
+            clearInterval(intervalTimer);
+    });
+
+    const resetInputNew = document.getElementById('resetInputNew');
+
+    resetInputNew.addEventListener('click', function() {    
+            dataArtArea.style.display = "none";
+            xEmail.style.display = "inline-flex";
+            xNoBreach.style.display = "none";
+
+            document.getElementById('input').value = null;
+            emailValue = document.getElementById('input').value = null;
+
+            clearInterval(intervalTimer);
+    });
+}
+
 const sortBreachesByDate = (entireDatabase, userDatabase) => {
-
-    /*
-    userDatabase.Name = "FirstPossible";
-    userDatabase.DateBreached = entireDatabase
-
-    */
 
     dataBreachesInOrderTimeDifferences = [];
    
@@ -503,25 +585,18 @@ const sortBreachesByDate = (entireDatabase, userDatabase) => {
 
             if (element.Name === dateElement.Name){
                 element.DateBreached = dateElement.AddedDate;
-            }
-    
-            
+            }            
         })
     })
 
     userDatabase.sort((a,b) => new Date(a.DateBreached) - new Date(b.DateBreached)
     )
 
-    //userDatabase.reverse();
-
     console.log(userDatabase);
-
-    //console.log(new Date(userDatabase[1].DateBreached) - new Date(userDatabase[0].DateBreached))
 
     for (let i = 0; i < userDatabase.length - 1; i++){
         dataBreachesInOrderTimeDifferences[i] = new Date(userDatabase[i+1].DateBreached) - new Date(userDatabase[i].DateBreached);
-        
-        console.log(dataBreachesInOrderTimeDifferences[i]);
+        //console.log(dataBreachesInOrderTimeDifferences[i]);
     }
 
     let averageDataBreachTime = null;
@@ -532,74 +607,43 @@ const sortBreachesByDate = (entireDatabase, userDatabase) => {
 
     averageDataBreachTime = averageDataBreachTime/dataBreachesInOrderTimeDifferences.length;
 
-    console.log(averageDataBreachTime);
+    //console.log(averageDataBreachTime);
 
-    var today = new Date();
+    let today = new Date();
 
-    var date = today.getFullYear()+'-'+('0' + (today.getMonth() + 1)).slice(-2)+'-'+('0' + today.getDate()).slice(-2);
+    let date = today.getFullYear()+'-'+('0' + (today.getMonth() + 1)).slice(-2)+'-'+('0' + today.getDate()).slice(-2);
 
-var time = today.getHours() + ":" + today.getMinutes() + "Z";
+    let time = today.getHours() + ":" + today.getMinutes() + "Z";
 
-var dateTime = date+'T'+time;
+    let dateTime = date+'T'+time;
 
-console.log(dateTime);
+    //console.log(dateTime);
 
-console.log(new Date((new Date(userDatabase[userDatabase.length-1].DateBreached).getTime()+ averageDataBreachTime)));
+    //console.log(new Date((new Date(userDatabase[userDatabase.length-1].DateBreached).getTime()+ averageDataBreachTime)));
 
-let then = (new Date(userDatabase[userDatabase.length-1].DateBreached).getTime()+ averageDataBreachTime);
+    let timeDifference = (new Date(userDatabase[userDatabase.length-1].DateBreached).getTime()+ averageDataBreachTime);
 
-loadDataArt(then, dateTime);
-
-    // data.forEach(barChartElement => {
-    //     if (barChartElement.IsVerified
-    //                 && barChartElement.Domain != ""){
-
-    //                     //Bar Graph
-    //                     if (count < 10){
-    //                         count++;
-    //                         topBreaches.push({"Name": barChartElement.Name, "PwnCount": barChartElement.PwnCount});
-    //                     }
-
-    //                     //Line Graph
-    //                     let date = parseInt(barChartElement.BreachDate.substring(0,4));
-                            
-    //                     numBreachesPerYear.find(e => {
-    //                         if (e.Year === date){
-    //                             e.DataLoss += barChartElement.PwnCount;
-    //                     }
-    //                     });
-    //     }
-    // });
-
-    //console.log(numBreachesPerYear);
+    loadDataArt(timeDifference, dateTime);
 }
 
-const loadDataArt = (then, dateTime) => {
+const loadDataArt = (timeDifference, dateTime) => {
 
-    let then1 = null;
+    let timeDifference1 = null;
 
-    then1 = then;
-
-    const dataArtArea = document.querySelector(".data-art");
+    timeDifference1 = timeDifference;
 
     const dataArtTitle = document.querySelector(".data-art-title");
-
     const dataArtSub = document.querySelector(".data-art-sub");
-
     const dataArtDays = document.querySelector(".time-days");
-    
-
     const dataArtHours = document.querySelector(".time-hours");
-
     const dataArtMinutes = document.querySelector(".time-minutes");
-
     const dataArtSeconds = document.querySelector(".time-seconds");
 
-    console.log(then);
+    //console.log(timeDifference);
 
     let dateNowDiff = null;
 
-    if (then1 < new Date(dateTime)){
+    if (timeDifference1 < new Date(dateTime)){
         dataArtTitle.innerText = "Watch out! You are overdue for a data breach by ";
         dataArtSub.innerText = "So it could happen any second now...";
     }
@@ -609,189 +653,54 @@ const loadDataArt = (then, dateTime) => {
         dataArtSub.innerText = "But it could also happen at any second now...";
     }
 
-    clearInterval(xyz);
-    seconds=0;
-    minutes=0;
-    hours=0;
-    days=0;
+    clearInterval(intervalTimer);
+    timerSeconds=0;
+    timerMinutes=0;
+    timerHours=0;
+    timerDays=0;
 
-    dataArtDays.innerText = ('0' + days).slice(-2);
-    dataArtHours.innerText = ('0' + hours).slice(-2);
-    dataArtMinutes.innerText = ('0' + minutes).slice(-2);
-    dataArtSeconds.innerText = ('0' + seconds).slice(-2);
+    dataArtDays.innerText = ('0' + timerDays).slice(-2);
+    dataArtHours.innerText = ('0' + timerHours).slice(-2);
+    dataArtMinutes.innerText = ('0' + timerMinutes).slice(-2);
+    dataArtSeconds.innerText = ('0' + timerSeconds).slice(-2);
 
     audioObj.volume = 0;
 
- xyz = setInterval(function() {
+    intervalTimer = setInterval(function() {
 
-        if (then1 < new Date(dateTime)){
-            dateNowDiff = new Date(Date.now() - then1);
-        }
-        else
-        {
-            dateNowDiff = new Date(then1 - Date.now());
-        }
-    
-        console.log(new Date(Date.now()));
-    
-    
-        seconds = Math.floor((dateNowDiff)/1000);
-        minutes = Math.floor(seconds/60);
-        hours = Math.floor(minutes/60);
-        days = Math.floor(hours/24);
-    
-        hours = hours-(days*24);
-        minutes = minutes-(days*24*60)-(hours*60);
-        seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
-    
-        // console.log("Days: " + days);
-
-        dataArtDays.innerText = days;
-    
-        // console.log("Hours: " + hours);
-
-        dataArtHours.innerText = ('0' + hours).slice(-2);
-    
-        // console.log("Minutes: " + minutes);
-
-        dataArtMinutes.innerText = ('0' + minutes).slice(-2);
-    
-        // console.log("Seconds: " + seconds);
-
-        dataArtSeconds.innerText = ('0' + seconds).slice(-2);
-
-        audioObj.play();
-
-        console.log(audioObj.volume);
-
-        if (audioObj.volume < 0.9){
-            audioObj.volume += 0.05;
-        }
-    
-    }, 1000)
-
-
-}
-
-const checkDataArtInput = (data) =>{
-    var ad;
-
-
-var nam = document.getElementById('inputSave');
-
-nam.addEventListener('click', function() {
-    console.log(nam);
-
-    dataBreachesInOrder = null;
-
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById('input').value))
-    {
-        ad = encodeURIComponent(document.getElementById('input').value);
-
-        console.log(event.target.Name);
-        console.log(ad);
-    
-        var x = document.querySelector('.data-art');
-        var xEmail = document.querySelector('.data-art-email');
-        var xNoBreach = document.querySelector('.data-art-no-breach');
-
-
-        clearInterval(xyz);
-
-        audioObj.pause();
-
-        seconds = 0;
-        minutes = 0;
-        hours = 0;
-        days = 0;
-
-        const url = "https://wits-1894979-proxy.herokuapp.com/https://haveibeenpwned.com/api/v3/breachedaccount/" + ad;
-
-        const getData = async () => {
-            const response = await fetch(url, {
-                method: "GET",
-                headers: {
-                  "hibp-api-key": "f269230d7044457a910dc8d2d1205013"
-                }
-              });
-
-              if (response.ok)
-              {
-                dataBreachesInOrder = await response.json();
+            if (timeDifference1 < new Date(dateTime)){
+                dateNowDiff = new Date(Date.now() - timeDifference1);
+            }
+            else
+            {
+                dateNowDiff = new Date(timeDifference1 - Date.now());
+            }
         
-                console.log(dataBreachesInOrder);
-            
-            
-                    sortBreachesByDate(data, dataBreachesInOrder);
-    
-                    xEmail.style.display = "none";
-                    x.style.display = "inline-flex";
-              }
-              else
-              {
-                xEmail.style.display = "none";
-                xNoBreach.style.display = "inline-flex";
+            //console.log(new Date(Date.now()));
 
-
-              }
-            
-            
-        }
+            timerSeconds = Math.floor((dateNowDiff)/1000);
+            timerMinutes = Math.floor(timerSeconds/60);
+            timerHours = Math.floor(timerMinutes/60);
+            timerDays = Math.floor(timerHours/24);
         
-        getData().catch(error =>{
-            console.error(error);
-            getData();
-        });
-    }
-    else
-    {
-      alert("Please Enter a Valid Email Address")
+            timerHours = timerHours-(timerDays*24);
+            timerMinutes = timerMinutes-(timerDays*24*60)-(timerHours*60);
+            timerSeconds = timerSeconds-(timerDays*24*60*60)-(timerHours*60*60)-(timerMinutes*60);
+        
+            dataArtDays.innerText = timerDays;
+            dataArtHours.innerText = ('0' + timerHours).slice(-2);
+            dataArtMinutes.innerText = ('0' + timerMinutes).slice(-2);
+            dataArtSeconds.innerText = ('0' + timerSeconds).slice(-2);
+
+            audioObj.play();
+
+            //console.log(audioObj.volume);
+
+            if (audioObj.volume < 0.9){
+                audioObj.volume += 0.05;
+            }
+        
+        }, 1000)
 
 
-
-      return (false)
-    }
-});
-
-var resetInput = document.getElementById('resetInput');
-
-resetInput.addEventListener('click', function() {
-    console.log(resetInput);
-        var x = document.querySelector('.data-art');
-        var xEmail = document.querySelector('.data-art-email');
-        var xNoBreach = document.querySelector('.data-art-no-breach');
-    
-        x.style.display = "none";
-        xEmail.style.display = "inline-flex";
-        xNoBreach.style.display = "none";
-        document.getElementById('input').value = null;
-        ad = document.getElementById('input').value = null;
-
-        audioObj.pause();
-
-        clearInterval(xyz);
-
-
-});
-
-var resetInputNew = document.getElementById('resetInputNew');
-
-
-resetInputNew.addEventListener('click', function() {
-    console.log(resetInput);
-        var x = document.querySelector('.data-art');
-        var xEmail = document.querySelector('.data-art-email');
-        var xNoBreach = document.querySelector('.data-art-no-breach');
-    
-        x.style.display = "none";
-        xEmail.style.display = "inline-flex";
-        xNoBreach.style.display = "none";
-
-        document.getElementById('input').value = null;
-        ad = document.getElementById('input').value = null;
-
-        clearInterval(xyz);
-
-
-});
 }
