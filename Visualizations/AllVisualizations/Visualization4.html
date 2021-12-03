@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Increased Size of Data Breaches in Recent Years</title>
+    <title>When Will My Data Be Lost Next?</title>
 
     <link
       rel="shortcut icon"
@@ -17,23 +17,20 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "name": "The Increased Size of Data Breaches in Recent Years",
+        "name": "When Will My Data Be Lost Next?",
         "author": {
           "@type": "Person",
           "name": "Michael Parkin"
         },
-        "headline": "The Increased Size of Data Breaches in Recent Years",
+        "headline": "When Will My Data Be Lost Next?",
         "image": [
-          "https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization3.jpg"
+          "https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization4.jpg"
         ],
-        "datePublished": "2021-11-12"
+        "datePublished": "2021-12-01"
       }
     </script>
 
-    <meta
-      property="og:title"
-      content="The Increased Size of Data Breaches in Recent Years"
-    />
+    <meta property="og:title" content="When Will My Data Be Lost Next?" />
     <meta property="og:type" content="article" />
     <meta name="author" property="article:publisher" content="Michael Parkin" />
     <meta property="article:section" content="Data Visualization" />
@@ -41,20 +38,20 @@
     <meta property="og:site_name" content="Lost Data" />
     <meta
       property="og:url"
-      content="https://mikeparkinwits.github.io/WSOA3029A_1894979/AllVisualizations/Visualization3.html"
+      content="https://mikeparkinwits.github.io/WSOA3029A_1894979/AllVisualizations/Visualization4.html"
     />
     <meta
       property="og:image"
-      content="https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization3.jpg"
+      content="https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization4.jpg"
     />
     <meta
       property="og:image:alt"
-      content="A bubble chart showing the different sizesdata breaches over the years"
+      content="A countdown clock/timer that shows the time till your next data breach"
     />
     <meta
       name="description"
       property="og:description"
-      content="An interactive data visualization showing the change in data breach sizes before and after 2015"
+      content="An interactive data visualization where you can see the time till your next data breach"
     />
 
     <meta
@@ -64,8 +61,6 @@
 
     <script type="module" src="../../Scripts/persistentElements.js"></script>
     <script type="module" src="../../Scripts/dataVisualization.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/timezz/dist/timezz.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../../Style Sheet/main.css" />
     <link
@@ -86,7 +81,7 @@
       <article class="background-tone-one h-entry border-lock">
         <header class="page-header">
           <h1 class="standard-page-title p-name">
-            The Increased Size of Data Breaches in Recent Years
+            When Will My Data Be Lost Next?
           </h1>
 
           <!-- <section class="data-art">
@@ -135,7 +130,7 @@
         <article class="data-art-no-breach">
           <h2 class="data-art-title">You've had no breaches yet!</h2>
           <p class="data-art-sub-no-breach">
-            But they could happen at any second...
+            But that could change at any second...
           </p>
 
           <a class="button" id="resetInputNew">Search New Email</a>
@@ -147,85 +142,90 @@
           <header class="page-header">
             <h2>Reflection</h2>
             <p class="standard-page-date">
-              <time class="dt-published" datetime="2021-11-12"
-                >12 November 2021</time
+              <time class="dt-published" datetime="2021-12-01"
+                >01 December 2021</time
               >
-              | Words: 543 | Data Visualization
+              | Words: 610 | Data Visualization
             </p>
           </header>
 
           <section class="e-content standard-page-content">
             <p>
-              While not every data visualization needs to incorporate
-              interactivity to meaningfully portray their message, when utilized
-              correctly it can greatly enhance the overall narrative of the
-              visualization. As such, in this blog post I aim to critically
-              reflect on my third data visualization – exploring my
-              implementation of interactivity within it. To do this, I start by
-              explaining both the narrative I am trying to portray, and the
-              visualization type chosen. Thereafter, I explore how I chose to
-              incorporate interactivity into my visualization, evaluating its
-              success in relation to the seven components of interactivity for
-              visualization that Evanthia Dimara and Charles Perin highlight in
-              their 2020 text
-              <cite>What is Interaction for Data Visualization?</cite>
-              (Dimara and Perin, 2020).
+              While data visualizations have traditionally been known as an
+              unbiased and objective way of portraying information; the
+              introduction of data-driven artworks has marked a shift towards a
+              more subjective and artistic data visualization. However, just
+              because data-driven artworks are not governed by the same rules
+              that data visualizations are does not mean they have no governing
+              principles whatsoever. As such, in this blog post I aim to
+              critically reflect on the interactive data-driven artwork that I
+              created, using Fernanda Viegas and Martin Wattenberg’s 2007 text
+              <cite>Artistic Data Visualization: Beyond Visual Analytics</cite>
+              (2007) as a benchmark to do so.
             </p>
 
             <p>
-              However, before we can look at how I incorporated interactivity
-              into my data visualization, we must understand the visualization
-              itself – beginning with the narrative that I was trying to
-              portray. While the data visualizations I have created thus far
-              have been fairly simple, allowing me to grow my skillset, for my
-              third data visualization I wanted to challenge myself. As such, I
-              landed on the idea of recreating one of my previous data
-              visualizations in a new, and interesting, way. From this, I then
-              deciding to rethink my first data visualization, concluding that a
-              bubble graph would allow me to explore not only the biggest data
-              breaches of all time, but also the size of all data breaches in
-              relation to one another. Although, I soon realized that this idea
-              would not make full use of the bubble graph, as I only planned on
-              comparing the size of bubbles and had no intention of utilizing
-              different colours. As such, I decided that by combining my
-              previous two narratives, I would then be able to create an even
-              more interesting narrative – the increasing size of data breaches
-              in recent years, where different coloured bubbles represent data
-              breaches before and after 2015 (the median date for my data).
-            </p>
-            <p>
-              While I believe that this alone does sufficiently communicate my
-              narrative, I knew that the inclusion of interactivity could
-              greatly enhance it – if incorporated well. As such, to better
-              understand how to meaningfully incorporate interactivity, I looked
-              to Dimara and Perin, who define interaction for visualization as
+              a full understanding of what a data-driven artwork is and how it
+              differs from a traditional data visualization. As noted in the
+              introduction, unlike their counterpart, data-driven artworks
+              encourage the perspective of the creator to be at the forefront of
+              the visualization. To achieve this, Viégas and Wattenberg note
+              that artists frequently subvert predefined constructs of
+              traditional data visualizations – as they have traditionally been
+              used to minimize perspective. Although, while data-driven art
+              includes a forceful point of view, Viégas and Wattenberg also
+              point out that they are still
               <q
-                >“interaction for visualization is the
-                <strong>interplay</strong> between a <strong>person</strong> and
-                a <strong>data interface</strong> involving a
-                <strong>data-related intent</strong>, at least one
-                <strong>action</strong> from the person and an interface
-                <strong>reaction</strong> that is
-                <strong>perceived as such</strong>”</q
+                >“visualizations of <strong>data</strong> done by artists with
+                the <strong>intent</strong> of making art”</q
               >
-              (Dimara and Perin, 2020: 8; emphasis added). Using this, I then
-              concluded that to create meaningful interactions, interactivity
-              must meet the end-user’s intent in a timely, and accurate, manner.
-              As such, I determined that the most likely intent for the user was
-              learning more about each data breach. This then resulted in the
-              idea of utilizing the action of hovering over a bubble to provide
-              the end-user with more information about each data breach.
+              (Viégas and Wattenberg, 2007: 2; emphasis added). Thus, it is
+              crucial that data-driven artworks forgo artistic beauty as their
+              motive, and instead use an actual dataset to emphasize the
+              creator’s artistic intent.
             </p>
             <p>
-              In brief, I then believe that, although not necessary, the
-              inclusion of interactivity helped to greatly enhance the message
-              for this data visualization – ultimately allowing the end-user to
-              explore additional information that was previously inaccessible.
-              Not only that, but by consulting Dimara and Perin’s definition for
-              interaction in visualizations, before incorporating interaction, I
-              believe that my inclusion of interactivity was as successful as
-              possible – allowing the user to quickly, and easily, meet their
-              data-related intent when requested.
+              With that, we can then start looking at the data-driven artwork I
+              created in relation to Viégas and Wattenberg’s definition. While I
+              considered various ideas for the artwork, such as creating glitch
+              art of different company logos that represents the amount of data
+              they have ‘lost’, I felt this did not challenge the meaning of
+              data visualizations enough. As such, I decided to challenge myself
+              further, landing on the idea of creating an interactive countdown
+              clock/timer to indicate when the user is most likely to have their
+              data breached next – using my API to find the average time between
+              data breaches linked to the user’s account. This was done with the
+              intent of making the information more personal and relatable to
+              the user, making them more aware of the impact and importance of
+              this topic.
+            </p>
+            <p>
+              However, some might argue that this cannot be considered a
+              data-driven artwork, as it only makes use of text – but I would
+              disagree, as this was deliberate. Whilst most traditional data
+              visualizations prioritize the use of visual, over text-based,
+              representation; I purposefully subverted this expectation to aid
+              my artworks point-of-view. By using a timer as the center point of
+              the visualization, it is clear what information must be focused
+              on; and with the countdown clock/timer always ticking forward
+              (with audio clock ticks), users are also made aware of how much of
+              their personal data is being shared on the internet unwillingly.
+            </p>
+            <p>
+              In conclusion, we can then see that although my data-driven
+              artwork may seem simple, every choice was deliberate. By
+              reflecting on the artwork, we can see that it clearly meets Viégas
+              and Wattenberg’s definition of a data-driven artwork – as it uses
+              my data with the intent of making threat of data breaches more
+              personal. Not only that, but it commits various sins of
+              traditional scientific data visualizations to create a forceful
+              point-of-view. Although, it is important to note that some users
+              will have passed the predicted date for a their next breach, or
+              have none at all, and as such I have also accounted for these
+              factors – which can be tested with the following emails:
+              foo@bar.com (predicted date yet to arrive),
+              multiple-breaches@hibp-integration-tests.com (predicted date
+              passed), opt-out-breach@hibp-integration-tests.com (no breaches).
             </p>
           </section>
         </section>
@@ -238,10 +238,14 @@
           <h2>References</h2>
           <ol class="standard-page-references">
             <li>
-              Dimara, E., Perin, C., 2020.
-              <cite>What is Interaction for Data Visualization? </cite>
-              IEEE Trans. Vis. Comput. Graph. 26, 119–129. https://doi.org
-              /10.1109/TVCG. 2019.2934283
+              Viégas, F.B., Wattenberg, M., 2007.
+              <cite
+                >Artistic Data Visualization: Beyond Visual Analytics, in:
+                Schuler, D. (Ed.), Online Communities and Social Computing,
+                Lecture Notes in Computer Science.</cite
+              >
+              Springer Berlin Heidelberg, Berlin, Heidelberg, pp. 182–191.
+              https://doi.org/ 10.1007/978-3-540-73257-0_21
             </li>
           </ol>
         </section>

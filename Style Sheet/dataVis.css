@@ -166,46 +166,27 @@ circle {
 }
 
 .data-art,
-.data-art-no-breach {
-  display: inline-flex;
-  justify-content: center;
-  align-self: center;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  width: 90%;
-  max-height: 18.75rem;
-
-  padding: 2rem 0rem;
-  padding-top: 3.8rem;
-  margin: 2rem 0rem;
-
-  border: 0.11rem solid rgb(87, 87, 87);
-  box-shadow: 0.01rem 0.01rem 1rem 0.01rem rgba(219, 219, 219, 0.582);
-
-  display: none;
-}
-
+.data-art-no-breach,
 .data-art-email {
   display: inline-flex;
   justify-content: center;
-  align-self: center;
-  align-content: center;
   align-items: center;
+  align-self: center;
   flex-direction: column;
 
   width: 90%;
   max-height: 18.75rem;
 
-  padding: 2rem 0rem;
-  padding-top: 3.8rem;
+  padding: 3.8rem 0rem 2rem 0rem;
   margin: 2rem 0rem;
 
   border: 0.11rem solid rgb(87, 87, 87);
   box-shadow: 0.01rem 0.01rem 1rem 0.01rem rgba(219, 219, 219, 0.582);
+}
 
-  /* display: none; */
+.data-art,
+.data-art-no-breach {
+  display: none;
 }
 
 input {
@@ -227,16 +208,9 @@ input {
 .time-hours,
 .time-minutes,
 .time-seconds {
-  align-content: center;
   padding: 0rem 1rem;
-  justify-content: center;
-  align-self: center;
-  text-align: center;
-  padding-bottom: 0rem;
   margin-bottom: 0rem;
-
   font-size: 4rem;
-
   margin-top: 2.5rem;
 
   color: #fd3826;
@@ -259,24 +233,15 @@ input {
 
 .data-art-sub,
 .data-art-sub-no-breach {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
+  margin: 0rem;
 
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: normal;
 
   text-align: center;
 }
 
-.data-art h2 {
-  font-size: 1.5rem;
-  font-weight: normal;
-
-  margin-bottom: 0.2rem;
-
-  text-align: center;
-}
-
+.data-art h2,
 .data-art-email h2 {
   font-size: 1.5rem;
   font-weight: normal;
@@ -350,11 +315,7 @@ input {
   .time-hours,
   .time-minutes,
   .time-seconds {
-    align-content: center;
     padding: 0rem 0rem;
-    justify-content: center;
-    align-self: center;
-    text-align: center;
     padding-bottom: 0rem;
     margin-bottom: 0rem;
 
@@ -364,13 +325,6 @@ input {
   }
 
   .timer1 {
-    display: inline-flex;
-    justify-content: center;
-    align-self: center;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-
     font-size: 1rem;
     padding: 0rem 0.5rem;
 
@@ -385,12 +339,14 @@ input {
   .data-art h2,
   .data-art-email h2 {
     font-size: 1.3rem;
-    font-weight: normal;
-
-    margin-bottom: 0.2rem;
-
-    text-align: center;
 
     padding-top: 0rem;
+  }
+
+  .data-art-sub,
+  .data-art-sub-no-breach {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

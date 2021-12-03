@@ -1,4 +1,14 @@
-[{"title": "The Increased Size of Data Breaches in Recent Years", "location": "Visualizations/AllVisualizations/Visualization3",
+[
+    {"title": "When Will My Data Be Lost Next?", "location": "Visualizations/AllVisualizations/Visualization4",
+        "imagePreview": {
+            "src":"Images/VisualizationPreviewImages/Visualization4.jpg",
+            "alt": "A countdown clock/timer that shows the time till your next data breach",
+            "imageTitle": "A countdown clock/timer that shows the time till your next data breach"},
+        "type": "Data Visualization",
+        "description": "An interactive data visualization where you can see the time till your next data breach",
+        "publishDate": "01 December 2021"
+        },
+            {"title": "The Increased Size of Data Breaches in Recent Years", "location": "Visualizations/AllVisualizations/Visualization3",
     "imagePreview": {
         "src":"Images/VisualizationPreviewImages/Visualization3.jpg",
         "alt": "A bubble chart showing the different sizesdata breaches over the years",

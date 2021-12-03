@@ -82,7 +82,7 @@ const sortDataOrder = (data) => {
                         //Bar Graph
                         if (count < 10){
                             count++;
-                            topBreaches.push({"emailSubmitButtone": barChartElement.Name, "PwnCount": barChartElement.PwnCount});
+                            topBreaches.push({"Name": barChartElement.Name, "PwnCount": barChartElement.PwnCount});
                         }
 
                         //Line Graph
@@ -100,30 +100,23 @@ const sortDataOrder = (data) => {
 }
 
 const loadBarGraph = (data) => {
-
     const svgArea = d3.select("svg")
     .attr("viewBox", "0 0 750 500")
     .attr("preserveAspectRatio", "xMidYMin meet");
-
     const margin = {top: 40, right: 75, bottom: 100, left: 225},
     width = svgArea.attr('width') - margin.right - margin.left,
     height = svgArea.attr('height') - margin.bottom - margin.top;
-
     const yScale = d3.scaleBand()
     .domain(data.map(d => d.Name))
     .range([0, height])
-    .pemailValueding(0.1);
-
+    .padding(0.1);
     const xScale = d3.scaleLinear()
         .domain([0, d3.max(data, dataInput => dataInput.PwnCount)])
         .range([0, width]);
     
     const g = svgArea.append('g')
         .attr('transform', "translate(" + margin.left + "," + margin.top + ")");
-
         
-
-
     g.append('g')
     .call(d3.axisLeft().scale(yScale))
     .selectAll('.domain, .tick line')
@@ -135,7 +128,6 @@ const loadBarGraph = (data) => {
     xAxisG.select('.domain')
     .remove();
     
-
     g.selectAll('rect')
         .data(data)
         .enter().append('rect')
@@ -146,11 +138,10 @@ const loadBarGraph = (data) => {
             )
             .attr('height', yScale.bandwidth())
                 .attr('transform', 'translate(1,0)');
-
-
             xAxisG.append('text').attr('class', 'axis-lab')
             .attr('x', width/2).attr('y', 45).text('Number of Records Lost');
 }
+
 
 const groupDataByYear = (data) => {
 
@@ -613,7 +604,7 @@ const sortBreachesByDate = (entireDatabase, userDatabase) => {
 
     let date = today.getFullYear()+'-'+('0' + (today.getMonth() + 1)).slice(-2)+'-'+('0' + today.getDate()).slice(-2);
 
-    let time = today.getHours() + ":" + today.getMinutes() + "Z";
+    let time = today.getHours() + ":" +  ('0' + (today.getMinutes())).slice(-2)  + "Z";
 
     let dateTime = date+'T'+time;
 
@@ -643,6 +634,9 @@ const loadDataArt = (timeDifference, dateTime) => {
 
     let dateNowDiff = null;
 
+    console.log(timeDifference1);
+    console.log(dateTime);
+
     if (timeDifference1 < new Date(dateTime)){
         dataArtTitle.innerText = "Watch out! You are overdue for a data breach by ";
         dataArtSub.innerText = "So it could happen any second now...";
@@ -650,7 +644,7 @@ const loadDataArt = (timeDifference, dateTime) => {
     else
     {
         dataArtTitle.innerText = "Your next data breach will happen in";
-        dataArtSub.innerText = "But it could also happen at any second now...";
+        dataArtSub.innerText = "So be ready...";
     }
 
     clearInterval(intervalTimer);
