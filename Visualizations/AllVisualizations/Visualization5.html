@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 10 Most Stolen Information in Data Breaches</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="../../Images/Mini_Logo.png"
+    />
+
+    <!-- Google Structured Data can only be added inline as it is using JSON-LD - as noted in the w3 here: https://www.w3.org/TR/2016/REC-html51-20161101/semantics-scripting.html#the-script-element -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "name": "Top 10 Most Stolen Information in Data Breaches",
+        "author": {
+          "@type": "Person",
+          "name": "Michael Parkin"
+        },
+        "headline": "Top 10 Most Stolen Information in Data Breaches",
+        "image": [
+          "https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization5.jpg"
+        ],
+        "datePublished": "2021-12-07"
+      }
+    </script>
+
+    <meta
+      property="og:title"
+      content="Top 10 Most Stolen Information in Data Breaches"
+    />
+    <meta property="og:type" content="article" />
+    <meta name="author" property="article:publisher" content="Michael Parkin" />
+    <meta property="article:section" content="Data Visualization" />
+    <meta property="article:tag" content="Data Visualization" />
+    <meta property="og:site_name" content="Lost Data" />
+    <meta
+      property="og:url"
+      content="https://mikeparkinwits.github.io/WSOA3029A_1894979/AllVisualizations/Visualization5.html"
+    />
+    <meta
+      property="og:image"
+      content="https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization5.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="A donut graph showing the top 10 most stolen data"
+    />
+    <meta
+      name="description"
+      property="og:description"
+      content="An interactive donut graph showing the top 10 most stolen data in data breaches"
+    />
+
+    <meta
+      name="keywords"
+      content="Data Breaches, Lost Data, Data Privacy, Data Breach Visualizations"
+    />
+
+    <script type="module" src="../../Scripts/persistentElements.js"></script>
+    <script type="module" src="../../Scripts/dataVisualization.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Style Sheet/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../Style Sheet/dataVis.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="header-nav">
+      <nav class="navbar"></nav>
+    </header>
+
+    <!-- Content -->
+    <main>
+
+      
+      <article class="background-tone-one h-entry border-lock">
+        <header class="page-header">
+          <h1 class="standard-page-title p-name">
+            Top 10 Most Stolen Information in Data Breaches
+          </h1>
+
+          <div>
+     <button id="everyone">Everyone surveyed</button>
+     <button id="women">Only women surveyed</button>
+     <button id="men">Only men surveyed</button>
+</div>
+          <section class="svg-container">
+            <svg class="svg-pie-graph" width="750" height="500"></svg>
+          </section>
+
+ 
+        </header>
+      </article>
+
+      <article class="background-tone-one h-entry border-lock">
+        <section class="standard-page">
+          <header class="page-header">
+            <h2>Reflection</h2>
+            <p class="standard-page-date">
+              <time class="dt-published" datetime="2021-12-07"
+                >07 December 2021</time
+              >
+              | Words: 543 | Data Visualization
+            </p>
+          </header>
+
+          <section class="e-content standard-page-content">
+            <p>
+              While not every data visualization needs to incorporate
+              interactivity to meaningfully portray their message, when utilized
+              correctly it can greatly enhance the overall narrative of the
+              visualization. As such, in this blog post I aim to critically
+              reflect on my third data visualization – exploring my
+              implementation of interactivity within it. To do this, I start by
+              explaining both the narrative I am trying to portray, and the
+              visualization type chosen. Thereafter, I explore how I chose to
+              incorporate interactivity into my visualization, evaluating its
+              success in relation to the seven components of interactivity for
+              visualization that Evanthia Dimara and Charles Perin highlight in
+              their 2020 text
+              <cite>What is Interaction for Data Visualization?</cite>
+              (Dimara and Perin, 2020).
+            </p>
+
+            <p>
+              However, before we can look at how I incorporated interactivity
+              into my data visualization, we must understand the visualization
+              itself – beginning with the narrative that I was trying to
+              portray. While the data visualizations I have created thus far
+              have been fairly simple, allowing me to grow my skillset, for my
+              third data visualization I wanted to challenge myself. As such, I
+              landed on the idea of recreating one of my previous data
+              visualizations in a new, and interesting, way. From this, I then
+              deciding to rethink my first data visualization, concluding that a
+              bubble graph would allow me to explore not only the biggest data
+              breaches of all time, but also the size of all data breaches in
+              relation to one another. Although, I soon realized that this idea
+              would not make full use of the bubble graph, as I only planned on
+              comparing the size of bubbles and had no intention of utilizing
+              different colours. As such, I decided that by combining my
+              previous two narratives, I would then be able to create an even
+              more interesting narrative – the increasing size of data breaches
+              in recent years, where different coloured bubbles represent data
+              breaches before and after 2015 (the median date for my data).
+            </p>
+            <p>
+              While I believe that this alone does sufficiently communicate my
+              narrative, I knew that the inclusion of interactivity could
+              greatly enhance it – if incorporated well. As such, to better
+              understand how to meaningfully incorporate interactivity, I looked
+              to Dimara and Perin, who define interaction for visualization as
+              <q
+                >“interaction for visualization is the
+                <strong>interplay</strong> between a <strong>person</strong> and
+                a <strong>data interface</strong> involving a
+                <strong>data-related intent</strong>, at least one
+                <strong>action</strong> from the person and an interface
+                <strong>reaction</strong> that is
+                <strong>perceived as such</strong>”</q
+              >
+              (Dimara and Perin, 2020: 8; emphasis added). Using this, I then
+              concluded that to create meaningful interactions, interactivity
+              must meet the end-user’s intent in a timely, and accurate, manner.
+              As such, I determined that the most likely intent for the user was
+              learning more about each data breach. This then resulted in the
+              idea of utilizing the action of hovering over a bubble to provide
+              the end-user with more information about each data breach.
+            </p>
+            <p>
+              In brief, I then believe that, although not necessary, the
+              inclusion of interactivity helped to greatly enhance the message
+              for this data visualization – ultimately allowing the end-user to
+              explore additional information that was previously inaccessible.
+              Not only that, but by consulting Dimara and Perin’s definition for
+              interaction in visualizations, before incorporating interaction, I
+              believe that my inclusion of interactivity was as successful as
+              possible – allowing the user to quickly, and easily, meet their
+              data-related intent when requested.
+            </p>
+          </section>
+        </section>
+      </article>
+
+      <!-- References -->
+
+      <footer class="background-tone-two border-lock">
+        <section class="standard-page-footer">
+          <h2>References</h2>
+          <ol class="standard-page-references">
+            <ol class="standard-page-references">
+              <li>
+                Dimara, E., Perin, C., 2020.
+                <cite>What is Interaction for Data Visualization? </cite>
+                IEEE Trans. Vis. Comput. Graph. 26, 119–129. https://doi.org
+                /10.1109/TVCG. 2019.2934283
+              </li>
+          </ol>
+        </section>
+      </footer>
+    </main>
+
+    <section class="data-vis-nav-buttons"></section>
+
+    <a class="back-to-top" href="#top">&#9650;</a>
+
+    <!-- Footer -->
+    <footer class="main-footer h-card"></footer>
+  </body>
+</html>

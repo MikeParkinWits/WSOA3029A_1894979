@@ -1,4 +1,13 @@
-[
+[{"title": "Top 10 Most Stolen Information in Data Breaches", "location": "Visualizations/AllVisualizations/Visualization5",
+    "imagePreview": {
+        "src":"Images/VisualizationPreviewImages/Visualization5.jpg",
+        "alt": "A donut graph showing the top 10 most stolen data",
+        "imageTitle": "A donut graph showing the top 10 most stolen data"},
+    "type": "Data Visualization",
+    "description": "An interactive donut graph showing the top 10 most stolen data in data breaches",
+    "publishDate": "07 December 2021"
+    },
+        
     {"title": "When Will My Data Be Lost Next?", "location": "Visualizations/AllVisualizations/Visualization4",
         "imagePreview": {
             "src":"Images/VisualizationPreviewImages/Visualization4.jpg",

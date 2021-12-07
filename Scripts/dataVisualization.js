@@ -24,6 +24,16 @@ let audioObj = new Audio("../../Audio/156667__unfa__stereo-tick.flac");
 
 let dataArtArea;
 
+//Map Variables
+
+let allDatasOne = [];
+let passwordCount = 0;
+let result;
+let resultNEW;
+let resultNEWNEW;
+let pass = 0;
+
+
 
 numBreachesPerYear.find(e => {
     if (e.Year === 2019){
@@ -31,6 +41,8 @@ numBreachesPerYear.find(e => {
 
 }
 });
+
+
 
 const getAllDataBreaches = async () => {
     const response = await fetch(dataBreachURL);
@@ -52,14 +64,78 @@ const getAllDataBreaches = async () => {
     
         LoadBubbleGraph(allBreachesInOrder);
     }
+    else if (document.querySelector(".svg-pie-graph")){
+
+        test(data);
+        loadPieChart(data);
+    }
     else
     {
         checkDataArtInput(data);
     }
-
-
-    
+    //getPwnedByCountry(data);
 }
+
+let test = (data) => {
+
+    let temp;
+
+    for (let i = 0; i< data.length; i++){
+        //console.log(data[i]);
+
+        for (let y = 0; y< data[i].DataClasses.length; y++){
+            //console.log(allDatasOne.element.DataClasses[i]);
+            //console.log(data[i].DataClasses[y]);
+
+            //allDatasOne.push({"Name": temp});
+
+            temp = data[i].DataClasses[y];
+
+            console.log(temp);
+
+
+                allDatasOne.push(temp);
+
+                passwordCount++;
+
+
+
+
+            //alert(super_array);
+
+            // console.log(allDatasOne);
+
+
+            
+        }
+    }
+
+    result = allDatasOne.reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), Object.create(null));
+
+
+    console.log(result);
+
+    console.log(passwordCount);
+
+    resultNEW = Object.keys(result).map(e => ({title: e, value: result[e], all: passwordCount}))
+    console.log(resultNEW)
+
+    resultNEW = resultNEW.slice(0,10);
+
+    resultNEW.forEach(element => {
+        pass += element.value;
+    });
+
+    resultNEW.forEach(element => {
+        element.all = pass;
+    });
+
+    resultNEW.sort((a,b) => a.value - b.value)
+
+    resultNEW.reverse();
+}
+
+
 
 getAllDataBreaches().catch(error =>{
     console.error(error);
@@ -696,5 +772,227 @@ const loadDataArt = (timeDifference, dateTime) => {
         
         }, 1000)
 
+
+}
+
+const loadPieChart = (data) => {
+
+const svgArea = d3.select("svg"),
+margin = {top:30, right: 100, bottom: 30, left: 100},
+width = svgArea.attr('width') - margin.left - margin.right,
+height = svgArea.attr('height') - margin.top - margin.bottom;
+
+svgArea
+.attr("viewBox", "0 0 750 500")
+.attr("preserveAspectRatio", "xMidYMin meet");
+
+let radius = Math.min(width, height)/2;
+let donutWidth = 75;
+let color = d3.scaleOrdinal()
+    .range(["#e31a1c","#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"]);
+
+let svg = d3.select('.svg-pie-graph')
+    .append('svg')
+    .attr('width', width*2)
+    .attr('height', height)
+    .append('g')
+    .attr('transform', 'translate(' + (width / 2) +
+        ',' + (height / 2) + ')');
+
+let arc = d3.arc()
+    .innerRadius(radius - donutWidth)
+    .outerRadius(radius);
+
+let pie = d3.pie()
+    .value(function (d) {
+        return d.value;
+    })
+    .sort(null);
+
+let legendRectSize = 13;
+let legendSpacing = 7;
+
+let donutTip = d3.select("body").append("section")
+    .attr("class", "donut-tip")
+    .style("opacity", 0);
+
+let path = svg.selectAll('path')
+    .data(pie(resultNEW))
+    .enter()
+    .append('path')
+    .attr('d', arc)
+    .attr('fill', function (d, i) {
+        return color(d.data.title);
+    })
+    .attr('transform', 'translate(0, 0)')
+    .on('mouseover', function (d, i) {
+        d3.select(this).transition()
+            .duration('50')
+            .attr('opacity', '.85');
+        donutTip.transition()
+            .duration(50)
+            .style("opacity", 1);
+        let num = (Math.round((d.value / d.data.all) * 100)).toString() + '%';
+        if (Math.round((d.value / d.data.all) * 100) < 1){
+            num = "<1%";
+        }
+        donutTip.html(num)
+            .style("left", (d3.event.pageX + 10) + "px")
+            .style("top", (d3.event.pageY - 15) + "px");
+
+    })
+    .on('mouseout', function (d, i) {
+        d3.select(this).transition()
+            .duration('50')
+            .attr('opacity', '1');
+        donutTip.transition()
+            .duration('50')
+            .style("opacity", 0);
+    });
+
+
+let legend = svg.selectAll('.legend')
+    .data(color.domain())
+    .enter()
+    .append('g')
+    .attr('class', 'circle-legend')
+    .attr('transform', function (d, i) {
+        let height = legendRectSize + legendSpacing;
+        let offset = height * color.domain().length / 2;
+        let horz = -2 * legendRectSize - 13;
+        let vert = (i * 1.2) * height - offset;
+        return 'translate(' + horz + ',' + vert + ')';
+    });
+
+legend.append('circle')
+    .style('fill', color)
+    .style('stroke', color)
+    .attr('cx', 300)
+    .attr('cy', 0)
+    .attr('r', '.5rem');
+
+legend.append('text')
+    .attr('x', legendRectSize + legendSpacing + 300)
+    .attr('y', legendRectSize - legendSpacing)
+    .text(function (d) {
+        return d;
+    });
+
+function change(data) {
+    let pie = d3.pie()
+        .value(function (d) {
+            return d.value;
+        }).sort(null)(data);
+
+    let width = 360;
+    let height = 360;
+    let radius = Math.min(width, height) / 2;
+    let donutWidth = 75;
+
+    path = d3.select("#donut")
+        .selectAll("path")
+        .data(pie); // Compute the new angles
+    let arc = d3.arc()
+        .innerRadius(radius - donutWidth)
+        .outerRadius(radius);
+    path.transition().duration(500).attr("d", arc); // redrawing the path with a smooth transition
+}
+
+d3.select("button#everyone")
+    .on("click", function () {
+        change(totals);
+    })
+d3.select("button#women")
+    .on("click", function () {
+        change(femaleData);
+    })
+d3.select("button#men")
+    .on("click", function () {
+        change(maleData)
+    })
+
+/*
+arc.append("text")
+.attr("transform", function(d) { 
+return "translate(" + label.centroid(d) + ")"; 
+})
+.text(function(d) { return d.data.label; })
+.style("font-family", "arial")
+.style("font-size", 15);
+
+*/
+
+/*
+const getPwnedByCountry = (pwnedData) => {
+
+    let test = false;
+    let domain;
+    let add = 0;
+
+    pwnedData.forEach(pwnedElement => {
+
+        if (pwnedElement.AddedDate.substring(0,7) == "2021-06"){
+        allData.push({"Domain": pwnedElement.Domain, "Name" : pwnedElement.PwnCount})
+
+        add += pwnedElement.PwnCount;
+
+        console.log(add);
+    }}
+    )
+
+    console.log(add);
+    console.log(allData);
+
+
+
+test = false;
+
+            let mapUrl = "https://api.orb-intelligence.com/3/match/?api_key=c66c5dad-395c-4ec6-afdf-7b78eb94166a&name=" + allData[i].Name + "&website=" + allData[i].Domain;
+    
+            const getDat = async () => {
+                const response = await fetch(mapUrl);
+                const allDataOne = await response.json();
+                console.log(allDataOne.results[0].orb_num);
+            test = true;
+
+            getDatas(allDataOne);
+            
+            
+                
+            }
+
+            
+            
+            getDat().catch(error =>{
+                console.error(error);
+                getDat();
+            });  
+        }  
+
+            const getDatas = async (allDataOne) => {
+                const response = await fetch("https://api.orb-intelligence.com/3/fetch/" + allDataOne.results[0].orb_num + "/?api_key=c66c5dad-395c-4ec6-afdf-7b78eb94166a");
+                const allDataOnes = await response.json();
+                console.log(allDataOnes.industry);
+                
+            
+
+
+            test = true;
+            
+            
+                
+            
+        
+
+    
+
+    
+    console.log(allData);
+
+    domain = allData[2].Domain;
+    
+}
+
+*/
 
 }

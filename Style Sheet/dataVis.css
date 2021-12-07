@@ -24,12 +24,17 @@
 
 .svg-bar-graph,
 .svg-line-graph,
-.svg-bubble-graph {
+.svg-bubble-graph,
+.svg-pie-graph {
   width: 80%;
   height: 100%;
   margin: 0.5rem 1rem;
   border: 0.11rem solid rgb(87, 87, 87);
   box-shadow: 0.01rem 0.01rem 1rem 0.01rem rgba(219, 219, 219, 0.582);
+}
+
+.svg-pie-graph {
+  padding-top: 3rem;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
@@ -251,6 +256,18 @@ input {
   text-align: center;
 }
 
+section.donut-tip {
+  position: absolute;
+  text-align: center;
+  padding: 0.5rem;
+  background: #ffffff;
+  color: #313639;
+  border: 1px solid #313639;
+  border-radius: 8px;
+  pointer-events: none;
+  font-size: 1.3rem;
+}
+
 /* ------------------------
     2. Responsive Design 
    ------------------------ */
@@ -260,7 +277,8 @@ input {
 @media only screen and (max-width: 1024px) {
   .svg-bar-graph,
   .svg-line-graph,
-  .svg-bubble-graph {
+  .svg-bubble-graph,
+  .svg-pie-graph {
     width: 90%;
     margin: 0.5rem 0rem;
   }
@@ -294,8 +312,13 @@ input {
 @media only screen and (max-width: 765px) {
   .svg-bar-graph,
   .svg-line-graph,
-  .svg-bubble-graph {
+  .svg-bubble-graph,
+  .svg-pie-graph {
     width: 95%;
+  }
+
+  .svg-pie-graph {
+    padding-top: 1.5rem;
   }
 
   .tick text {
