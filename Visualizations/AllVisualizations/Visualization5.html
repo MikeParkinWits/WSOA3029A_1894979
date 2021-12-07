@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Top 10 Most Stolen Information in Data Breaches</title>
+    <title>Top Stolen Information in Data Breaches</title>
 
     <link
       rel="shortcut icon"
@@ -17,12 +17,12 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "name": "Top 10 Most Stolen Information in Data Breaches",
+        "name": "Top Stolen Information in Data Breaches",
         "author": {
           "@type": "Person",
           "name": "Michael Parkin"
         },
-        "headline": "Top 10 Most Stolen Information in Data Breaches",
+        "headline": "Top Stolen Information in Data Breaches",
         "image": [
           "https://mikeparkinwits.github.io/WSOA3029A_1894979/VisualizationPreviewImages/Visualization5.jpg"
         ],
@@ -32,7 +32,7 @@
 
     <meta
       property="og:title"
-      content="Top 10 Most Stolen Information in Data Breaches"
+      content="Top Stolen Information in Data Breaches"
     />
     <meta property="og:type" content="article" />
     <meta name="author" property="article:publisher" content="Michael Parkin" />
@@ -49,12 +49,12 @@
     />
     <meta
       property="og:image:alt"
-      content="A donut graph showing the top 10 most stolen data"
+      content="A pie chart showing the top 10 most stolen data"
     />
     <meta
       name="description"
       property="og:description"
-      content="An interactive donut graph showing the top 10 most stolen data in data breaches"
+      content="An interactive pie chart showing the top stolen items in data breaches"
     />
 
     <meta
@@ -70,7 +70,8 @@
       type="text/css"
       href="../../Style Sheet/dataVis.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>  </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
+  </head>
   <body>
     <!-- Navbar -->
     <header class="header-nav">
@@ -79,24 +80,14 @@
 
     <!-- Content -->
     <main>
-
-      
       <article class="background-tone-one h-entry border-lock">
         <header class="page-header">
           <h1 class="standard-page-title p-name">
-            Top 10 Most Stolen Information in Data Breaches
+            Top Stolen Information in Data Breaches
           </h1>
-
-          <div>
-     <button id="everyone">Everyone surveyed</button>
-     <button id="women">Only women surveyed</button>
-     <button id="men">Only men surveyed</button>
-</div>
           <section class="svg-container">
             <svg class="svg-pie-graph" width="750" height="500"></svg>
           </section>
-
- 
         </header>
       </article>
 
@@ -108,82 +99,76 @@
               <time class="dt-published" datetime="2021-12-07"
                 >07 December 2021</time
               >
-              | Words: 543 | Data Visualization
+              | Words: 499 | Data Visualization
             </p>
           </header>
 
           <section class="e-content standard-page-content">
             <p>
-              While not every data visualization needs to incorporate
-              interactivity to meaningfully portray their message, when utilized
-              correctly it can greatly enhance the overall narrative of the
-              visualization. As such, in this blog post I aim to critically
-              reflect on my third data visualization – exploring my
-              implementation of interactivity within it. To do this, I start by
-              explaining both the narrative I am trying to portray, and the
-              visualization type chosen. Thereafter, I explore how I chose to
-              incorporate interactivity into my visualization, evaluating its
-              success in relation to the seven components of interactivity for
-              visualization that Evanthia Dimara and Charles Perin highlight in
-              their 2020 text
-              <cite>What is Interaction for Data Visualization?</cite>
-              (Dimara and Perin, 2020).
+              Although I believe that through the creation of various data
+              visualizations, and data-driven artworks, I have been able to
+              teach users about the dangers of oversharing their information
+              online; there is still one area I believe that I have not to
+              cover. As such, in this blog post I aim to reflect on this new
+              visualization. To do this, I start by outlining the reasoning, and
+              narrative, behind my choices – before looking more closely at the
+              considerations made during the visualization’s creation.
+              Thereafter, I conclude by reflecting on whether I believe that I
+              was successful in achieving my intended narrative.
             </p>
 
             <p>
-              However, before we can look at how I incorporated interactivity
-              into my data visualization, we must understand the visualization
-              itself – beginning with the narrative that I was trying to
-              portray. While the data visualizations I have created thus far
-              have been fairly simple, allowing me to grow my skillset, for my
-              third data visualization I wanted to challenge myself. As such, I
-              landed on the idea of recreating one of my previous data
-              visualizations in a new, and interesting, way. From this, I then
-              deciding to rethink my first data visualization, concluding that a
-              bubble graph would allow me to explore not only the biggest data
-              breaches of all time, but also the size of all data breaches in
-              relation to one another. Although, I soon realized that this idea
-              would not make full use of the bubble graph, as I only planned on
-              comparing the size of bubbles and had no intention of utilizing
-              different colours. As such, I decided that by combining my
-              previous two narratives, I would then be able to create an even
-              more interesting narrative – the increasing size of data breaches
-              in recent years, where different coloured bubbles represent data
-              breaches before and after 2015 (the median date for my data).
+              First, we must start by understanding the new dataset that I chose
+              to visualize. Up until now, the main intent of all my
+              visualizations were to inform users about the increasing threat of
+              data breaches – with visualizations around data breach sizes, and
+              the looming threat this poses to the user. Although, while I had
+              been preaching for users to try and reduce their risk of having
+              their data stolen, I realized I had not actually told users what
+              data they should be keeping safe. As such, for this visualization
+              I decided to visualize the most stolen information during a data
+              breach – with the aim of making users question what personal
+              information they share online.
             </p>
             <p>
-              While I believe that this alone does sufficiently communicate my
-              narrative, I knew that the inclusion of interactivity could
-              greatly enhance it – if incorporated well. As such, to better
-              understand how to meaningfully incorporate interactivity, I looked
-              to Dimara and Perin, who define interaction for visualization as
-              <q
-                >“interaction for visualization is the
-                <strong>interplay</strong> between a <strong>person</strong> and
-                a <strong>data interface</strong> involving a
-                <strong>data-related intent</strong>, at least one
-                <strong>action</strong> from the person and an interface
-                <strong>reaction</strong> that is
-                <strong>perceived as such</strong>”</q
-              >
-              (Dimara and Perin, 2020: 8; emphasis added). Using this, I then
-              concluded that to create meaningful interactions, interactivity
-              must meet the end-user’s intent in a timely, and accurate, manner.
-              As such, I determined that the most likely intent for the user was
-              learning more about each data breach. This then resulted in the
-              idea of utilizing the action of hovering over a bubble to provide
-              the end-user with more information about each data breach.
+              To do this, I then decided to use a pie chart for my visualization
+              – as it is an informative way of comparing proportional
+              information. Although, it is important to acknowledge that pie
+              charts have garnered a bad reputation within the visualization
+              community, with scholars such as Cole Nussbaumer Knaflic who, in
+              their 2015 book
+              <cite
+                >Storytelling with data: a data visualization guide for business
+                professionals</cite
+              >, disown the visualization method, and its usefulness, all
+              together – stating that they are deceptive and misleading
+              (Knaflic, 2015). However, I believe that this can be said for any
+              visualization when used incorrectly/maliciously (ibid.). Thus, I
+              deem the pie chart useful and serving a specific purpose, when
+              utilized correctly, well – comparing proportional information
+              together easily.
             </p>
             <p>
-              In brief, I then believe that, although not necessary, the
-              inclusion of interactivity helped to greatly enhance the message
-              for this data visualization – ultimately allowing the end-user to
-              explore additional information that was previously inaccessible.
-              Not only that, but by consulting Dimara and Perin’s definition for
-              interaction in visualizations, before incorporating interaction, I
-              believe that my inclusion of interactivity was as successful as
-              possible – allowing the user to quickly, and easily, meet their
-              data-related intent when requested.
+              However, in order to decrease the confusion that Knaflic point
+              out, I also make use of interactivity. When the user hovers over
+              any part of the chart, a bubble appears indicating the percentage
+              that that section holds. This then allows numbers to be hidden
+              from the visualization for the most part, which aids in its visual
+              communication, but still allows those curious to receive this
+              information. Although, even with this I would say that I did not
+              reach my potential the graphs potential in terms of interactivity.
+              As a result of unforeseen circumstances, and time constraints, I
+              was unable to implement all interactivity planned, with options to
+              switch between different time periods, to see the change in stolen
+              information, scrapped.
+            </p>
+
+            <p>
+              In conclusion, we can then see that although I was unable to meet
+              my goal for interactivity in this chart, I would still argue that
+              I was able to successfully portray the topmost stolen information
+              in data breaches – helping to keep users more informed and safer.
+              online.
             </p>
           </section>
         </section>
@@ -195,13 +180,14 @@
         <section class="standard-page-footer">
           <h2>References</h2>
           <ol class="standard-page-references">
-            <ol class="standard-page-references">
-              <li>
-                Dimara, E., Perin, C., 2020.
-                <cite>What is Interaction for Data Visualization? </cite>
-                IEEE Trans. Vis. Comput. Graph. 26, 119–129. https://doi.org
-                /10.1109/TVCG. 2019.2934283
-              </li>
+            <li>
+              Knaflic, C.N. 2015.
+              <cite>
+                Storytelling with data: a data visualization guide for business
+                professionals.</cite
+              >
+              Hoboken, New Jersey: Wiley.
+            </li>
           </ol>
         </section>
       </footer>

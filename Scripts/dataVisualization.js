@@ -38,11 +38,8 @@ let pass = 0;
 numBreachesPerYear.find(e => {
     if (e.Year === 2019){
         e.DataLoss += 10;
-
 }
 });
-
-
 
 const getAllDataBreaches = async () => {
     const response = await fetch(dataBreachURL);
@@ -789,7 +786,7 @@ svgArea
 let radius = Math.min(width, height)/2;
 let donutWidth = 75;
 let color = d3.scaleOrdinal()
-    .range(["#e31a1c","#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"]);
+    .range(["#e31a1c","#fb9a99","#a6cee3","#1f78b4","#b2df8a","#33a02c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"]);
 
 let svg = d3.select('.svg-pie-graph')
     .append('svg')
@@ -800,7 +797,7 @@ let svg = d3.select('.svg-pie-graph')
         ',' + (height / 2) + ')');
 
 let arc = d3.arc()
-    .innerRadius(radius - donutWidth)
+    .innerRadius(0)
     .outerRadius(radius);
 
 let pie = d3.pie()
@@ -891,108 +888,10 @@ function change(data) {
 
     path = d3.select("#donut")
         .selectAll("path")
-        .data(pie); // Compute the new angles
+        .data(pie);
     let arc = d3.arc()
         .innerRadius(radius - donutWidth)
         .outerRadius(radius);
-    path.transition().duration(500).attr("d", arc); // redrawing the path with a smooth transition
+    path.transition().duration(500).attr("d", arc);
 }
-
-d3.select("button#everyone")
-    .on("click", function () {
-        change(totals);
-    })
-d3.select("button#women")
-    .on("click", function () {
-        change(femaleData);
-    })
-d3.select("button#men")
-    .on("click", function () {
-        change(maleData)
-    })
-
-/*
-arc.append("text")
-.attr("transform", function(d) { 
-return "translate(" + label.centroid(d) + ")"; 
-})
-.text(function(d) { return d.data.label; })
-.style("font-family", "arial")
-.style("font-size", 15);
-
-*/
-
-/*
-const getPwnedByCountry = (pwnedData) => {
-
-    let test = false;
-    let domain;
-    let add = 0;
-
-    pwnedData.forEach(pwnedElement => {
-
-        if (pwnedElement.AddedDate.substring(0,7) == "2021-06"){
-        allData.push({"Domain": pwnedElement.Domain, "Name" : pwnedElement.PwnCount})
-
-        add += pwnedElement.PwnCount;
-
-        console.log(add);
-    }}
-    )
-
-    console.log(add);
-    console.log(allData);
-
-
-
-test = false;
-
-            let mapUrl = "https://api.orb-intelligence.com/3/match/?api_key=c66c5dad-395c-4ec6-afdf-7b78eb94166a&name=" + allData[i].Name + "&website=" + allData[i].Domain;
-    
-            const getDat = async () => {
-                const response = await fetch(mapUrl);
-                const allDataOne = await response.json();
-                console.log(allDataOne.results[0].orb_num);
-            test = true;
-
-            getDatas(allDataOne);
-            
-            
-                
-            }
-
-            
-            
-            getDat().catch(error =>{
-                console.error(error);
-                getDat();
-            });  
-        }  
-
-            const getDatas = async (allDataOne) => {
-                const response = await fetch("https://api.orb-intelligence.com/3/fetch/" + allDataOne.results[0].orb_num + "/?api_key=c66c5dad-395c-4ec6-afdf-7b78eb94166a");
-                const allDataOnes = await response.json();
-                console.log(allDataOnes.industry);
-                
-            
-
-
-            test = true;
-            
-            
-                
-            
-        
-
-    
-
-    
-    console.log(allData);
-
-    domain = allData[2].Domain;
-    
-}
-
-*/
-
 }

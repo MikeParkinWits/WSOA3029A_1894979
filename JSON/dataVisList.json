@@ -1,10 +1,10 @@
-[{"title": "Top 10 Most Stolen Information in Data Breaches", "location": "Visualizations/AllVisualizations/Visualization5",
+[{"title": "Top Stolen Information in Data Breaches", "location": "Visualizations/AllVisualizations/Visualization5",
     "imagePreview": {
         "src":"Images/VisualizationPreviewImages/Visualization5.jpg",
-        "alt": "A donut graph showing the top 10 most stolen data",
-        "imageTitle": "A donut graph showing the top 10 most stolen data"},
+        "alt": "A pie chart showing the top 10 most stolen data",
+        "imageTitle": "A pie chart showing the top 10 most stolen data"},
     "type": "Data Visualization",
-    "description": "An interactive donut graph showing the top 10 most stolen data in data breaches",
+    "description": "An interactive pie chart showing the top stolen items in data breaches",
     "publishDate": "07 December 2021"
     },
         
